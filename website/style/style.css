@@ -19,6 +19,9 @@
 
 .tag_title {
   position: absolute;
+  font-size: 48px;
+  color: white;
+  margin-left: auto;
   z-index: 1;
 }
 
