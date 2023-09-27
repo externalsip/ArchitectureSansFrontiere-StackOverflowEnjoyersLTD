@@ -1,7 +1,9 @@
 @use "partials/nouvelle_template";
 @use "partials/page_accueil";
+@use "partials/colorsVar" as col;
 
 html{
+    font-family: 'Lato', sans-serif;
     width:100vw;
     padding:0;
     overflow-y: scroll;

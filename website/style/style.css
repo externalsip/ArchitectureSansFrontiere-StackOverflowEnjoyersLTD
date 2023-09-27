@@ -19,7 +19,7 @@
 .nouvelle_hero .nouvelle_hero_container .nouvelle_hero_image .nouvelle_hero_image_gradient {
   height: 100%;
   width: 100%;
-  background-image: linear-gradient(to bottom, rgba(255, 0, 0, 0), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.534), rgb(0, 0, 0));
+  background-image: linear-gradient(to bottom, rgb(191, 215, 234), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.534), rgb(0, 0, 0));
 }
 
 .tag_title {
@@ -84,6 +84,13 @@
   background-size: cover;
   height: 45vmin;
   background-position: center;
+  position: relative;
+}
+.hero__image__gradient {
+  background-image: linear-gradient(to right, rgba(191, 215, 234, 0), rgba(191, 215, 234, 0.1), rgba(191, 215, 234, 0.534), rgb(191, 215, 234));
+  position: absolute;
+  width: 100%;
+  height: 100%;
 }
 
 @media screen and (min-width: 1200px) {
@@ -95,6 +102,11 @@
   }
   .hero__image {
     height: 60vmin;
+  }
+}
+@media screen and (max-width: 767px) {
+  .hero__image__gradient {
+    background-image: linear-gradient(to bottom, rgba(191, 215, 234, 0), rgba(191, 215, 234, 0.1), rgba(191, 215, 234, 0.534), rgb(191, 215, 234));
   }
 }
 .swiper-pagination-bullet {
@@ -132,14 +144,19 @@
 .projects__list {
   height: 80%;
 }
+.projects__title {
+  font-size: 32px;
+  font-weight: bold;
+  color: #1A3A3A;
+}
 .projects__greenBarContainer {
   width: 100%;
-  height: 100%;
+  height: 90%;
   bottom: 0%;
   position: absolute;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: flex-end;
 }
 .projects__greenBar {
   width: 100%;
@@ -156,6 +173,7 @@
   display: none;
 }
 .projects__greenBar:nth-child(3) {
+  position: absolute;
   bottom: 20%;
 }
 .projects__container {
@@ -163,14 +181,22 @@
 }
 
 @media screen and (max-width: 768px) {
+  .projects__greenBarContainer {
+    justify-content: space-around;
+  }
   .projects__greenBar:nth-child(1) {
     display: block;
   }
   .projects__greenBar:nth-child(2) {
     display: block;
   }
+  .projects__greenBar:nth-child(3) {
+    position: relative;
+    bottom: 0;
+  }
 }
 html {
+  font-family: "Lato", sans-serif;
   width: 100vw;
   padding: 0;
   overflow-y: scroll;
