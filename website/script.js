@@ -26,8 +26,10 @@ const swiperAct1 = new Swiper('.swiperActIMG', {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
   },
+  preventClicks: true,
   effect: "fade",
   loop:true,
+  slidesPerView:1,
 });
 const swiperAct2 = new Swiper('.swiperActTXT', {
   direction:"horizontal",
@@ -35,5 +37,6 @@ const swiperAct2 = new Swiper('.swiperActTXT', {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
   },
+  preventClicks: true,
   loop:true,
 });
