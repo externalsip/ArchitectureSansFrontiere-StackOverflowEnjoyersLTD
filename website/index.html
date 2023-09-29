@@ -1,62 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Architecture Sans Frontières</title>
-    <link rel="stylesheet" href="style/style.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="style/style.css" />
     <link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
-/>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
-</head>
-<body>
-
-  <!--
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!--
     NAV
   -->
 
-    <nav class="navbar navbar-expand-md fixed-top" style="background-color: #70B074;">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">
-            <img class="navbar-brand__img" src="assets/img/logo.png">
-          </a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse justify-content-evenly" id="navbarNav">
-            <ul class="navbar-nav align-self-md-end align-items-end ml-auto col-lg-9 col-md-10">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Nos Services</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Nouvelles</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Équipe</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">À Propos</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Notre Histoire</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">FAQ</a>
-              </li>
-            </ul>
-            <div class="nav_end col-md-2 col-lg-3">
-                <button type="button" class="charityBtn">Donnez</button>
-                <div class="nav-item">
-                  <a class="nav-link" href="#">EN</a>
-                  </div>
+    <nav
+      class="navbar navbar-expand-md fixed-top"
+      style="background-color: #70b074"
+    >
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img class="navbar-brand__img" src="assets/img/logo.png" />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse justify-content-evenly"
+          id="navbarNav"
+        >
+          <ul
+            class="navbar-nav align-self-md-end align-items-end ml-auto col-lg-9 col-md-10"
+          >
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#"
+                >Nos Services</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Nouvelles</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Équipe</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">À Propos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Notre Histoire</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">FAQ</a>
+            </li>
+          </ul>
+          <div class="nav_end col-md-2 col-lg-3">
+            <button type="button" class="charityBtn">Donnez</button>
+            <div class="nav-item">
+              <a class="nav-link" href="#">EN</a>
             </div>
           </div>
         </div>
+      </div>
     </nav>
 
     <!--
@@ -66,80 +91,158 @@
     <section class="hero">
       <div class="hero__wrapper container-fluid">
         <div class="row">
-            <div class="hero__image col-md-6 col-12">
-              <div class="hero__image__gradient"></div> 
+          <div class="hero__image col-md-6 col-12">
+            <div class="hero__image__gradient"></div>
+          </div>
+          <div class="hero__info col-md-6 col-12 swiperProject">
+            <div class="swiper-wrapper swiperProjectWrapper">
+              <div class="swiper-slide hero__text">text1</div>
+              <div class="swiper-slide hero__text">text2</div>
+              <div class="swiper-slide hero__text">text3</div>
+              <div class="swiper-slide hero__text">text4</div>
             </div>
-            <div class="hero__info col-md-6 col-12 swiperProject">
-                <div class="swiper-wrapper swiperProjectWrapper">
-                    <div class="swiper-slide hero__text">text1</div>
-                    <div class="swiper-slide hero__text">text2</div>
-                    <div class="swiper-slide hero__text">text3</div>
-                    <div class="swiper-slide hero__text">text4</div>
-                </div>
-                <div class="swiper-pagination"></div>
-            </div>
+            <div class="swiper-pagination"></div>
+          </div>
         </div>
-
       </div>
     </section>
 
     <!--PROJECTS-->
 
     <section class="projects">
-      <div class="projects__wrapper container">          
-
+      <div class="projects__wrapper container">
         <div class="row projects__title">
           <div class="col-12 text-center">Projets</div>
         </div>
         <div class="row projects__list justify-content-evenly gy-5">
-
-          <div class="col-8 col-md-3 projects__container">
-
-          </div>
-          <div class="col-8 col-md-3 projects__container">
-
-          </div>
-          <div class="col-8 col-md-3 projects__container">
-
-          </div>
+          <div class="col-8 col-md-3 projects__container"></div>
+          <div class="col-8 col-md-3 projects__container"></div>
+          <div class="col-8 col-md-3 projects__container"></div>
         </div>
       </div>
       <div class="projects__greenBarContainer">
-        <div class="projects__greenBar"></div>      
         <div class="projects__greenBar"></div>
         <div class="projects__greenBar"></div>
-    </div>
+        <div class="projects__greenBar"></div>
+      </div>
     </section>
 
-<!--ACTUALITÉS-->
+    <!--ACTUALITÉS-->
 
-<section class="actuality">
+    <section class="actuality">
       <div class="actuality__wrapper container-fluid">
         <div class="row actuality__title">
           <div class="col-12 text-center">Actualités</div>
         </div>
         <div class="row">
-          <div class="col-md-6 col-12 swiperActIMG actuality__swiper swiper-no-swiping">
+          <div
+            class="col-md-6 col-12 swiperActIMG actuality__swiper swiper-no-swiping"
+          >
             <div class="swiper-wrapper col-6">
-              <div class="swiper-slide actuality__img"><img src="../sources/medias/01_accueil/image_actualite_03_accueil.jpg" class="actuality__img__source"></div>
-              <div class="swiper-slide actuality__img"><img src="../sources/medias/01_accueil/image_actualite_02_accueil.png" class="actuality__img__source"></div>
-              <div class="swiper-slide actuality__img"><img src="../sources/medias/01_accueil/image_actualite_01_accueil.png" class="actuality__img__source"></div>
+              <div class="swiper-slide actuality__img">
+                <img
+                  src="../sources/medias/01_accueil/image_actualite_03_accueil.jpg"
+                  class="actuality__img__source"
+                />
+              </div>
+              <div class="swiper-slide actuality__img">
+                <img
+                  src="../sources/medias/01_accueil/image_actualite_02_accueil.png"
+                  class="actuality__img__source"
+                />
+              </div>
+              <div class="swiper-slide actuality__img">
+                <img
+                  src="../sources/medias/01_accueil/image_actualite_01_accueil.png"
+                  class="actuality__img__source"
+                />
+              </div>
             </div>
             <div class="swiper-button-next actuality__swiper__btn"></div>
             <div class="swiper-button-prev actuality__swiper__btn"></div>
-            </div>            
-            <div class="col-md-6 col-12 swiperActTXT actuality__swiper swiper-no-swiping">
-              <div class="swiper-wrapper col-6">
-                <div class="swiper-slide actuality__txt">text1</div>
-                <div class="swiper-slide actuality__txt">text2</div>
-                <div class="swiper-slide actuality__txt">text3</div>
-              </div>
+          </div>
+          <div
+            class="col-md-6 col-12 swiperActTXT actuality__swiper swiper-no-swiping"
+          >
+            <div class="swiper-wrapper col-6">
+              <div class="swiper-slide actuality__txt">text1</div>
+              <div class="swiper-slide actuality__txt">text2</div>
+              <div class="swiper-slide actuality__txt">text3</div>
+            </div>
           </div>
         </div>
       </div>
     </section>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+    <!--PIED DE PAGE-->
+
+    <footer class="bd-footer">
+      <div class="container-fluid pt-3 pb-3 ps-3 pe-3">
+        <div class="row">
+          <div class="col-sm-12 col-lg-8 ps-4 text-start">
+            <a href="index.html">
+              <img class="logo" src="assets/img/logo.png" alt="logo" />
+            </a>
+            <div class="col-sm-12 col-lg-8 pt-4 text-start">
+              <button
+                type="button"
+                class="btn2 btn--map text-start"
+                data-bs-toggle="modal"
+                data-bs-target="#button_modal"
+              >
+                201 rue Sainte-Catherine <br />
+                Est, Montréal, QC, H2X 1L2
+              </button>
+              <div
+                class="modal fade"
+                id="button_modal"
+                tabindex="-1"
+                aria-labelledby="button_modalLabel"
+                aria-hidden="true"
+              >
+                <div class="modal-dialog modal-lg modal-dialog-centered ps-3">
+                  <div class="modal-content text-center">
+                    <div class="modal-header">
+                      <button
+                        type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"
+                      ></button>
+                    </div>
+                    <div class="modal-body">
+                      <iframe class="col-12" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d11183.655466016115!2d-73.5622731!3d45.5118125!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cc9108322460ef1%3A0xca8e823480d71fa5!2sArchitecture%20Sans%20Fronti%C3%A8res%20Qu%C3%A9bec!5e0!3m2!1sfr!2sca!4v1696025495060!5m2!1sfr!2sca" width="750" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <p class="contact pt-3">
+                514 868-1767<br/>
+                info@asf-quebec.org
+              </p>
+              <p class="bienfaisance">
+               Numéro d'organisme de bienfaisance<br/>
+              officiel du Canada: 831067012RR0001
+              </p>
+              <div class="col-12 col-lg-8 text-start">
+                <p class="droits">
+                  Copyright (c)2023 Architecture sans frontières Québec. Tous droits réservés. | Propulsé par Stack Overflow Enjoyers LTD
+                  </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
+<!--
+-->
