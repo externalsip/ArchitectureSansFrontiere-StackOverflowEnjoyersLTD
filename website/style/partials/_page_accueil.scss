@@ -158,6 +158,7 @@
         font-size: 32px;
         font-weight: bold;
         color: col.$GrisArd;
+        padding-top:50px;
     }
     &__wrapper{
         width:100%;
@@ -178,6 +179,13 @@
             height: 100%;
         object-fit: fill;
         }
+        &__gradient{
+            background-image: linear-gradient(to right, rgba(191, 215, 234,0), rgba(191, 215, 234, 0.1), rgba(191, 215, 234, 0.534) , rgb(191, 215, 234));
+            position:absolute;
+            width:100%;
+            height:100%;
+            left:0;
+        }
     }
 }
 
@@ -194,5 +202,72 @@
     }
     .actuality__swiper{
         height:40%;
+    }
+}
+
+// DONS
+
+.charity{
+    height:45vh;
+    width:100%;
+    &__wrapper{
+        width:100%;
+        height:100%;
+    }
+    &__text{
+        background-color: col.$Asperge;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 50px 0;
+        font-size:20px;
+    }
+    &__img{
+        background-image: url("/sources/medias/01_accueil/image_dons.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        position:relative;
+        &__gradient{
+            background-image: linear-gradient(to left, rgba(112, 176, 116,0), rgba(112, 176, 116, 0.1), rgba(112, 176, 116, 0.534) , rgb(112, 176, 116));
+            position:absolute;
+            width:100%;
+            height:100%;
+            left:0;
+        }
+    }
+    &__row{
+        height:100%;
+    }
+    &__button{
+        width:20%;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .charity{
+        height:60vh;
+    }
+    .charity__img__gradient{
+        background-image: linear-gradient(to top, rgba(112, 176, 116,0), rgba(112, 176, 116, 0.1), rgba(112, 176, 116, 0.534) , rgb(112, 176, 116));
+    }
+}
+
+// TÉMOIGNAGES
+
+.feedback{
+    height:60vh;
+    &__wrapper{
+        width:100%;
+        height:100%;
+        background-image: url("/sources/medias/01_accueil/backgroundTemoignageLg.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position:center;
+    }
+    &__title{
+        padding-top:25px;
+        font-size:32px;
+        font-weight: bold;
     }
 }
