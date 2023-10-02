@@ -30,6 +30,7 @@
   margin-left: 15px;
   margin-top: 4px;
   z-index: 1;
+  top: 105px;
 }
 
 /* tablet */
@@ -46,6 +47,7 @@
 }
 .tag_genre {
   position: absolute;
+  top: 105px;
 }
 
 /* tablet */
