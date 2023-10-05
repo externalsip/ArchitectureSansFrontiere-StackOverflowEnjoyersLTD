@@ -228,6 +228,16 @@
     }
     &__button{
         width:20%;
+        padding:10px;
+        border-radius:15px;
+        background-color: col.$Blanc;
+        color: col.$VertFor;
+        font-weight: 900;
+        border: none;
+        &:hover{
+            background-color: col.$VertFor;
+            color: col.$Blanc;
+        }
     }
 }
 

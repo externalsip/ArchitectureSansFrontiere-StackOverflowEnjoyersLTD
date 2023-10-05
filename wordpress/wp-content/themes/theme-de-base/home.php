@@ -1,6 +1,7 @@
 <?php 
 /**
- * 	Template Name: À propos
+ * 	Template Name: Accueil
+ * 
  * 	Identique à page, mais avec une barre latérale
  */
 

@@ -538,6 +538,16 @@
 }
 .charity__button {
   width: 20%;
+  padding: 10px;
+  border-radius: 15px;
+  background-color: #ffffff;
+  color: #518154;
+  font-weight: 900;
+  border: none;
+}
+.charity__button:hover {
+  background-color: #518154;
+  color: #ffffff;
 }
 
 @media screen and (max-width: 576px) {
@@ -623,10 +633,32 @@ html {
   justify-content: space-around;
 }
 
+.nav-link {
+  color: #ffffff !important;
+  font-size: 15px !important;
+  font-weight: 900 !important;
+}
+.nav-link.active {
+  color: #000 !important;
+}
+.nav-link:hover {
+  color: #1a3a3a !important;
+}
+
 .charityBtn {
   width: 20%;
   height: 60%;
-  border-radius: 8px;
+  border-radius: 15px;
+  background-color: #ffffff;
+  font-size: 15px;
+  font-weight: 900;
+  color: #70b074;
+  border: none;
+}
+
+.charityBtn:hover {
+  background-color: #518154;
+  color: #ffffff;
 }
 
 .langSwap {
@@ -636,6 +668,7 @@ html {
 }
 
 .nav_end {
+  margin-top: 10px;
   display: flex;
   align-items: flex-end;
   flex-direction: column;
@@ -655,9 +688,8 @@ html {
     padding: 2px;
   }
   .charityBtn {
-    width: 60%;
+    width: 40%;
     height: 100%;
-    border-radius: 8px;
   }
   .langSwap {
     height: 40%;
