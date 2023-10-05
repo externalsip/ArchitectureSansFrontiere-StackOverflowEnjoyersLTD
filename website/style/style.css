@@ -10,7 +10,7 @@
   width: 100%;
   height: 500px;
   /* the article's thumbnail image here; to be the hero */
-  background-image: url("/sources/medias/02_hub_nouvelles/image_06_nouvelle.png");
+  background-image: url("../../../sources/medias/02_hub_nouvelles/image_06_nouvelle.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -162,7 +162,7 @@
   }
 }
 .main_content_image1 {
-  background-image: url("/sources/medias/03_detail_nouvelle/nouvelle_05/image_interne_nouvelle_cinq.png");
+  background-image: url("../../../sources/medias/03_detail_nouvelle/nouvelle_05/image_interne_nouvelle_cinq.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -177,7 +177,7 @@
 }
 
 .main_content_image2 {
-  background-image: url("/sources/medias/03_detail_nouvelle/nouvelle_05/image_interne_02_nouvelle_cinq.jpg");
+  background-image: url("../../../sources/medias/03_detail_nouvelle/nouvelle_05/image_interne_02_nouvelle_cinq.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -187,6 +187,11 @@
   float: left;
 }
 
+@media screen and (max-width: 375px) {
+  .main_content_image2 {
+    position: relative;
+  }
+}
 .photo_credits {
   font-size: 16px;
   font-weight: light;
@@ -200,13 +205,90 @@
     display: none;
 }
 */
+.suggested_article {
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
 .line {
   width: calc(100vw - 15px);
   height: 6px;
   margin: 0 auto;
-  background-color: #70B074;
+  background-color: #70b074;
 }
 
+.nextArticleTitle {
+  margin: 24px auto;
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.nextArticleImage {
+  background-image: url("../../../sources/medias/02_hub_nouvelles/image_05_nouvelle.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  float: left;
+  margin-bottom: 15px;
+  margin-right: 15px;
+  width: 500px;
+  height: 400px;
+}
+
+/* tablet */
+@media screen and (max-width: 768px) {
+  .nextArticleImage {
+    margin-bottom: 15px;
+    margin-right: 15px;
+    width: 400px;
+    height: 300px;
+  }
+}
+/* phone */
+@media screen and (max-width: 375px) {
+  .nextArticleImage {
+    margin-bottom: 15px;
+    margin-right: 15px;
+    width: 300px;
+    height: 300px;
+  }
+}
+.nextArticleHeadline {
+  color: #70b074;
+  font-weight: 500;
+  font-size: 40px;
+}
+
+/* tablet */
+@media screen and (max-width: 768px) {
+  .nextArticleHeadline {
+    font-size: 32px;
+  }
+}
+/* phone */
+@media screen and (max-width: 375px) {
+  .nextArticleHeadline {
+    font-size: 20px;
+  }
+}
+.nextArticleParagraph {
+  font-weight: 500;
+  font-size: 24px;
+}
+
+/* tablet */
+@media screen and (max-width: 768px) {
+  .nextArticleParagraph {
+    font-weight: 500;
+    font-size: 16px;
+  }
+}
+/* phone */
+@media screen and (max-width: 375px) {
+  .nextArticleParagraph {
+    display: none;
+  }
+}
 .swiperProject {
   position: relative;
   z-index: 1;
