@@ -24,11 +24,33 @@ html{
 
 }
 
+.nav-link{
+    color:col.$Blanc !important;
+    font-size:15px !important;
+    font-weight: 900 !important;
+    &.active{
+        color:col.$Noir !important;
+    }
+    &:hover{
+        color: col.$GrisArd !important;
+    }
+}
+
 .charityBtn{
     width:20%;
     height: 60%;
-    border-radius: 8px;
+    border-radius:15px;
+    background-color: col.$Blanc;
+    font-size: 15px;
+    font-weight: 900;
+    color: col.$Asperge;
+    border: none;
 }
+.charityBtn:hover{
+    background-color: col.$VertFor;
+    color: col.$Blanc;
+}
+
 .langSwap{
     height:40%;
     text-align: center;
@@ -36,6 +58,7 @@ html{
 }
 
 .nav_end{
+    margin-top:10px;
     display: flex;
     align-items: flex-end;
     flex-direction: column;
@@ -56,9 +79,9 @@ html{
         padding:2px;
     }
     .charityBtn{
-        width:60%;
+        width:40%;
         height: 100%;
-        border-radius: 8px;
+
     }
     .langSwap{
         height:40%;
