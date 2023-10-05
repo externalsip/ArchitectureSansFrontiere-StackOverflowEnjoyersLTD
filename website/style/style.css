@@ -737,4 +737,38 @@ html {
   color: white;
   cursor: pointer;
 }
+.btn-dons {
+  color: white;
+  font-weight: bold;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: #70b074;
+  border: none;
+  border-radius: 10px 10px 10px 10px;
+  cursor: pointer;
+}
+.btn-dons:hover {
+  background-color: #518154;
+}
+.btn-newsletter {
+  color: black;
+  font-weight: bold;
+  background-color: #3dbee3;
+  border: none;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 22px;
+  padding-right: 22px;
+  border-radius: 10px 10px 10px 10px;
+  cursor: pointer;
+}
+.btn-newsletter:hover {
+  color: white;
+  background-color: #2d8aa3;
+}
+.conditions {
+  color: white;
+}
 /*# sourceMappingURL=style.css.map */
