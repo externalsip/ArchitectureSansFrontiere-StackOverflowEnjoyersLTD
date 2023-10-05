@@ -78,6 +78,10 @@
     width:100%;
     height:80vmin;
     position:relative;        
+    background-image: url("/sources/medias/01_accueil/projets_background.png");  
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position:center;      
     background-color: col.$Asperge;
     &__wrapper{
         padding:30px;
@@ -95,56 +99,39 @@
     &__list{
         height:80%;
     }
-    &__greenBarContainer{
-        width:100%;
-        height:90%;
-        bottom:0%;
+    &__svg{
         position:absolute;
-        display:flex;
-        flex-direction: column;
-        justify-content: flex-end;
-    }
-    &__greenBar{
-        width:100%;
-        height:20%;
-        background-color: col.$VertFor;
-
-        z-index: 1;
-        &:nth-child(1){
-            top:10%;
-            display:none;
-        }
+        height:80%;
+        width:50%;
         &:nth-child(2){
-            top:50%;
-            display:none;
+            left:25%;
         }
         &:nth-child(3){
-            position:absolute;
-            bottom:20%;
+            left:50%;
         }
     }
     &__container{
-        background-color: black;
+        width:auto;
+        height:80%;
+        position:relative;
+        justify-self: center;
+        path:hover{
+            width:100%;
+            height:100%;
+            transform: scale(1.2);
+        }
     }
+
   }
 
- @media screen and (max-width: 768px) {
-.projects__greenBarContainer{
-    justify-content: space-around;
-}
-.projects__greenBar{
-    &:nth-child(1){
-        display:block;
-    }
-    &:nth-child(2){
-        display:block;
-    }
-    &:nth-child(3){
-        position:relative;
-        bottom:0;
+@media screen and (max-width:576px) {
+    .projects{
+        height:80vmax;
+        background-image: url("/sources/medias/01_accueil/projets_background_sm.png");
+
     }
 }
-}
+
 
 //ACTUALITÉS
 
@@ -177,7 +164,7 @@
             display:block;
             width:100%;
             height: 100%;
-        object-fit: fill;
+
         }
         &__gradient{
             background-image: linear-gradient(to right, rgba(191, 215, 234,0), rgba(191, 215, 234, 0.1), rgba(191, 215, 234, 0.534) , rgb(191, 215, 234));
