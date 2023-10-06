@@ -156,7 +156,12 @@
         height:80%;
         &:nth-child(2){
             bottom:0;
+            width:50%;
+            overflow: hidden;
         }
+    }
+    &__txt{
+        padding:20px;
     }
     &__img{
         height: auto;
@@ -190,6 +195,10 @@
     .actuality__swiper{
         height:40%;
     }
+}
+
+.swiper-button-prev{
+    background-image: url('/sources/medias/01_accueil/boutonSwiper.png');
 }
 
 // DONS

@@ -20,6 +20,10 @@ const swiperPro = new Swiper('.swiperProject', {
     }
   });
 
+/*
+Swipers in the actuality section
+*/
+
 const swiperAct1 = new Swiper('.swiperActIMG', {
   direction:"horizontal",
   navigation: {
@@ -40,3 +44,17 @@ const swiperAct2 = new Swiper('.swiperActTXT', {
   preventClicks: true,
   loop:true,
 });
+
+/*Animation GSAP sur le bouton de dons*/
+
+const donationBtn = document.getElementById("animationBtn");
+
+donationBtn.addEventListener("click", () => {
+  gsap.timeline()
+      .to(donationBtn, {scale: 1.1, duration: 0.2})
+      .to(donationBtn, {scale: 1, duration: 0.3})
+      .to(donationBtn, {scale: 1.1, duration: 0.4})
+      .to(donationBtn, {scale: 1, duration: 0.5})
+      .to(donationBtn, {scale: 1.1, duration: 0.6})
+      .to(donationBtn, {scale: 1, duration: 0.7})
+})
