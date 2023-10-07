@@ -1,7 +1,7 @@
 /*
 swiper in the hero uses swipe.js, this is the code that makes said swiper work.
 */
-
+if(document.getElementById("caroussel_hero") != undefined){
 const swiperPro = new Swiper('.swiperProject', {
     // Optional parameters
     direction: 'horizontal',
@@ -57,4 +57,12 @@ donationBtn.addEventListener("click", () => {
       .to(donationBtn, {scale: 1, duration: 0.5})
       .to(donationBtn, {scale: 1.1, duration: 0.6})
       .to(donationBtn, {scale: 1, duration: 0.7})
-})
+});
+}
+/*Animation GSAP dans la page 404*/
+
+if(document.getElementById("page404") != undefined){
+  gsap.timeline()
+    .fromTo(".notFound__container", {y: "100vh"}, {y: 10, duration:1})
+    .to(".titleChar", {y:-10, ease:Sine.InOut, stagger: 0.1, repeat:-1, yoyo:true, duration:0.5})
+}

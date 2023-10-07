@@ -1,5 +1,6 @@
 @use "partials/nouvelle_template";
 @use "partials/page_accueil";
+@use "partials/missingPage.scss";
 @use "partials/colorsVar" as col;
 
 html {
@@ -91,6 +92,8 @@ html {
     position: absolute;
   }
 }
+
+//FOOTER
 
 .bd-footer {
   background-color: col.$GrisArd;
