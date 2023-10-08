@@ -587,6 +587,17 @@
     background-color: #BFD7EA;
   }
 }
+.notFound {
+  width: 100vw;
+  height: 100vh;
+  padding-top: 10%;
+}
+
+.titleChar {
+  font-size: 50px;
+  display: inline-block;
+}
+
 html {
   font-family: "Lato", sans-serif;
   width: 100vw;
