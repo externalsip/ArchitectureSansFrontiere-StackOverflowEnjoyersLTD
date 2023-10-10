@@ -1,7 +1,7 @@
 /*
 swiper in the hero uses swipe.js, this is the code that makes said swiper work.
 */
-if(document.getElementById("caroussel_hero") != undefined){
+if(document.getElementById("carrousel_hero") != undefined){
 const swiperPro = new Swiper('.swiperProject', {
     // Optional parameters
     direction: 'horizontal',
