@@ -629,6 +629,10 @@
   display: inline-block;
 }
 
+.faq {
+  background-color: #bfd7ea;
+}
+
 html {
   font-family: "Lato", sans-serif;
   width: 100vw;
