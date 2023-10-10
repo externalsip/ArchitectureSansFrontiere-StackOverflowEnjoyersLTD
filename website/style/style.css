@@ -755,22 +755,57 @@ html {
   color: white !important;
 }
 
+.btn-dons {
+  background-color: #70b074;
+  color: white;
+  font-weight: bold;
+  padding: 12px;
+  border: none;
+  border-radius: 15px 15px 15px 15px;
+}
+
+.btn-dons:hover {
+  background-color: #466e49;
+}
+
+.btn-newsletter {
+  background-color: #3dbee3;
+  color: black;
+  font-weight: bold;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border: none;
+  border-radius: 15px 15px 15px 15px;
+}
+
+.btn-newsletter:hover {
+  color: white;
+  background-color: #36a9c9;
+}
+
 .bi-facebook {
   font-size: 40px;
+  color: #70b074;
 }
 
 .bi-youtube {
   font-size: 40px;
+  color: #70b074;
 }
 
 .bi-linkedin {
   font-size: 40px;
+  color: #70b074;
 }
 
 .bi-twitter-x {
   font-size: 40px;
+  color: #70b074;
 }
 
 .bi-arrow-up-circle {
   font-size: 40px;
+  color: #70b074;
 }/*# sourceMappingURL=style.css.map */
