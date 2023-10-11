@@ -79,7 +79,7 @@
     height:80vmin;
     position:relative;        
     background-image: url("/sources/medias/01_accueil/projets_background.png");  
-    background-repeat: no-repeat;
+    background-repeat: repeat-x;
     background-size: contain;
     background-position:center;      
     background-color: col.$Asperge;
@@ -241,6 +241,7 @@
     &__img{
         object-fit:cover ;
         object-position: center;
+        height:100%;
         &__gradient{
             background-image: linear-gradient(to left, rgba(112, 176, 116,0), rgba(112, 176, 116, 0.1), rgba(112, 176, 116, 0.534) , rgb(112, 176, 116));
             position:absolute;

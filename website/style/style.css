@@ -364,7 +364,7 @@
   height: 80vmin;
   position: relative;
   background-image: url("/sources/medias/01_accueil/projets_background.png");
-  background-repeat: no-repeat;
+  background-repeat: repeat-x;
   background-size: contain;
   background-position: center;
   background-color: #70B074;
@@ -521,6 +521,7 @@
      object-fit: cover;
   -o-object-position: center;
      object-position: center;
+  height: 100%;
 }
 .charity__img__gradient {
   background-image: linear-gradient(to left, rgba(112, 176, 116, 0), rgba(112, 176, 116, 0.1), rgba(112, 176, 116, 0.534), rgb(112, 176, 116));
@@ -628,7 +629,7 @@
 }
 
 html {
-  font-family: "Lato", sans-serif;
+  font-family: "Lato", sans-serif !important;
   width: 100vw;
   padding: 0;
   overflow-y: scroll;
@@ -656,7 +657,6 @@ html {
 }
 
 .charityBtn {
-  width: 20%;
   height: 60%;
   border-radius: 15px;
   background-color: #FFFFFF;
@@ -698,7 +698,6 @@ html {
     padding: 2px;
   }
   .charityBtn {
-    width: 40%;
     height: 100%;
   }
   .langSwap {
