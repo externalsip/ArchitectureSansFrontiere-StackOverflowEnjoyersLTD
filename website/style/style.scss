@@ -2,16 +2,17 @@
 @use "partials/page_accueil";
 @use "partials/missingPage.scss";
 @use "partials/page_faq";
+@use "partials/page_equipe";
 @use "partials/header";
 @use "partials/footer";
 @use "partials/colorsVar" as col;
 
-*{
+* {
   box-sizing: border-box;
 }
 
 html {
-  font-family: "Lato", sans-serif!important;
+  font-family: "Lato", sans-serif !important;
   width: 100vw;
   padding: 0;
   overflow-y: scroll;
