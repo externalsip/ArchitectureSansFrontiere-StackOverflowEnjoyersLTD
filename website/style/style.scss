@@ -4,6 +4,10 @@
 @use "partials/page_faq";
 @use "partials/colorsVar" as col;
 
+*{
+  box-sizing: border-box;
+}
+
 html {
   font-family: "Lato", sans-serif;
   width: 100vw;

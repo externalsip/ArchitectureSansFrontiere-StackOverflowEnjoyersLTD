@@ -224,14 +224,14 @@
 // DONS
 
 .charity{
-    height:45vh;
     width:100%;
     &__wrapper{
         width:100%;
         height:100%;
+        background-color: col.$Asperge;
     }
     &__text{
-        background-color: col.$Asperge;
+
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -239,24 +239,20 @@
         font-size:20px;
     }
     &__img{
-        background-image: url("/sources/medias/01_accueil/image_dons.png");
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center;
-        position:relative;
+        object-fit:cover ;
+        object-position: center;
         &__gradient{
             background-image: linear-gradient(to left, rgba(112, 176, 116,0), rgba(112, 176, 116, 0.1), rgba(112, 176, 116, 0.534) , rgb(112, 176, 116));
             position:absolute;
             width:100%;
             height:100%;
-            left:0;
+            left:0; 
         }
     }
-    &__row{
-        height:100%;
+    &__imgContainer{
+        position:relative;
     }
     &__button{
-        width:20%;
         padding:10px;
         border-radius:15px;
         background-color: col.$Blanc;
@@ -271,9 +267,6 @@
 }
 
 @media screen and (max-width: 576px) {
-    .charity{
-        height:60vh;
-    }
     .charity__img__gradient{
         background-image: linear-gradient(to top, rgba(112, 176, 116,0), rgba(112, 176, 116, 0.1), rgba(112, 176, 116, 0.534) , rgb(112, 176, 116));
     }
@@ -294,7 +287,6 @@
 // TÉMOIGNAGES
 
 .feedback{
-    height:auto;
     &__wrapper{
         width:100%;
         height:100%;
@@ -311,7 +303,6 @@
 }
 .person{
     &__wrapper{
-        width:100%;
         height:100%;
         display:flex;
         flex-direction: column;
