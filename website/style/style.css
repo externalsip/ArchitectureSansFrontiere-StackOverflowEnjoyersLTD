@@ -624,18 +624,6 @@
   background-color: #bfd7ea;
 }
 
-* {
-  box-sizing: border-box;
-}
-
-html {
-  font-family: "Lato", sans-serif !important;
-  width: 100vw;
-  padding: 0;
-  overflow-y: scroll;
-  overflow-x: hidden;
-}
-
 .navbar-brand__img {
   height: 20%;
 }
@@ -805,4 +793,16 @@ html {
 .bi-arrow-up-circle {
   font-size: 40px;
   color: #70b074;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Lato", sans-serif !important;
+  width: 100vw;
+  padding: 0;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }/*# sourceMappingURL=style.css.map */
