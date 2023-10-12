@@ -643,19 +643,6 @@
   position: relative;
 }
 
-@media screen and (min-width: 1200px) {
-  .hero {
-    height: 100%;
-  }
-  .hero__container {
-    height: 100%;
-    width: 100%;
-  }
-  .hero__img {
-    height: 60vmin;
-    width: 100%;
-  }
-}
 .navbar-brand__img {
   height: 20%;
 }
