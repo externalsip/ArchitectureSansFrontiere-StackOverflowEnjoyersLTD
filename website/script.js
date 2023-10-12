@@ -1,3 +1,14 @@
+//Animation GSAP sur menu hamburger du nav
+
+let hamMenu = document.querySelector(".navbar-toggler");
+
+hamMenu.addEventListener("mouseover", () => {
+    gsap.to(hamMenu, {scale: 1.1, duration: 0.5});
+});
+
+hamMenu.addEventListener("mouseout", () => {
+    gsap.to(hamMenu, {scale: 1, duration: 0.5});
+});
 /*
 swiper in the hero uses swipe.js, this is the code that makes said swiper work.
 */

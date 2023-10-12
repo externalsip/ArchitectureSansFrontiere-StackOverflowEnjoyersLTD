@@ -296,20 +296,18 @@
 
 .hero {
   width: 100%;
-  height: 100%;
   margin-top: 104px;
 }
 .hero__wrapper {
   width: 100%;
-  height: 100%;
 }
 .hero__info {
   font-size: 16px;
   background-color: #BFD7EA;
-  height: 45vmin;
 }
 .hero__text {
   padding: 20px;
+  margin: 20px 0;
 }
 .hero__image {
   background-image: url("../assets/img/hero.png");
@@ -472,6 +470,9 @@
   }
   .actuality__swiper {
     height: 40%;
+  }
+  .actuality__img__gradient {
+    display: none;
   }
 }
 .swiper-button-prev::after {
@@ -810,6 +811,29 @@
 .bi-arrow-up-circle {
   font-size: 40px;
   color: #70b074;
+}
+
+.genericHero {
+  height: 40vmin;
+  background-image: url("/sources/medias/06_equipe/image_hero.jpg");
+  background-size: cover;
+  background-position-y: top;
+  background-position-x: center;
+  background-repeat: no-repeat;
+  display: flex;
+  padding: 50px;
+}
+.genericHero__textContent {
+  background-color: #FFFFFF;
+  font-size: 24px;
+  height: 10vmin;
+}
+.genericHero__filter {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 * {
