@@ -7,19 +7,17 @@
 }
 .hero{
     width:100%;
-    height:100%;
     margin-top: 104px;
     &__wrapper{
         width:100%;
-        height:100%;
     }
     &__info{
         font-size: 16px;
         background-color: col.$BleuCol;
-        height:45vmin;
     }
     &__text{
         padding:20px;
+        margin: 20px 0;
     }
     &__image{
         background-image: url("../assets/img/hero.png");
@@ -193,6 +191,9 @@
     }
     .actuality__swiper{
         height:40%;
+    }
+    .actuality__img__gradient{
+        display: none;
     }
 }
 
