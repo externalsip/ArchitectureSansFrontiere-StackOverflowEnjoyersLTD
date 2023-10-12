@@ -52,12 +52,13 @@
     </div>
 </nav>
 
+<div itemscope itemtype="https://schema.org/NewsArticle">
        <!--hero-->
     <section class="nouvelle_hero">
         <div>
             <!-- hero news tag here -->
             <img class="tag_genre" src="/sources/medias/svg/nouvelle_main-tag.svg">
-            <h1 class="tag_title">TANZANIE</h1>
+            <h1 itemprop="articleSection" class="tag_title">TANZANIE</h1>
         </div>
         <div class="nouvelle_hero_container container-fluid p-0">
             <!-- hero image here -->
@@ -68,7 +69,7 @@
                 </div>
             </div>
             <div class="hero_text">
-               <h1 class="hero_title">École en Tanzanie: le chantier se prépare !</h1>
+               <h1 itemprop="headline" class="hero_title">École en Tanzanie: le chantier se prépare !</h1>
                <p class="hero_paragraph"> Conception terminée et la construction commence! </p> 
             </div>
             
@@ -76,25 +77,25 @@
     </section>
 
     <section class="summary">
-        <p class="summary_paragraph">
+        <p itemprop="about" class="summary_paragraph">
             La conception de l’école primaire pour la communauté massaï d’Enguserosambu est terminée et sa construction s’apprête à commencer. 
             L’équipe de volontaires du Programme du regroupement étudiants pour la coopération internationale de l’ÉTS (PRÉCI) prend désormais le relais en Tanzanie pour participer au chantier.
         </p>
-        <p class="date"> 27 août 2023 </p>
+        <p itemprop="datePublished" class="date"> 27 août 2023 </p>
     </section>
     <section class="main_content">
-        <p class="main_content_paragraph">
+        <p itemprop="articleBody" class="main_content_paragraph">
             Notre architecte coopérant, Étienne Bernier d’Agence Spatiale, et notre architecte coordonnatrice de projets, 
             Maude Ledoux, sont fiers du travail accompli durant l’été pour terminer la conception de l’école. 
             Soutenu par l’équipe de l’Agence Spatiale, 
             le travail a été réalisé en étroite collaboration avec le <a href="https://img.pokemondb.net/artwork/large/wooper.jpg">PRÉCI</a> et la <a href="https://img.pokemondb.net/artwork/large/wooper.jpg">Tanzanien Heritage Foundation</a> (THF), partenaire local du projet.
         </p>
 
-        <div class="main_content_image1"></div>
+        <div itemprop="image" class="main_content_image1"></div>
 
         <div class="main_content_paragraph2">
-            <div class="main_content_image2 image2"></div>
-                <p class="main_content_paragraph">
+            <div itemprop="image" class="main_content_image2 image2"></div>
+                <p itemprop="articleBody" class="main_content_paragraph">
                     Les plans en mains, les cinq volontaires du PRÉCI sont désormais arrivés en Tanzanie le 27 août, pour un séjour de quatre mois. Ils ont rejoint THF, qui les attendait pour démarrer le travail de construction. 
                 La nouvelle école sera construite en plein cœur du village d’Enguserosambu avec l’assistance des populations massaïs bénéficiaires du projet. 
                 Le chantier sera réalisé avec des ouvriers locaux, l’équipe du PRÉCI et l’appui de notre partenaire. 
@@ -114,12 +115,12 @@
         <div class="line">
         </div>
         <h2 class="nextArticleTitle"> Nouvelle suivante</h2>
-        <div class="nextArticleImage"></div>
+        <div itemprop="image" class="nextArticleImage"></div>
         <h2 class="nextArticleHeadline">PARTICIPEZ : Sondage pour améliorer l’adaptation des bâtiments aux inondations</h2>
         <p class="nextArticleParagraph"> Vous êtes concerné.e.s ou préoccupé.e.s par l'adaptation des bâtiments aux inondations ? Vous avez un point de vue à [...] </p>
     </section>
 
-
+</div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <script src="script.js"></script>
 </body>

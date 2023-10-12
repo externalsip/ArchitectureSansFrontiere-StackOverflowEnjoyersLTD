@@ -1,0 +1,18 @@
+@use "colorsVar" as col;
+
+.about_text{
+    margin: 200px 120px;
+    margin-bottom: 0px;
+}
+
+.section1_title{
+    font-size: 48px;
+    font-weight: 800;
+    color: col.$Asperge;
+    margin-bottom: 20px;
+}
+
+.section1_paragraph{
+    font-size: 24px;
+    margin-right: 20%;
+}
