@@ -796,6 +796,29 @@
   color: #70b074;
 }
 
+.genericHero {
+  height: 40vmin;
+  background-image: url("/sources/medias/06_equipe/image_hero.jpg");
+  background-size: cover;
+  background-position-y: top;
+  background-position-x: center;
+  background-repeat: no-repeat;
+  display: flex;
+  padding: 50px;
+}
+.genericHero__textContent {
+  background-color: #FFFFFF;
+  font-size: 24px;
+  height: 10vmin;
+}
+.genericHero__filter {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
 * {
   box-sizing: border-box;
 }
