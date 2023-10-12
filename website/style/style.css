@@ -625,24 +625,6 @@
   background-color: #bfd7ea;
 }
 
-.hero {
-  width: 100%;
-  height: 100%;
-  margin-top: 104px;
-}
-.hero__container {
-  width: 100%;
-  height: 100%;
-}
-.hero__img {
-  background-image: url("/sources/medias/06_equipe/image_hero.jpg");
-  background-size: cover;
-  height: 55vmin;
-  background-position: center;
-  z-index: 2;
-  position: relative;
-}
-
 .navbar-brand__img {
   height: 20%;
 }
