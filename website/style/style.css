@@ -623,10 +623,19 @@
   background-color: #bfd7ea;
 }
 
+.hero_equipe {
+  background-color: #bfd7ea;
+}
+
 .equipe__titre {
   font-size: 50px;
   color: black;
-  font-weight: bold;
+  font-weight: medium;
+}
+
+.card-direction {
+  background-color: #bfd7ea;
+  border: none;
 }
 
 .about_text {
