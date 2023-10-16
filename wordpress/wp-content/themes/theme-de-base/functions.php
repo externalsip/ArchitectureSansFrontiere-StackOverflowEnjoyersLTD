@@ -64,3 +64,20 @@ function add_style_and_js()  {
 
 /* Appel de la fonction ajoutant les styles et scripts */
 add_action('wp_enqueue_scripts', 'add_style_and_js'); 
+
+// Pour ajouter sur les <li>
+function add_menu_list_item_class($classes, $item, $args) {
+    if (property_exists($args, 'list_item_class')) {
+        $classes[] = $args->list_item_class;
+    }
+    return $classes;
+  }
+ add_filter('nav_menu_css_class', 'add_menu_list_item_class', 1, 3);
+ // Pour ajouter sur les <a>
+ function add_additional_class_on_a($classes, $item, $args){
+    if (isset($args->add_a_class)) {
+        $classes['class'] = $args->add_a_class;
+    }
+    return $classes;
+}
+add_filter('nav_menu_link_attributes', 'add_additional_class_on_a', 1, 3);

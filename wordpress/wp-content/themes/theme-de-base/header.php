@@ -8,6 +8,26 @@
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
 <meta name="viewport" content="width=device-width" />
+<link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
 <title>
 	<?php bloginfo('name'); // Affiche le nom du blog ?> | 
 	<?php is_front_page() ? bloginfo('description') : wp_title(''); // si nous sommes sur la page d'accueil, affichez la description à partir des paramètres du site - sinon, affichez le titre du post ou de la page. ?>
@@ -43,6 +63,48 @@
 			wp_nav_menu( array( 'theme_location' => 'main-menu' ) );
 		?>
 	</nav>
+
+	<nav
+  class="navbar navbar-expand-md fixed-top"
+  style="background-color: #70b074"
+>
+  <div class="container-fluid">
+    <a class="navbar-brand" href="index.html">
+      <img class="navbar-brand__img" src="assets/img/logo.png" />
+    </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div
+      class="collapse navbar-collapse justify-content-evenly"
+      id="navbarNav"
+    >
+	  <?php 
+		// Affiche un menu si dans le tableau de bord un menu a été défini dans cet emplacement
+		wp_nav_menu( array( 'theme_location' => 'main-menu',
+		'menu_class' => 'navbar-nav align-self-md-end align-items-end ml-auto col-md-9',
+		'list_item_class' => 'nav-item',
+		'add_a_class' => 'nav-link' ) );
+		?>
+      <div class="nav_end col-md-3">
+        <button type="button" class="charityBtn col-3 col-md-6 p-1">
+          Faire un don
+        </button>
+        <div class="nav-item">
+          <a class="nav-link" href="#">EN</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
 
 	<?php 
 		// Affiche la description de site se trouvant dans "General Settings" dans l'admin WordPress
