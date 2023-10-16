@@ -641,11 +641,12 @@
 }
 
 .about_text {
-  margin: 150px 120px;
+  margin: 150px 150px;
   margin-bottom: 0px;
 }
 
 .section1_title {
+  text-align: center;
   font-size: 48px;
   font-weight: 800;
   color: #70B074;
@@ -654,7 +655,10 @@
 
 .section1_paragraph {
   font-size: 18px;
-  margin-right: 20%;
+}
+
+.sponsor {
+  text-align: center;
 }
 
 .sponsor_title {
@@ -677,20 +681,39 @@
 }
 
 .mission_section {
-  width: 100vw;
+  margin: 0 auto;
+  border-radius: 20px;
+  width: 80vw;
   height: 500px;
   margin-top: 40px;
   background-color: #BFD7EA;
 }
 
+.mission_vision {
+  background-color: gray;
+  border-radius: 20px;
+  margin: 0 auto;
+  height: 40%;
+  width: 90%;
+}
+
 .mission_title {
   font-size: 36px;
   font-weight: bold;
+  display: block;
 }
 
 .mission_text {
   font-size: 18px;
   font-weight: bold;
+}
+
+.mission {
+  width: 50%;
+}
+
+.vision {
+  width: 50%;
 }
 
 .navbar-brand__img {
