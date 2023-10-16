@@ -518,10 +518,8 @@
   font-size: 20px;
 }
 .charity__img {
-  -o-object-fit: cover;
-     object-fit: cover;
-  -o-object-position: center;
-     object-position: center;
+  object-fit: cover;
+  object-position: center;
   height: 100%;
 }
 .charity__img__gradient {
@@ -632,7 +630,7 @@
 .equipe__titre {
   font-size: 50px;
   color: black;
-  font-weight: medium;
+  font-weight: 600;
 }
 
 .card-direction {
