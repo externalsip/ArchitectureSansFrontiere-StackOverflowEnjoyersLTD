@@ -518,8 +518,10 @@
   font-size: 20px;
 }
 .charity__img {
-  object-fit: cover;
-  object-position: center;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
   height: 100%;
 }
 .charity__img__gradient {
@@ -639,7 +641,7 @@
 }
 
 .about_text {
-  margin: 200px 120px;
+  margin: 150px 120px;
   margin-bottom: 0px;
 }
 
@@ -651,8 +653,44 @@
 }
 
 .section1_paragraph {
-  font-size: 24px;
+  font-size: 18px;
   margin-right: 20%;
+}
+
+.sponsor_title {
+  font-size: 36px;
+  color: #70B074;
+}
+
+.oaq {
+  margin-top: 20px;
+}
+
+.statistic {
+  text-align: center;
+}
+
+.statistic_title {
+  font-size: 36px;
+  color: #70B074;
+  font-weight: bold;
+}
+
+.mission_section {
+  width: 100vw;
+  height: 500px;
+  margin-top: 40px;
+  background-color: #BFD7EA;
+}
+
+.mission_title {
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.mission_text {
+  font-size: 18px;
+  font-weight: bold;
 }
 
 .navbar-brand__img {

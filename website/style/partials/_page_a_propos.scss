@@ -1,7 +1,7 @@
 @use "colorsVar" as col;
 
 .about_text{
-    margin: 200px 120px;
+    margin: 150px 120px;
     margin-bottom: 0px;
 }
 
@@ -13,6 +13,46 @@
 }
 
 .section1_paragraph{
-    font-size: 24px;
+    font-size: 18px;
     margin-right: 20%;
+}
+
+.sponsor_title{
+    font-size: 36px;
+    color: col.$Asperge;
+}
+
+.oaq{
+    margin-top: 20px;
+}
+
+.statistic{
+    text-align: center;
+}
+
+.statistic_title{
+    font-size: 36px;
+    color: col.$Asperge;
+    font-weight: bold;
+}
+
+.mission_section{
+    width: 100vw;
+    height: 500px;
+    margin-top: 40px;
+    background-color: col.$BleuCol; 
+}
+
+.mission_vision{
+    
+}
+
+.mission_title{
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.mission_text{
+    font-size: 18px;
+    font-weight: bold;
 }
