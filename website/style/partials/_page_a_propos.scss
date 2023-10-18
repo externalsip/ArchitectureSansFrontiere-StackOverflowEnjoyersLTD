@@ -1,11 +1,12 @@
 @use "colorsVar" as col;
 
 .about_text{
-    margin: 200px 120px;
+    margin: 150px 150px;
     margin-bottom: 0px;
 }
 
 .section1_title{
+    text-align: center;
     font-size: 48px;
     font-weight: 800;
     color: col.$Asperge;
@@ -13,6 +14,201 @@
 }
 
 .section1_paragraph{
-    font-size: 24px;
-    margin-right: 20%;
+    font-size: 18px;
+}
+
+.sponsor{
+    text-align: center;
+}
+
+.sponsor_title{
+    font-size: 36px;
+    color: col.$Asperge;
+}
+
+.oaq{
+    margin-top: 20px;
+}
+
+.statistic{
+    text-align: center;
+}
+
+.statistic_title{
+    font-size: 36px;
+    color: col.$Asperge;
+    font-weight: bold;
+}
+
+
+.mission_section{
+    margin: 0 auto;
+    border-radius: 20px;
+    width: 60vw;
+    height: 100%;
+    margin-top: 40px;
+}
+
+.mission_vision{
+    background-color: col.$GrisArd;
+    border-radius: 20px 20px 0px 0px;
+    margin: 0 auto;
+    padding-top: 30px;
+    padding-bottom: 15px;
+    top: 20px;
+    height: 45%;
+    width: 90%;
+    display: flex;
+    color: white;
+}
+
+.mission_title{
+    font-size: 36px;
+    font-weight: bold;
+    display: block;
+    text-align: center;
+}
+
+.mission_text{
+    font-size: 18px;
+    font-weight: bold;
+    width: 48%;
+}
+
+.mission{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.vision{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.values_section{
+    background-color: col.$Cyan;
+    border-radius: 0px 0px 20px 20px;
+    margin: 0 auto;
+    padding: 40px;
+    top: 20px;
+    width: 90%;
+}
+
+.values_title{
+    text-align: center;
+    font-weight: bold;
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.justice{ grid-area: justice; padding: 20px; text-align: center; }
+.engagement{ grid-area: engagement; padding: 20px; text-align: center; }
+.solidarity{ grid-area: solidarity; padding: 20px; text-align: center; }
+.respect{ grid-area: respect; padding: 20px; text-align: center; }
+
+.values{
+    display: grid;
+    grid-template-areas: 
+        "justice engagement"
+        "solidarity respect"
+    ;
+}
+
+.values_subtitle{
+    font-weight: bold;
+}
+
+.asf{
+    margin-top: 20px;
+}
+
+.network_title{
+    text-align: center;
+    font-size: 48px;
+    font-weight: 800;
+    color: col.$Asperge;
+    margin-bottom: 20px;
+}
+
+.network_paragraph{
+    font-size: 18px;
+    margin-left: 150px;
+    margin-right: 150px;
+}
+
+.network_section{
+    margin-top: 40px;
+}
+
+.team_section{
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.team_title{
+    font-size: 48px;
+    font-weight: 800;
+    color: col.$Asperge;
+    margin-bottom: 20px;
+}
+
+.team_paragraph{
+    font-size: 18px;
+    margin-left: 150px;
+    margin-right: 150px;
+    max-width: 700px;
+}
+
+.partners_title{
+    text-align: center;
+    font-size: 48px;
+    font-weight: 800;
+    color: col.$Asperge;
+    margin-bottom: 20px;
+}
+
+.partners_paragraph{
+    font-size: 18px;
+    margin-left: 150px;
+    margin-right: 150px;
+}
+
+.partners_section{
+    margin-top: 40px;
+}
+
+.partners_sponsor{
+    text-align: center;
+}
+
+.partners{
+    border-radius: 50%;
+}
+
+.programs_title{
+    text-align: center;
+    font-size: 48px;
+    font-weight: 800;
+    color: col.$Asperge;
+    margin-bottom: 20px;
+}
+
+.programs_paragraph{
+    font-size: 18px;
+    margin-left: 150px;
+    margin-right: 150px;
+}
+
+.programs_section{
+    margin-top: 40px;
+}
+
+.programs_sponsor{
+    text-align: center;
 }
