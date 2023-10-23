@@ -1,0 +1,24 @@
+@use "colorsVar" as col;
+
+//PAGE HISTOIRE
+
+.timeline{
+    height:10vmin;
+    &__line{
+        height:25%;
+        width:100%;
+        position:relative;
+    }
+    &__dot{
+        width:5%;
+        aspect-ratio: 1/1;
+        border-radius: 50%;
+        position:absolute;
+        right:-5%;
+    }
+    &__event{
+        position:absolute;
+        top:-20%;
+        
+    }
+}
