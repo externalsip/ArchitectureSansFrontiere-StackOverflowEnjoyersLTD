@@ -1,6 +1,9 @@
 //Animation GSAP sur menu hamburger du nav
 
-let hamMenu = document.querySelector(".navbar-toggler");
+gsap.registerPlugin(ScrollTrigger);
+
+if(document.querySelector(".navbar-toggler") != undefined){
+  let hamMenu = document.querySelector(".navbar-toggler");
 
 hamMenu.addEventListener("mouseover", () => {
     gsap.to(hamMenu, {scale: 1.1, duration: 0.5});
@@ -9,6 +12,9 @@ hamMenu.addEventListener("mouseover", () => {
 hamMenu.addEventListener("mouseout", () => {
     gsap.to(hamMenu, {scale: 1, duration: 0.5});
 });
+}
+
+
 /*
 swiper in the hero uses swipe.js, this is the code that makes said swiper work.
 */
@@ -76,4 +82,25 @@ if(document.getElementById("page404") != undefined){
   gsap.timeline()
     .fromTo(".notFound__container", {y: "100vh"}, {y: 10, duration:1})
     .to(".titleChar", {y:-10, ease:Sine.InOut, stagger: 0.1, repeat:-1, yoyo:true, duration:0.5})
+}
+
+if(document.getElementById("history") != undefined){
+  let timelineEvents = document.querySelectorAll(".eventContainer");
+  let infoArr = document.querySelectorAll(".info");
+  console.log("hi");
+  gsap.timeline({scrollTrigger: {
+    pin: true,
+    end: "2000% bottom",
+    scrub: true,
+    toggleActions: "restart complete reverse reset",
+    trigger: "#history"
+  }})
+  .to(timelineEvents, {x: "-150vw", stagger: 5, duration: 10})
+  .to(infoArr[0], {opacity: 1, duration: 0.5, ease: "none"}, "-=24")
+  .to(infoArr[0], {opacity: 0, duration: 0.5, ease: "none"}, "-=18")
+  .to(infoArr[1], {opacity: 1, duration: 0.5, ease: "none"}, "<")
+  .to(infoArr[1], {opacity: 0, duration: 0.5, ease: "none"}, "-=12.5")
+  .to(infoArr[2], {opacity: 1, duration: 0.5, ease: "none"}, "<")
+  .to(infoArr[2], {opacity: 0, duration: 0.5, ease: "none"}, "-=8")
+  .to(infoArr[3], {opacity: 1, duration: 0.5, ease: "none"}, "<")
 }

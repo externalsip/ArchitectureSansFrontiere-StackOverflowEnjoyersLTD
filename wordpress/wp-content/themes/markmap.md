@@ -32,6 +32,12 @@
 ### Champ Titre (the title)
 ### Champ Image (ACF)
 ## composante description generique
+## composante élément timeline
+### Champ texte (ACF)
+## Composante info élément timeline
+### Titre (ACF)
+### Année (ACF)
+### texte (content)
 ## Footer
 ### Menu wp
 
