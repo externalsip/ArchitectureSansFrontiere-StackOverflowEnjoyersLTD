@@ -390,7 +390,7 @@
   left: 0;
   text-align: center;
   color: #FFFFFF;
-  font-size: 48px;
+  font-size: 32px;
   font-weight: 800;
   padding: 20px;
   width: 100%;
@@ -401,12 +401,12 @@
     background-image: url("/sources/medias/01_accueil/projets_background_sm.png");
   }
   .projects__name {
-    font-size: 24px;
+    font-size: 28px;
   }
 }
 @media screen and (max-width: 1200px) {
   .projects__name {
-    font-size: 18px;
+    font-size: 24px;
   }
 }
 .actuality {
@@ -851,6 +851,30 @@
 
 .programs_sponsor {
   text-align: center;
+}
+
+.timeline {
+  height: 20vmax;
+  position: relative;
+}
+.timeline__line {
+  height: 25%;
+  width: 100%;
+  position: absolute;
+  background-color: #70B074;
+  bottom: 0;
+}
+.timeline__dot {
+  height: 70%;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  position: absolute;
+  background-color: #fff;
+}
+.timeline__event {
+  position: absolute;
+  top: 20%;
+  font-size: 24px;
 }
 
 .navbar-brand__img {

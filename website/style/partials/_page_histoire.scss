@@ -1,24 +1,28 @@
 @use "colorsVar" as col;
+@use "fontSizeVar" as ft;
 
 //PAGE HISTOIRE
 
 .timeline{
-    height:10vmin;
+    height:20vmax;
+    position: relative;
     &__line{
         height:25%;
         width:100%;
-        position:relative;
+        position:absolute;
+        background-color: col.$Asperge;
+        bottom:0;
     }
     &__dot{
-        width:5%;
+        height:70%;
         aspect-ratio: 1/1;
         border-radius: 50%;
         position:absolute;
-        right:-5%;
+        background-color: #fff;
     }
     &__event{
         position:absolute;
-        top:-20%;
-        
+        top:20%;
+        font-size: ft.$title3;
     }
 }
