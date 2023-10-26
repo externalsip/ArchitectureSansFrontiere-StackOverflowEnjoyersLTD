@@ -624,6 +624,10 @@
   border: none;
 }
 
+.genericHero {
+  top: 103px;
+}
+
 .about_text {
   margin: 150px 150px;
   margin-bottom: 0px;
