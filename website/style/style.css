@@ -1120,6 +1120,28 @@
   left: 0;
 }
 
+.description_title {
+  text-align: center;
+  font-size: 48px;
+  font-weight: 800;
+  color: #70B074;
+  margin-bottom: 20px;
+}
+
+.description_paragraph {
+  font-size: 18px;
+  margin-left: 150px;
+  margin-right: 150px;
+}
+
+.description_section {
+  margin-top: 40px;
+}
+
+.description_sponsor {
+  text-align: center;
+}
+
 * {
   box-sizing: border-box;
 }
