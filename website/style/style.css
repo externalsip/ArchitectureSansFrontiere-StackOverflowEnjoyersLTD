@@ -599,6 +599,10 @@
   height: 100vh;
   padding-top: 10%;
 }
+.notFound__wrapper {
+  height: 100%;
+  position: absolute;
+}
 
 .titleChar {
   font-size: 50px;
@@ -1113,6 +1117,11 @@
   font-weight: bold;
   height: 10vmin;
   z-index: 2;
+}
+@media screen and (max-width: 576px) {
+  .genericHero__textContent {
+    font-size: 24px;
+  }
 }
 .genericHero__filter {
   z-index: 1;

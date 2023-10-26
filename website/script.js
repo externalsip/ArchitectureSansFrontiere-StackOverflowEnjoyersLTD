@@ -1,6 +1,6 @@
 //Animation GSAP sur menu hamburger du nav
 
-gsap.registerPlugin(ScrollTrigger);
+
 
 if(document.querySelector(".navbar-toggler") != undefined){
   let hamMenu = document.querySelector(".navbar-toggler");
@@ -80,11 +80,12 @@ donationBtn.addEventListener("click", () => {
 
 if(document.getElementById("page404") != undefined){
   gsap.timeline()
-    .fromTo(".notFound__container", {y: "100vh"}, {y: 10, duration:1})
+    .fromTo(".notFound__container", {y: "80vh"}, {y: 10, duration:1})
     .to(".titleChar", {y:-10, ease:Sine.InOut, stagger: 0.1, repeat:-1, yoyo:true, duration:0.5})
 }
 
 if(document.getElementById("history") != undefined){
+  gsap.registerPlugin(ScrollTrigger);
   let timelineEvents = document.querySelectorAll(".eventContainer");
   let infoArr = document.querySelectorAll(".info");
   console.log("hi");
