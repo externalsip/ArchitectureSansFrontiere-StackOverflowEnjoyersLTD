@@ -108,4 +108,21 @@ if(document.getElementById("history") != undefined){
   .to(infoArr[3], {opacity: 1, duration: 0.5, ease: "none"}, "<")
 }
 
+// Script pour l'espacement en dessous du nav
+window.addEventListener("resize", spacingFunction);
+let nav = document.querySelector("nav");
+let navHeight = nav.clientHeight;
+function spacingFunction(){
+  if(document.querySelector(".hero")){
+    let hero = document.querySelector(".hero");
+    hero.style.marginTop = navHeight + "px";
+  }
+  else if(document.querySelector(".generic__hero")){
+    const hero = document.querySelector(".generic__hero");
+    hero.style.paddingTop = navHeight + "px";
+    console.log("space");
+  }
 
+}
+
+spacingFunction();
