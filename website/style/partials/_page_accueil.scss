@@ -210,7 +210,7 @@
   background-repeat: no-repeat;
   width: 3vmax !important;
   height: 3vmax !important;
-  @media screen and (max-width: 576px) {
+  @media screen and (max-width: 768px) {
     &{
       width: 6vmax !important;
       height: 6vmax !important;
@@ -229,7 +229,7 @@
   width: 3vmax !important;
   height: 3vmax !important;
   transform: scaleX(-100%);
-  @media screen and (max-width: 576px) {
+  @media screen and (max-width: 768px) {
     &{
       width: 6vmax !important;
       height: 6vmax !important;

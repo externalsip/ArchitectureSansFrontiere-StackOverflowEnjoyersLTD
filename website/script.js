@@ -84,6 +84,8 @@ if(document.getElementById("page404") != undefined){
     .to(".titleChar", {y:-10, ease:Sine.InOut, stagger: 0.1, repeat:-1, yoyo:true, duration:0.5})
 }
 
+
+/*Animation de la timeline avec gsap sur la page histoire*/
 if(document.getElementById("history") != undefined){
   gsap.registerPlugin(ScrollTrigger);
   let timelineEvents = document.querySelectorAll(".eventContainer");
@@ -91,7 +93,7 @@ if(document.getElementById("history") != undefined){
   console.log("hi");
   gsap.timeline({scrollTrigger: {
     pin: true,
-    end: "2000% bottom",
+    end: "1000% bottom",
     scrub: true,
     toggleActions: "restart complete reverse reset",
     trigger: "#history"
@@ -105,3 +107,5 @@ if(document.getElementById("history") != undefined){
   .to(infoArr[2], {opacity: 0, duration: 0.5, ease: "none"}, "-=8")
   .to(infoArr[3], {opacity: 1, duration: 0.5, ease: "none"}, "<")
 }
+
+

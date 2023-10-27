@@ -12,8 +12,12 @@
     position:relative;
     display:flex;
     padding:50px;
+    top:10%;
     &__textContent{
         background-color: col.$Blanc;
+        display:flex;
+        align-items: center;
+        justify-content: center;
         font-size:ft.$title1;
         font-weight: bold;
         height:10vmin;
@@ -33,4 +37,8 @@
         top:0;
         left:0;
     }
+}
+
+.generic__hero{
+    padding-top: 200px;
 }

@@ -5,7 +5,6 @@
     font-size: 48px;
     font-weight: 800;
     color: col.$Asperge;
-    margin-bottom: 20px;
 }
 
 .description_paragraph{
@@ -18,4 +17,9 @@
 
 .description_sponsor{
     text-align: center;
+}
+
+.description{
+    position: relative;
+    width:100%;
 }
