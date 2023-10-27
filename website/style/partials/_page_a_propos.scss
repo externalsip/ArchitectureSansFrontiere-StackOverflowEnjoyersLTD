@@ -117,6 +117,48 @@
     ;
 }
 
+@media screen and (max-width: 375px) {
+    .about_text{
+        margin: 50px;
+    }
+    .mission_section{
+        margin:50px;
+    }
+    .network_section{
+        margin:50px;
+    }
+    .team_section{
+        margin:50px;
+    }
+    .partners_section{
+        margin:50px;
+    }
+    .programs_section{
+        margin: 50px;
+    }
+    .section_image{
+        width: 100%;
+    }
+  }
+
+  
+@media screen and (max-width: 768px) {
+    .values {
+        display: inline;
+    }
+
+    .section_image{
+        width: 80%;
+    }
+
+  }
+
+@media screen and (max-width: 375px) {
+    .values {
+        display: inline;
+    }
+  }
+
 .values_subtitle{
     font-weight: bold;
 }
@@ -211,4 +253,12 @@
 
 .programs_sponsor{
     text-align: center;
+}
+
+.savoirfaire{
+    width: 60%;
+}
+
+.membre{
+    width: 40%;
 }

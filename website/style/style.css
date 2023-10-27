@@ -376,8 +376,10 @@
   transform: scale(1.1);
 }
 .projects__image {
-  object-fit: cover;
-  object-position: center;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
   height: 100%;
   width: 100%;
   display: block;
@@ -509,8 +511,10 @@
   font-size: 20px;
 }
 .charity__img {
-  object-fit: cover;
-  object-position: center;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
   height: 100%;
   width: 100%;
 }
@@ -813,6 +817,42 @@
   grid-template-areas: "justice engagement" "solidarity respect";
 }
 
+@media screen and (max-width: 375px) {
+  .about_text {
+    margin: 50px;
+  }
+  .mission_section {
+    margin: 50px;
+  }
+  .network_section {
+    margin: 50px;
+  }
+  .team_section {
+    margin: 50px;
+  }
+  .partners_section {
+    margin: 50px;
+  }
+  .programs_section {
+    margin: 50px;
+  }
+  .section_image {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .values {
+    display: inline;
+  }
+  .section_image {
+    width: 80%;
+  }
+}
+@media screen and (max-width: 375px) {
+  .values {
+    display: inline;
+  }
+}
 .values_subtitle {
   font-weight: bold;
 }
@@ -907,6 +947,14 @@
 
 .programs_sponsor {
   text-align: center;
+}
+
+.savoirfaire {
+  width: 60%;
+}
+
+.membre {
+  width: 40%;
 }
 
 .timeline {
