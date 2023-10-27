@@ -84,6 +84,8 @@ if(document.getElementById("page404") != undefined){
     .to(".titleChar", {y:-10, ease:Sine.InOut, stagger: 0.1, repeat:-1, yoyo:true, duration:0.5})
 }
 
+
+/*Animation de la timeline avec gsap sur la page histoire*/
 if(document.getElementById("history") != undefined){
   gsap.registerPlugin(ScrollTrigger);
   let timelineEvents = document.querySelectorAll(".eventContainer");
@@ -91,7 +93,7 @@ if(document.getElementById("history") != undefined){
   console.log("hi");
   gsap.timeline({scrollTrigger: {
     pin: true,
-    end: "2000% bottom",
+    end: "1000% bottom",
     scrub: true,
     toggleActions: "restart complete reverse reset",
     trigger: "#history"
@@ -105,3 +107,22 @@ if(document.getElementById("history") != undefined){
   .to(infoArr[2], {opacity: 0, duration: 0.5, ease: "none"}, "-=8")
   .to(infoArr[3], {opacity: 1, duration: 0.5, ease: "none"}, "<")
 }
+
+// Script pour l'espacement en dessous du nav
+window.addEventListener("resize", spacingFunction);
+let nav = document.querySelector("nav");
+let navHeight = nav.clientHeight;
+function spacingFunction(){
+  if(document.querySelector(".hero")){
+    let hero = document.querySelector(".hero");
+    hero.style.marginTop = navHeight + "px";
+  }
+  else if(document.querySelector(".generic__hero")){
+    const hero = document.querySelector(".generic__hero");
+    hero.style.paddingTop = navHeight + "px";
+    console.log("space");
+  }
+
+}
+
+spacingFunction();

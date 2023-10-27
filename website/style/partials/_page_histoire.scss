@@ -5,6 +5,7 @@
 
 .timeline{
     height:20vmax;
+    width:100vw;
     position: relative;
     padding:0!important;
     background-color: col.$Asperge;
@@ -23,7 +24,7 @@
         background-color: col.$Cyan;
         border: 1px solid col.$GrisArd;
         font-size: ft.$text;
-        @media screen and (max-width: 576px) {
+        @media screen and (max-width: 720px) {
             &{
                 font-size: 10px;
             }
@@ -34,7 +35,7 @@
         order: 1;
         font-size: ft.$title1;
         text-align: center;
-        @media screen and (max-width: 576px) {
+        @media screen and (max-width: 720px) {
             &{
                 font-size: ft.$text; 
             }
@@ -48,7 +49,7 @@
         bottom:0;
         justify-content: space-between;
         align-items: center;
-        right:-25vw;
+        right:-30%;
     }
 }        
 
@@ -67,5 +68,10 @@
     }
     &__text{
         font-size: ft.$text;
+        @media screen and (max-width: 720px){
+            &{
+                font-size: 14px;
+            }
+        }
     }
 }
