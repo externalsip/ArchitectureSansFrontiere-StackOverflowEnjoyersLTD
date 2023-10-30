@@ -108,9 +108,12 @@ if(document.getElementById("history") != undefined){
 }
 
 // Script pour l'espacement en dessous du nav
+
 window.addEventListener("resize", spacingFunction);
+
 let nav = document.querySelector("nav");
 let navHeight = nav.clientHeight;
+
 function spacingFunction(){
   if(document.querySelector(".hero")){
     const hero = document.querySelector(".hero");
@@ -124,7 +127,6 @@ function spacingFunction(){
     const hero = document.querySelector(".notFound");
     hero.style.paddingTop = navHeight + "px";
   }
-
 }
 
 spacingFunction();

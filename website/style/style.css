@@ -1235,7 +1235,7 @@
 }
 @media screen and (max-width: 576px) {
   .genericHero__textContent {
-    font-size: 24px;
+    font-size: 16px;
   }
 }
 .genericHero__filter {
@@ -1287,4 +1287,14 @@ html {
 
 body {
   overflow-x: hidden;
+}
+
+a {
+  color: #70B074;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+a:hover {
+  text-decoration: underline;
 }/*# sourceMappingURL=style.css.map */
