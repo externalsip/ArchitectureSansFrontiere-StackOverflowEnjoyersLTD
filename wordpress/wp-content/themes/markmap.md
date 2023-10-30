@@ -4,6 +4,7 @@
 ### Logo wp
 ## Composante Projet
 ### Titre du projet (Titre de l'article)
+### Image du projet (thumbnail)
 ## Composante article
 ### Image de l'article (Thumbnail de l'article)
 ### Titre de l'article (Titre de l'article)
@@ -11,6 +12,9 @@
 ## Compostante cartes services
 ### Titre du service (viens de l'article)
 ### résumé du service (ACF)
+## Composante témoignage
+### image (post thumbnail)
+### texte (post text)
 ## Footer
 ### Menu wp
 
