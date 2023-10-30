@@ -1173,6 +1173,7 @@
 }
 
 .footer_menus {
+  padding-left: 0;
   color: white;
   list-style-type: none;
 }
@@ -1232,6 +1233,10 @@
 }
 
 .bi-arrow-up-circle {
+  position: fixed;
+  z-index: 2000;
+  bottom: 40px;
+  right: 40px;
   font-size: 40px;
   color: #70b074;
 }
