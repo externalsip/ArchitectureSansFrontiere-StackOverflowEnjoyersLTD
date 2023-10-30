@@ -1293,6 +1293,7 @@ a {
   color: #70B074;
   text-decoration: none;
   cursor: pointer;
+  font-size: 16px;
 }
 
 a:hover {

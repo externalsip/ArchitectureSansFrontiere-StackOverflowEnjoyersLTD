@@ -69,7 +69,7 @@
   style="background-color: #70b074"
 >
   <div class="container-fluid">
-    <a class="navbar-brand" href="index.html">
+    <a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); // Lien vers la page d'accueil ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); // Title it with the blog name ?>" rel="home"><?php bloginfo( 'name' ); // Affiche le nom du site ?>>
       <img class="navbar-brand__img" src="assets/img/logo.png" />
     </a>
     <button

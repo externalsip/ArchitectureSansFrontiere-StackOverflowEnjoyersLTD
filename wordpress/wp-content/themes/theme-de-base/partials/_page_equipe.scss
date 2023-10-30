@@ -2,7 +2,6 @@
   background-color: #bfd7ea;
   border: none;
 }
-
 .hero_equipe {
   background-color: #bfd7ea;
 }
@@ -10,9 +9,27 @@
 .equipe__titre {
   font-size: 50px;
   color: black;
-  font-weight: medium;
+  font-weight: 600;
 }
 
 .card-direction {
   @include carte;
+}
+
+#heroGeneric {
+  top: 56px;
+}
+
+#titre_Contenu {
+  height: 20vmin;
+  padding-top: 15px;
+  padding-left: 33px;
+  color: #1a3a3a;
+  line-height: 1;
+  opacity: 0.8;
+}
+.texte_titre {
+  color: #1a3a3a;
+  font-size: 16px;
+  font-weight: normal;
 }

@@ -1,0 +1,26 @@
+@use "colorsVar" as col;
+@use "fontSizeVar" as ft;
+
+.description_title{
+    text-align: center;
+    font-size: ft.$title1;
+    font-weight: 800;
+    color: col.$Asperge;
+}
+
+.description_paragraph{
+    font-size: ft.$text;
+}
+
+.description_section{
+    margin-top: 40px;
+}
+
+.description_sponsor{
+    text-align: center;
+}
+
+.description{
+    position: relative;
+    width:100%;
+}

@@ -13,25 +13,44 @@ C'est le moment d'effacer ce commentaire et d'écrire du vrai
  
  */
 
-@use "partials/nouvelle_template";
-@use "partials/page_accueil";
-@use "partials/missingPage.scss";
-@use "partials/page_faq";
-@use "partials/page_equipe";
-@use "partials/page_a_propos";
-@use "partials/header";
-@use "partials/footer";
-@use "partials/hero_generique";
-@use "partials/colorsVar" as col;
-
-* {
-  box-sizing: border-box;
-}
-
-html {
-  font-family: "Lato", sans-serif !important;
-  width: 100vw;
-  padding: 0;
-  overflow-y: scroll;
-  overflow-x: hidden;
-}
+ @use "partials/nouvelle_template";
+ @use "partials/page_accueil";
+ @use "partials/missingPage.scss";
+ @use "partials/page_faq";
+ @use "partials/page_equipe";
+ @use "partials/page_a_propos";
+ @use "partials/page_histoire";
+ @use "partials/header";
+ @use "partials/footer";
+ @use "partials/hero_generique";
+ @use "partials/description_generique";
+ @use "partials/colorsVar" as col;
+ @use "partials/fontSizeVar" as ft;
+ 
+ * {
+   box-sizing: border-box;
+ }
+ 
+ html {
+   font-family: "Lato", sans-serif !important;
+   width: 100vw;
+   padding: 0;
+   overflow-y: scroll;
+   overflow-x: hidden;
+   max-width: 100vw;
+ }
+ 
+ body{
+   overflow-x: hidden;
+ }
+ 
+ a{
+   color: col.$Asperge;
+   text-decoration: none;
+   cursor: pointer;
+   font-size: ft.$text;
+ }
+ 
+ a:hover{
+   text-decoration: underline;
+ }

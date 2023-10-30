@@ -1,4 +1,5 @@
 @use "colorsVar" as col;
+@use "fontSizeVar" as ft;
 @use 'sass:color';
 
 .genericHero{
@@ -11,12 +12,23 @@
     position:relative;
     display:flex;
     padding:50px;
+    top:10%;
     &__textContent{
         background-color: col.$Blanc;
-        font-size:32px;
+        display:flex;
+        align-items: center;
+        justify-content: center;
+        font-size:ft.$title1;
         font-weight: bold;
         height:10vmin;
         z-index: 2;
+        color: col.$Asperge;
+        font-weight: 800;
+        @media screen and (max-width: 576px) {
+            &{
+                font-size: ft.$text;
+            }
+        }
     }
     &__filter{        
         z-index:1;

@@ -11,6 +11,7 @@
 @use "partials/hero_generique";
 @use "partials/description_generique";
 @use "partials/colorsVar" as col;
+@use "partials/fontSizeVar" as ft;
 
 * {
   box-sizing: border-box;
@@ -33,7 +34,7 @@ a{
   color: col.$Asperge;
   text-decoration: none;
   cursor: pointer;
-  font-size: col.$text;
+  font-size: ft.$text;
 }
 
 a:hover{

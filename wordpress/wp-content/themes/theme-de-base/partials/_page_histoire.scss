@@ -1,0 +1,77 @@
+@use "colorsVar" as col;
+@use "fontSizeVar" as ft;
+
+//PAGE HISTOIRE
+
+.timeline{
+    height:20vmax;
+    width:100vw;
+    position: relative;
+    padding:0!important;
+    background-color: col.$Asperge;
+    &__line{
+        height:25%;
+        width:100%;
+        position:absolute;
+        background-color: col.$Aero;
+        bottom:0;
+    }
+    &__dot{
+        order: 2;
+        height:50%;
+        aspect-ratio: 1/1;
+        border-radius: 50%;
+        background-color: col.$Cyan;
+        border: 1px solid col.$GrisArd;
+        font-size: ft.$text;
+        @media screen and (max-width: 720px) {
+            &{
+                font-size: 10px;
+            }
+        }
+    }
+    &__event{
+        top:20%;
+        order: 1;
+        font-size: ft.$title1;
+        text-align: center;
+        @media screen and (max-width: 720px) {
+            &{
+                font-size: ft.$text; 
+            }
+        }
+    }
+    .eventContainer{
+        width: 30%;
+        position:absolute;
+        display:flex;
+        flex-direction: column;
+        bottom:0;
+        justify-content: space-between;
+        align-items: center;
+        right:-30%;
+    }
+}        
+
+.infoContainer{
+    height:80vh;
+}
+.info{
+    opacity: 0;
+    position:absolute;
+    width:100%;
+    &__title{
+        font-size: ft.$title1;
+    }
+    &__year{
+        font-size: ft.$title2;
+    }
+    &__text{
+        font-size: ft.$text;
+        @media screen and (max-width: 720px){
+            &{
+                font-size: 14px;
+            }
+        }
+    }
+}
