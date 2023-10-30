@@ -90,7 +90,6 @@ if(document.getElementById("history") != undefined){
   gsap.registerPlugin(ScrollTrigger);
   let timelineEvents = document.querySelectorAll(".eventContainer");
   let infoArr = document.querySelectorAll(".info");
-  console.log("hi");
   gsap.timeline({scrollTrigger: {
     pin: true,
     end: "1000% bottom",
@@ -114,13 +113,16 @@ let nav = document.querySelector("nav");
 let navHeight = nav.clientHeight;
 function spacingFunction(){
   if(document.querySelector(".hero")){
-    let hero = document.querySelector(".hero");
+    const hero = document.querySelector(".hero");
     hero.style.marginTop = navHeight + "px";
   }
   else if(document.querySelector(".generic__hero")){
     const hero = document.querySelector(".generic__hero");
     hero.style.paddingTop = navHeight + "px";
-    console.log("space");
+  }
+  else if(document.querySelector(".notFound")){
+    const hero = document.querySelector(".notFound");
+    hero.style.paddingTop = navHeight + "px";
   }
 
 }
