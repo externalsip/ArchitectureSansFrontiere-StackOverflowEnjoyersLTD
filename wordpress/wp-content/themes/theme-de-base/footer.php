@@ -7,7 +7,7 @@
 </main>
 
 <footer class="bd-footer">
-      <div class="container-fluid pt-3 pb-3 ps-3 pe-3">
+      <div class="container pt-3 pb-3 ps-3 pe-3">
         <div class="row">
           <!--<div class="col-sm-12 col-lg-8 ps-4 text-start">-->
           <div class="col-12 col-lg-3">

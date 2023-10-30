@@ -298,11 +298,13 @@
   overflow: hidden;
   width: 100%;
   margin-top: 104px;
+  background-color: #BFD7EA;
 }
 .hero__wrapper {
   width: 100%;
 }
 .hero__info {
+  overflow: hidden;
   font-size: 16px;
   background-color: #BFD7EA;
 }
@@ -496,11 +498,11 @@
 
 .charity {
   width: 100%;
+  background-color: #70B074;
 }
 .charity__wrapper {
   width: 100%;
   height: 100%;
-  background-color: #70B074;
 }
 .charity__text {
   display: flex;
@@ -556,13 +558,15 @@
   font-weight: bold;
 }
 
-.feedback__wrapper {
-  width: 100%;
-  height: 100%;
+.feedback {
   background-image: url("/sources/medias/01_accueil/backgroundTemoignageLg.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+}
+.feedback__wrapper {
+  width: 100%;
+  height: 100%;
 }
 .feedback__title {
   padding: 25px 0;
@@ -576,7 +580,7 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  font-size: 24px;
+  font-size: 16px;
   padding-bottom: 25px;
 }
 .person__wrapper:nth-child(1) .person__img {
@@ -600,7 +604,7 @@
 }
 
 @media screen and (max-width: 576px) {
-  .feedback__wrapper {
+  .feedback {
     background-image: none;
     background-color: #BFD7EA;
   }
