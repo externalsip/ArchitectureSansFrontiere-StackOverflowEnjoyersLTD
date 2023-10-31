@@ -378,10 +378,8 @@
   transform: scale(1.1);
 }
 .projects__image {
-  -o-object-fit: cover;
-     object-fit: cover;
-  -o-object-position: center;
-     object-position: center;
+  object-fit: cover;
+  object-position: center;
   height: 100%;
   width: 100%;
   display: block;
@@ -513,10 +511,8 @@
   font-size: 20px;
 }
 .charity__img {
-  -o-object-fit: cover;
-     object-fit: cover;
-  -o-object-position: center;
-     object-position: center;
+  object-fit: cover;
+  object-position: center;
   height: 100%;
   width: 100%;
 }
@@ -628,8 +624,16 @@
   display: inline-block;
 }
 
-.faq {
+body {
   background-color: #bfd7ea;
+}
+
+.description_paragraph {
+  padding: 0 !important;
+}
+
+.description_title {
+  margin-top: 120px !important;
 }
 
 .hero_equipe {

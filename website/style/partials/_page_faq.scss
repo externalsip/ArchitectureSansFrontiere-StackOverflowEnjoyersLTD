@@ -1,3 +1,13 @@
-.faq {
+@use "colorsVar" as col;
+@use "fontSizeVar" as ft;
+@use "sass:color";
+
+body {
   background-color: #bfd7ea;
+}
+.description_paragraph {
+  padding: 0 !important;
+}
+.description_title {
+  margin-top: 120px !important;
 }
