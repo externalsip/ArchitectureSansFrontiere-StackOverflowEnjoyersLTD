@@ -700,6 +700,14 @@ body {
   margin-top: 100px;
 }
 
+.programs__wrapper {
+  padding: 0 !important;
+}
+
+.description_paragraph {
+  text-align: justify;
+}
+
 .card:hover {
   color: #70b074;
   transform: scale(1.1);
