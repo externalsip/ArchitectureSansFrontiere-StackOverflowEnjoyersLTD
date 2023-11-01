@@ -2,18 +2,22 @@
 ## Header
 ### Menu wp
 ### Logo wp
+## Composante slide héro
+### Titre de la slide (Titre de l'article)
+### Texte de la slide (Texte de l'article)
 ## Composante Projet
 ### Titre du projet (Titre de l'article)
 ### Image du projet (thumbnail)
 ## Composante article
 ### Image de l'article (Thumbnail de l'article)
 ### Titre de l'article (Titre de l'article)
-### Résumé de l'article (ACF)
+### Résumé de l'article (Contenu de l'article)
 ## Compostante cartes services
-### Titre du service (viens de l'article)
-### résumé du service (ACF)
+### Titre du service (Titre de l'article)
+### résumé du service (Contenu de l'article)
 ## Composante témoignage
 ### image (post thumbnail)
+### Nom (Titre de l'article)
 ### texte (post text)
 ## Footer
 ### Menu wp
