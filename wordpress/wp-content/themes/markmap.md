@@ -15,6 +15,8 @@
 ## Compostante cartes services
 ### Titre du service (Titre de l'article)
 ### résumé du service (Contenu de l'article)
+## Composante Dons
+### 
 ## Composante témoignage
 ### image (post thumbnail)
 ### Nom (Titre de l'article)
