@@ -1,0 +1,10 @@
+{
+  "post_types": {
+    "projet": {},
+    "heromainpage": {},
+    "articlemainpage": {},
+    "programmesmainpage": {},
+    "temoignage": {},
+    "don": {}
+  }
+}

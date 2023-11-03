@@ -162,11 +162,11 @@ get_header(); // Affiche header.php
                 <div class="card-body">
                   <h5 class="card-title"><?php ?>Coopération internationale</h5>
                   <p class="card-text">
-					<?php
+					<?php ?>
                     Une expertise architecturale pour les projets de coopération
                     internationale des ONG canadiennes et de leurs partenaires
                     des pays en développement
-					?>
+					
                   </p>
                 </div>
               </div>
