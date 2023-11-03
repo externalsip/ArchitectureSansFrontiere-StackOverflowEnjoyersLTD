@@ -158,6 +158,7 @@ get_header(); // Affiche header.php
         <div class="row justify-content-evenly">
           <div class="card mb-5 col-8 col-md-5 programs__card">
             <div class="row g-0">
+            <?php ?>
               <div class="col-12 col-md-9">
                 <div class="card-body">
                   <h5 class="card-title"><?php ?>Coopération internationale</h5>
