@@ -1324,6 +1324,10 @@ body {
   width: 100%;
 }
 
+.card {
+  transition-duration: 0.5s;
+}
+
 * {
   box-sizing: border-box;
 }
