@@ -1,7 +1,7 @@
 <?php 
 /**
  * 	Template Name: Equipe
- *  Template Post Type: post, page, equipes
+ *  Template Post Type: post, page, equipe
  * 	Identique à page, mais avec une barre latérale
  */
 
