@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - Advanced Custom Fields (ACF) - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2023-10-24 12:29:23+0000\n"
+"PO-Revision-Date: 2023-11-08 08:35:46+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -4685,10 +4685,6 @@ msgstr "Page des publications"
 msgid "Viewing back end"
 msgstr "Affichage de l’interface d’administration"
 
-#: includes/admin/views/acf-field-group/options.php:154
-msgid "Order No."
-msgstr "N° de commande."
-
 #: includes/admin/views/upgrade/network.php:117
 msgid "Please select at least one site to upgrade."
 msgstr "Veuillez choisir au moins un site à mettre à niveau."
@@ -4785,6 +4781,10 @@ msgstr "Afficher les boutons de téléversement de médias ?"
 msgctxt "Select2 JS matches_1"
 msgid "One result is available, press enter to select it."
 msgstr "Un résultat est disponible, appuyez sur « Entrée » pour le sélectionner."
+
+#: includes/admin/views/acf-field-group/options.php:154
+msgid "Order No."
+msgstr "N° d’ordre."
 
 #. Plugin Name of the plugin
 #: acf.php:94

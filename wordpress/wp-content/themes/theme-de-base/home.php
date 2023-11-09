@@ -17,18 +17,23 @@ get_header(); // Affiche header.php
           </div>
           <div class="hero__info col-md-6 col-12 swiperProject">
             <div class="swiper-wrapper swiperProjectWrapper">
-			<?php
-			 ?>
+                <?php
+                $slideArguments = array(
+                  'post_type' => 'slideheroprincipal',
+                  'posts_per_page' => 4
+                );
+                $heroSlides = new WP_Query($slideArguments);
+                while ($heroSlides->have_posts()) : $heroSlides->the_post(); 
+                ?>
               <div class="swiper-slide hero__text">
-                <h1><?php ?>Qui sommes-nous?</h1>
+                <h1><?php the_title();?></h1>
                 <p>
-					<?php ?>
-                  Architecture Sans Frontières Québec (ASFQ) est un organisme
-                  qui vient en aide aux populations victimes de crises, de
-                  catastrophes naturelles ou d’inégalités sociales.
+					<?php the_content();?>
                 </p>
               </div>
 			<?php
+      endwhile;
+      wp_reset_postdata();
 			 ?>
             </div>
             <div class="swiper-pagination"></div>
@@ -44,13 +49,21 @@ get_header(); // Affiche header.php
         <div class="row projects__title mt-3 mb-5">
           <div class="col-12 text-center"><?php ?>Projets</div>
         </div>
-		<?php ?>
-        <div class="row projects__list justify-content-sm-between justify-content-center gy-5 mb-5">
+        <div class="row projects__list justify-content-sm-between justify-content-center gy-5 mb-5">		
+          <?php
+    $projectArguments = array(
+      'post_type' => 'projets',
+      'posts_per_page' => 3
+    );
+    $project = new WP_Query($projectArguments);
+    while ($project->have_posts()) : $project->the_post(); ?>
+
           <div class="col-sm-4 col-8 projects__item">
-            <img class="projects__image" src="<?php ?>../sources/medias/01_accueil/image_projet_01_accueil.jpg">
-            <p class="projects__name"><?php ?>Logements pour personnel médical</p>
+            <?php the_post_thumbnail(array('class' => 'projects__image'));?>
+            <p class="projects__name"><?php the_title();?></p>
           </div>
-	<?php ?>
+	<?php endwhile;
+  wp_reset_postdata(); ?>
       </div>
     </section>
 
@@ -66,16 +79,21 @@ get_header(); // Affiche header.php
             class="col-md-6 col-12 swiperActIMG actuality__swiper swiper-no-swiping px-0 pb-3 pb-sm-0"
           >
             <div class="swiper-wrapper col-6">
-				<?php ?>
+				<?php     $articleArguments = array(
+      'post_type' => 'article',
+      'posts_per_page' => 3
+    );
+    $article = new WP_Query($articleArguments);
+    while ($article->have_posts()) : $article->the_post(); ?>
               <div class="swiper-slide actuality__img">
                 <div class="actuality__img__gradient"></div>
-                <img
-                  src="<?php ?>../sources/medias/01_accueil/image_actualite_03_accueil.jpg"
-                  class="actuality__img__source"
-                />
+                  <?php the_post_thumbnail(array('class' => 'actuality__img_source'));?>
               </div>
 
-			  <?php ?>
+			  <?php 
+        endwhile;
+        wp_reset_postdata();
+        ?>
 
             </div>
             <div class="swiper-button-next actuality__swiper__btn"></div>
@@ -86,23 +104,21 @@ get_header(); // Affiche header.php
           >
             <div class="swiper-wrapper col-6">
 
-				<?php ?>
+				<?php     while ($article->have_posts()) : $article->the_post();?>
 
               <div class="swiper-slide actuality__txt p-3">
                 <h1>
-					<?php ?>
-                  COLLOQUE | Architecture + Itinérance : Habiter la ville sans
-                  ancrage au logement | 22 novembre
+					<?php the_title();?>
                 </h1>
                 <p>
-					<?php ?>
-                  Ne manquez pas la seconde édition du colloque Architecture +
-                  Itinérance, une rencontre interdisciplinaire organisée par
-                  Architecture Sans Frontières Québec [...]
+					<?php the_content();?>
                 </p>
               </div>
 
-			  <?php ?>
+			  <?php 
+                endwhile;
+                wp_reset_postdata();
+        ?>
 
             </div>
           </div>

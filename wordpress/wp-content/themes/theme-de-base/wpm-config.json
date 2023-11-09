@@ -1,10 +1,12 @@
 {
   "post_types": {
-    "projet": {},
-    "heromainpage": {},
-    "articlemainpage": {},
-    "programmesmainpage": {},
-    "temoignage": {},
-    "don": {}
+    "projets": {},
+    "article": {},
+    "equipe": {},
+    "personnel": {},
+    "temoignages": {},
+    "dons": {},
+    "programme": {},
+    "slideheroprincipal": {}
   }
 }
