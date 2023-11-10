@@ -670,6 +670,15 @@ body {
   font-weight: normal;
 }
 
+.mcnamara {
+  width: 300px;
+  height: 300px;
+}
+
+.test {
+  text-align: justify;
+}
+
 #containerHero {
   top: 104px;
 }
