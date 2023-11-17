@@ -1337,6 +1337,29 @@ body {
   transition-duration: 0.5s;
 }
 
+.articlesBtnDiv {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 3rem;
+}
+
+.articlesBtn {
+  height: 50px;
+  width: 130px;
+  border-radius: 15px;
+  background-color: #FFFFFF;
+  font-size: 15px;
+  font-weight: 900;
+  color: #70B074;
+  border: none;
+  transition-duration: 0.5s;
+}
+
+.articlesBtn:hover {
+  background-color: #518154;
+  color: #FFFFFF;
+}
+
 * {
   box-sizing: border-box;
 }
