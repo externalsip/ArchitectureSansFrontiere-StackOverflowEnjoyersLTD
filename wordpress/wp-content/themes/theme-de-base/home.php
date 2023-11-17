@@ -24,6 +24,7 @@ get_header(); // Affiche header.php
                 );
                 $heroSlides = new WP_Query($slideArguments);
                 while ($heroSlides->have_posts()) : $heroSlides->the_post(); 
+                //Loop sur chaque slide du héro pour tous les afficher.
                 ?>
               <div class="swiper-slide hero__text">
                 <h1><?php the_title();?></h1>
@@ -47,7 +48,7 @@ get_header(); // Affiche header.php
     <section class="projects">
       <div class="projects__wrapper container p-2">
         <div class="row projects__title mt-3 mb-5">
-          <div class="col-12 text-center"><?php ?>Projets</div>
+          <div class="col-12 text-center"><?php the_field("titre_projet"); ?></div>
         </div>
         <div class="row projects__list justify-content-sm-between justify-content-center gy-5 mb-5">		
           <?php
@@ -72,7 +73,7 @@ get_header(); // Affiche header.php
     <section class="actuality">
       <div class="actuality__wrapper container pt-2">
         <div class="row actuality__title mb-5 mt-3">
-          <div class="col-12 text-center">Actualités</div>
+          <div class="col-12 text-center"><?php the_field("titre_actualites"); ?></div>
         </div>
         <div class="row p-0">
           <div
@@ -134,21 +135,29 @@ get_header(); // Affiche header.php
           <div
             class="charity__text col-12 col-sm-9 text-center text-sm-start p-5"
           >
-            <h1> <?php ?>Donnez</h1>
+          <?php
+              $donationArguments = array(
+                'post_type' => 'dons',
+                'posts_per_page' => 1
+              );
+              $donation = new WP_Query($donationArguments);
+              while ($donation->have_posts()) : $donation->the_post(); ?>
+            <h1> <?php the_title(); ?></h1>
             <p>
-				<?php ?>
-              Nos donateurs sont essentiels. Consultez notre portail de dons
-              pour soutenir notre mission ou une cause qui vous tient à coeur.
-              Vous bénéficierez d’un reçu de charité déductible d’impôt !
+				<?php the_content();?>
             </p>
             <button
               type="button"
               class="charity__button col-12 col-md-4 align-self-center align-self-sm-start"
               id="animationBtn"
             >
-			<?php ?>
-              Faire un don
+			<?php the_field("btnText"); ?>
             </button>
+
+            <?php endwhile
+            wp_reset_postdata(); 
+            ?>
+
           </div>
           <div class="charity__imgContainer col-12 col-sm-3">
             <div class="charity__img__gradient"></div>
@@ -167,35 +176,38 @@ get_header(); // Affiche header.php
       <div class="programs__wrapper container">
         <div class="row mb-5 pt-3">
           <div class="programs__title col-12 text-center">
-			<?php ?>
-            Nos Programmes
+			<?php the_field("titre_programmes"); ?>
           </div>
         </div>
         <div class="row justify-content-evenly">
+        <?php 
+                                $programArguments = array(
+                                  'post_type' => 'programme',
+                                  'posts_per_page' => 7
+                                );
+                                $program = new WP_Query($programArguments);
+                                while ($program->have_posts()) : $program->the_post();?>
           <div class="card mb-5 col-8 col-md-5 programs__card">
             <div class="row g-0">
-            <?php ?>
+           
               <div class="col-12 col-md-9">
                 <div class="card-body">
-                  <h5 class="card-title"><?php ?>Coopération internationale</h5>
+                  <h5 class="card-title"><?php the_title();?></h5>
                   <p class="card-text">
-					<?php ?>
-                    Une expertise architecturale pour les projets de coopération
-                    internationale des ONG canadiennes et de leurs partenaires
-                    des pays en développement
-					
+					            <?php the_field("resume");
+                    ?>
                   </p>
                 </div>
               </div>
               <div class="col-12 col-md-3 text-center">
-                <img
-                  src="/sources/medias/01_accueil/iconProgramme1.png"
-                  class="img-fluid"
-                  alt="icon1"
-                />
+                  <?php the_post_thumbnail(array('class' => 'img-fluid')); ?>
               </div>
             </div>
           </div>
+
+          <?php endwhile
+          wp_reset_postdata();
+          ?>
         </div>
       </div>
     </section>
@@ -205,18 +217,22 @@ get_header(); // Affiche header.php
     <section class="feedback">
       <div class="feedback__wrapper container-">
         <div class="row">
-          <div class="feedback__title col-12 text-center">Témoignages</div>
+          <div class="feedback__title col-12 text-center"><?php the_field("titre_temoignages"); ?></div>
         </div>
         <div class="row justify-content-evenly">
-			<?php ?>
+			<?php                                 
+        $temoignageArguments = array(
+          'post_type' => 'temoignage',
+          'posts_per_page' => 7
+        );
+        $temoignage = new WP_Query($temoignageArguments);
+        while ($temoignage->have_posts()) : $temoignage->the_post();?>
           <div class="col-8 col-md-3 person__wrapper">
-            <div class="person__img"></div>
+            <?php the_post_thumbnail(array('class' => 'person__img')) ?>
             <div class="person__text">
-              <h2 class="person__name"><?php ?>Jean Remont</h2>
+              <h2 class="person__name"><?php the_title();?></h2>
               <p class="person__statement">
-				<?php ?>
-                J’étais présent lors de la constructon d’une école et c’était
-                très inspirant!
+				<?php the_content();?>
               </p>
             </div>
 	

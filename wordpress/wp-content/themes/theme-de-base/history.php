@@ -1,6 +1,7 @@
 <?php 
 /**
  * 	Template Name: Histoire
+ *  Template Post Type: post, page, histoire
  * 	Identique à page, mais avec une barre latérale
  */
 
@@ -26,6 +27,5 @@ else : // Si aucune page n'a été trouvée
 	get_template_part( 'partials/404' ); // Affiche partials/404.php
 endif;
 
-get_sidebar(); // Affiche le contenu de sidebar.php
 get_footer(); // Affiche footer.php 
 ?>

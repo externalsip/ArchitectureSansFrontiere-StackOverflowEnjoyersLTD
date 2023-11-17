@@ -347,28 +347,12 @@
     text-align: center;
     font-size: ft.$text;
     padding-bottom: 25px;
-    &:nth-child(1) {
-      .person__img {
-        background-image: url("/sources/medias/01_accueil/temoin1.png");
-      }
-    }
-    &:nth-child(2) {
-      .person__img {
-        background-image: url("/sources/medias/01_accueil/temoin2.png");
-      }
-    }
-    &:nth-child(3) {
-      .person__img {
-        background-image: url("/sources/medias/01_accueil/temoin3.png");
-      }
-    }
   }
   &__img {
     width: 60%;
     aspect-ratio: 1/1;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
+    object-position: center;
+    object-fit: cover;
   }
   &__text {
     margin-top: 20px;

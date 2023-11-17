@@ -393,8 +393,10 @@ C'est le moment d'effacer ce commentaire et d'écrire du vrai
   transform: scale(1.1);
 }
 .projects__image {
-  object-fit: cover;
-  object-position: center;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
   height: 100%;
   width: 100%;
   display: block;
@@ -526,8 +528,10 @@ C'est le moment d'effacer ce commentaire et d'écrire du vrai
   font-size: 20px;
 }
 .charity__img {
-  object-fit: cover;
-  object-position: center;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
   height: 100%;
   width: 100%;
 }
@@ -598,21 +602,13 @@ C'est le moment d'effacer ce commentaire et d'écrire du vrai
   font-size: 16px;
   padding-bottom: 25px;
 }
-.person__wrapper:nth-child(1) .person__img {
-  background-image: url("/sources/medias/01_accueil/temoin1.png");
-}
-.person__wrapper:nth-child(2) .person__img {
-  background-image: url("/sources/medias/01_accueil/temoin2.png");
-}
-.person__wrapper:nth-child(3) .person__img {
-  background-image: url("/sources/medias/01_accueil/temoin3.png");
-}
 .person__img {
   width: 60%;
   aspect-ratio: 1/1;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+  -o-object-position: center;
+     object-position: center;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .person__text {
   margin-top: 20px;
