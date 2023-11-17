@@ -77,6 +77,7 @@ if(document.querySelector(".navbar-toggler") != undefined){
         .to(donationBtn, {scale: 1.1, duration: 0.6})
         .to(donationBtn, {scale: 1, duration: 0.7})
   });
+  console.log("reach");
   }
   /*Animation GSAP dans la page 404*/
   

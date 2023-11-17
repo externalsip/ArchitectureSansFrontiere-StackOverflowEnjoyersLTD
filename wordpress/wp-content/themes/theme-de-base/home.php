@@ -60,7 +60,7 @@ get_header(); // Affiche header.php
     while ($project->have_posts()) : $project->the_post(); ?>
 
           <div class="col-sm-4 col-8 projects__item">
-            <?php the_post_thumbnail(array('class' => 'projects__image'));?>
+            <?php the_post_thumbnail('full', array('class' => 'projects__image'));?>
             <p class="projects__name"><?php the_title();?></p>
           </div>
 	<?php endwhile;
@@ -88,7 +88,7 @@ get_header(); // Affiche header.php
     while ($article->have_posts()) : $article->the_post(); ?>
               <div class="swiper-slide actuality__img">
                 <div class="actuality__img__gradient"></div>
-                  <?php the_post_thumbnail(array('class' => 'actuality__img_source'));?>
+                  <?php the_post_thumbnail('full', array('class' => 'actuality__img_source'));?>
               </div>
 
 			  <?php 
@@ -154,7 +154,7 @@ get_header(); // Affiche header.php
 			<?php the_field("btnText"); ?>
             </button>
 
-            <?php endwhile
+            <?php endwhile;
             wp_reset_postdata(); 
             ?>
 
@@ -176,7 +176,8 @@ get_header(); // Affiche header.php
       <div class="programs__wrapper container">
         <div class="row mb-5 pt-3">
           <div class="programs__title col-12 text-center">
-			<?php the_field("titre_programmes"); ?>
+			<?php
+       get_field("titre_programmes"); ?>
           </div>
         </div>
         <div class="row justify-content-evenly">
@@ -200,12 +201,12 @@ get_header(); // Affiche header.php
                 </div>
               </div>
               <div class="col-12 col-md-3 text-center">
-                  <?php the_post_thumbnail(array('class' => 'img-fluid')); ?>
+                  <?php the_post_thumbnail('full', array('class' => 'img-fluid')); ?>
               </div>
             </div>
           </div>
 
-          <?php endwhile
+          <?php endwhile;
           wp_reset_postdata();
           ?>
         </div>
@@ -228,7 +229,7 @@ get_header(); // Affiche header.php
         $temoignage = new WP_Query($temoignageArguments);
         while ($temoignage->have_posts()) : $temoignage->the_post();?>
           <div class="col-8 col-md-3 person__wrapper">
-            <?php the_post_thumbnail(array('class' => 'person__img')) ?>
+            <?php the_post_thumbnail('full', array('class' => 'person__img')) ?>
             <div class="person__text">
               <h2 class="person__name"><?php the_title();?></h2>
               <p class="person__statement">
@@ -237,7 +238,8 @@ get_header(); // Affiche header.php
             </div>
 	
           </div>		
-		  <?php ?>
+		  <?php endwhile;
+          wp_reset_postdata();?>
           </div>
         </div>
       </div>
