@@ -378,10 +378,8 @@
   transform: scale(1.1);
 }
 .projects__image {
-  -o-object-fit: cover;
-     object-fit: cover;
-  -o-object-position: center;
-     object-position: center;
+  object-fit: cover;
+  object-position: center;
   height: 100%;
   width: 100%;
   display: block;
@@ -513,10 +511,8 @@
   font-size: 20px;
 }
 .charity__img {
-  -o-object-fit: cover;
-     object-fit: cover;
-  -o-object-position: center;
-     object-position: center;
+  object-fit: cover;
+  object-position: center;
   height: 100%;
   width: 100%;
 }
@@ -1339,6 +1335,29 @@ body {
 
 .card {
   transition-duration: 0.5s;
+}
+
+.articlesBtnDiv {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 3rem;
+}
+
+.articlesBtn {
+  height: 50px;
+  width: 130px;
+  border-radius: 15px;
+  background-color: #FFFFFF;
+  font-size: 15px;
+  font-weight: 900;
+  color: #70B074;
+  border: none;
+  transition-duration: 0.5s;
+}
+
+.articlesBtn:hover {
+  background-color: #518154;
+  color: #FFFFFF;
 }
 
 * {
