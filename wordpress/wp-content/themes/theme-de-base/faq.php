@@ -1,7 +1,7 @@
 <?php 
 /**
  * 	Template Name: FAQ
- *  Template Post Type: post, page, question
+ *  Template Post Type: post, page, questions
  * 	Identique à page, mais avec une barre latérale
  */
 
