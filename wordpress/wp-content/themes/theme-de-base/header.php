@@ -53,24 +53,13 @@
 >
 
 <header>
-	<h1>
-		<a href="<?php echo esc_url( home_url( '/' ) ); // Lien vers la page d'accueil ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); // Title it with the blog name ?>" rel="home"><?php bloginfo( 'name' ); // Affiche le nom du site ?></a>
-	</h1>
-
-	<nav>
-		<?php 
-			// Affiche un menu si dans le tableau de bord un menu a été défini dans cet emplacement
-			wp_nav_menu( array( 'theme_location' => 'main-menu' ) );
-		?>
-	</nav>
-
 	<nav
   class="navbar navbar-expand-md fixed-top"
   style="background-color: #70b074"
 >
   <div class="container-fluid">
-    <a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); // Lien vers la page d'accueil ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); // Title it with the blog name ?>" rel="home"><?php bloginfo( 'name' ); // Affiche le nom du site ?>>
-      <img class="navbar-brand__img" src="assets/img/logo.png" />
+    <a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); // Lien vers la page d'accueil ?>">
+      <img src="<?php bloginfo('template_url'); ?>/images/hero/logo.png" class="navbar-brand__img">
     </a>
     <button
       class="navbar-toggler"

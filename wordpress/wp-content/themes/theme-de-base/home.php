@@ -10,10 +10,11 @@ get_header(); // Affiche header.php
 ?>
 
 <section class="hero" id="carrousel_hero">
-      <div class="hero__wrapper container">
+      <div class="hero__wrapper container-fluid">
         <div class="row">
-          <div class="hero__image col-md-6 col-12">
+          <div class="col-md-6 col-12">
             <div class="hero__image__gradient"></div>
+            <img src="<?php bloginfo('template_url'); ?>/images/accueil/hero.png" class="hero__image">
           </div>
           <div class="hero__info col-md-6 col-12 swiperProject">
             <div class="swiper-wrapper swiperProjectWrapper">
@@ -48,15 +49,17 @@ get_header(); // Affiche header.php
     <section class="projects">
       <div class="projects__wrapper container p-2">
         <div class="row projects__title mt-3 mb-5">
-          <div class="col-12 text-center"><?php the_field("titre_projet"); ?></div>
+
+          <div class="col-12 text-center"><?php the_field("titre_projets"); ?></div>
         </div>
         <div class="row projects__list justify-content-sm-between justify-content-center gy-5 mb-5">		
-          <?php
+        <?php
     $projectArguments = array(
       'post_type' => 'projets',
       'posts_per_page' => 3
     );
-    $project = new WP_Query($projectArguments);
+    $project = new WP_Query($projectArguments);?>
+    <?php
     while ($project->have_posts()) : $project->the_post(); ?>
 
           <div class="col-sm-4 col-8 projects__item">
@@ -161,10 +164,7 @@ get_header(); // Affiche header.php
           </div>
           <div class="charity__imgContainer col-12 col-sm-3">
             <div class="charity__img__gradient"></div>
-            <img
-              src="/sources/medias/01_accueil/image_dons.png"
-              class="charity__img"
-            />
+            <img src="<?php bloginfo('template_url'); ?>/images/accueil/image_dons.png" class="charity__img">
           </div>
         </div>
       </div>
@@ -184,7 +184,8 @@ get_header(); // Affiche header.php
         <?php 
                                 $programArguments = array(
                                   'post_type' => 'programme',
-                                  'posts_per_page' => 7
+                                  'posts_per_page' => 7,
+                                  "order" => "DESC"
                                 );
                                 $program = new WP_Query($programArguments);
                                 while ($program->have_posts()) : $program->the_post();?>
@@ -223,8 +224,9 @@ get_header(); // Affiche header.php
         <div class="row justify-content-evenly">
 			<?php                                 
         $temoignageArguments = array(
-          'post_type' => 'temoignage',
-          'posts_per_page' => 7
+          'post_type' => 'temoignages',
+          'posts_per_page' => 7,
+          'order' => 'DESC'
         );
         $temoignage = new WP_Query($temoignageArguments);
         while ($temoignage->have_posts()) : $temoignage->the_post();?>

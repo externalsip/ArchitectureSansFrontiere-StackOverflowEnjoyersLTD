@@ -24,12 +24,12 @@
     margin: 20px 0;
   }
   &__image {
-    background-image: url("../assets/img/hero.png");
-    background-size: cover;
+    object-fit: cover;
     height: 45vmin;
-    background-position: center;
+    object-position: start;
     z-index: 2;
-    position: relative;
+    position:relative;
+    width:100%;
     &__gradient {
       background-image: linear-gradient(
         to right,
@@ -112,6 +112,7 @@
     height:100%;
     width:100%;
     display:block;
+
   }
   &__name{
     display:block;
@@ -323,7 +324,7 @@
 // TÉMOIGNAGES
 
 .feedback {
-  background-image: url("/sources/medias/01_accueil/backgroundTemoignageLg.png");
+  background-image: url("../images/accueil/backgroundTemoignageLg.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;

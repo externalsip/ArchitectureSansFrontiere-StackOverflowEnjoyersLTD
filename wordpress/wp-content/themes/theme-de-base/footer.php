@@ -11,8 +11,8 @@
         <div class="row">
           <!--<div class="col-sm-12 col-lg-8 ps-4 text-start">-->
           <div class="col-12 col-lg-3">
-            <a href="index.html">
-              <img class="logo" src="assets/img/logo.png" alt="logo" />
+            <a href="<?php echo esc_url( home_url( '/' ) ); // Lien vers la page d'accueil ?>">
+              <img src="<?php bloginfo('template_url'); ?>/images/hero/logo.png" class="logo" alt="logo">
             </a>
             <div class="col-sm-12 col-lg-8 pt-4 text-start">
               <button
@@ -76,11 +76,8 @@
           <div class="col-12 col-lg-3 pt-2 pb-3">
             <div class="logo_partenaire">
               <p class="presentation">Notre partenaire fondateur</p>
-              <img
-                class="partenaire"
-                src="assets/img/logo_partenaire.png"
-                alt="logo_partenaire"
-              />
+
+              <img src="<?php bloginfo('template_url'); ?>/images/footer/logo_partenaire.png" class="partenaire" alt="logo_partenaire">
             </div>
           </div>
 
@@ -140,14 +137,14 @@
 	 Si vous enlevez cette fonction, vous désactiverez du même coup toutes vos extensions (plugins) 🤷. 
 	 Vous pouvez la déplacer si désiré, mais garder là. */
 ?>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
 <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
       crossorigin="anonymous"
     ></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="main.js"></script>
 </body>
 
 </html>
