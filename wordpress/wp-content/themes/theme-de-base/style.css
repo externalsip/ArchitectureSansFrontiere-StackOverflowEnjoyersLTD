@@ -578,6 +578,7 @@ C'est le moment d'effacer ce commentaire et d'écrire du vrai
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  background-color: #BFD7EA;
 }
 .feedback__wrapper {
   width: 100%;
