@@ -6,6 +6,9 @@
 
 /* --------------------------------
 Ajoute les vignettes dans les posts de type Article */
+error_log('functions.php is being loaded!', 0);
+
+
 add_theme_support( 'post-thumbnails' );
 
 
@@ -75,9 +78,10 @@ function add_menu_list_item_class($classes, $item, $args) {
  add_filter('nav_menu_css_class', 'add_menu_list_item_class', 1, 3);
  // Pour ajouter sur les <a>
  function add_additional_class_on_a($classes, $item, $args){
-    if (isset($args->add_a_class)) {
-        $classes['class'] = $args->add_a_class;
+    if (isset($args->link_item_class)) {
+        $classes['class'] = $args->link_item_class;
     }
     return $classes;
 }
 add_filter('nav_menu_link_attributes', 'add_additional_class_on_a', 1, 3);
+

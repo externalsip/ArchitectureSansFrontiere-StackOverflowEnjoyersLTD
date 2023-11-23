@@ -13,6 +13,12 @@ if ( have_posts() ) : // Est-ce que nous avons des pages à afficher ?
 ?>
 <?php endwhile; // Fermeture de la boucle
 
+
+
+?>
+
+<?php
+
 get_template_part(" partials/genericHero ");
 
 get_template_part(" partials/genericDesc ");
@@ -27,9 +33,9 @@ get_template_part(" partials/genericDesc ");
 			<?php 
 				$eventArguments = array(
 					'post_type' => 'evenementhistoire',
-					'posts_per_page' => 3
+					'posts_per_page' => 4
 				  );
-				  $event = new WP_Query($slideArguments);
+				  $event = new WP_Query($eventArguments);
 				  while ($event->have_posts()) : $event->the_post(); 
 				?>
             <div class="eventContainer col-3 pb-1 pb-md-2 pb-xl-3">
@@ -51,9 +57,9 @@ get_template_part(" partials/genericDesc ");
 				<?php 
 					$eventArguments = array(
 						'post_type' => 'evenementhistoire',
-						'posts_per_page' => 3
+						'posts_per_page' => 4
 					);
-					$event = new WP_Query($slideArguments);
+					$event = new WP_Query($eventArguments);
 					while ($event->have_posts()) : $event->the_post(); 
 					?>
             	<div class="info">

@@ -81,7 +81,7 @@
 		wp_nav_menu( array( 'theme_location' => 'main-menu',
 		'menu_class' => 'navbar-nav align-self-md-end align-items-end ml-auto col-md-9',
 		'list_item_class' => 'nav-item',
-		'add_a_class' => 'nav-link' ) );
+		'add_a_class' => 'nav-link', ) );
 		?>
       <div class="nav_end col-md-3">
         <button type="button" class="charityBtn col-3 col-md-6 p-1">
