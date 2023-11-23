@@ -11,21 +11,67 @@ if ( have_posts() ) : // Est-ce que nous avons des pages à afficher ?
 	// Si oui, bouclons au travers les pages (logiquement, il n'y en aura qu'une)
 	while ( have_posts() ) : the_post(); 
 ?>
+<section class="generic__desc">
+    <div class="description container mt-5">
+        <h1 class="description_title">
+            <span>FAQ - Foire aux questions</span>
+        </h1>
+        <p class="description_paragraph mx-2 p-lg-5 mt-5">
+            Bienvenue à la foire aux question de l'organisme Architecture sans
+            frontière Québec. À l'intérieur de cette page, vous y trouverez des
+            réponses qui pourront potentiellement répondre aux questions que vous
+            vous posez concernant divers aspects de notre organisme.
+        </p>
+    </div>
+</section>
 
-<article>
-    <?php if (!is_front_page()) : // Si nous ne sommes PAS sur la page d'accueil ?>
-    <h2>
-        <?php the_title(); // Titre de la page ?>
-    </h2>
-    <?php endif; ?>
+<?php
+  $question = new WP_Query('post_type=question');
+  while ($question->have_posts()) : $question->the_post(); 
+?>
+<!-- 👆 Début boucle while -->
+<section class="faq" id="pagefaq">
+    <div class="container text-center pt-5 pb-5">
+        <div class="row justify-content-center ps-2 pe-4">
+            <div class="accordion" id="accordionExample">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="faq-01">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#collapsefaq-01" aria-expanded="true" aria-controls="collapsefaq-01">
+                            <?php the_title(); ?>
+                        </button>
+                    </h2>
 
-    <?php the_content(); // Contenu principal de la page ?>
-</article>
+                    <div id="collapsefaq-01" class="accordion-collapse collapse" aria-labelledby="faq-01"
+                        data-bs-parent="#accordionExample">
+                        <div class="accordion-body text-start">
+                            <p class="texte_01">
+                                <?php the_content(); ?>
+                            </p>
+                            <p class="texte-02">
+                                <?php the_content(); ?>
+                            </p>
+                            <p class="texte_03">
+                                <?php the_content(); ?>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</section>
+<!-- 👇 Fin boucle while -->
+<?php
+  endwhile; 
+  wp_reset_postdata(); 
+?>
 <?php endwhile; // Fermeture de la boucle
 
 else : // Si aucune page n'a été trouvée
 	get_template_part( 'partials/404' ); // Affiche partials/404.php
 endif;
+
+
 
 get_sidebar(); // Affiche le contenu de sidebar.php
 get_footer(); // Affiche footer.php 
