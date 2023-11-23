@@ -378,10 +378,8 @@
   transform: scale(1.1);
 }
 .projects__image {
-  -o-object-fit: cover;
-     object-fit: cover;
-  -o-object-position: center;
-     object-position: center;
+  object-fit: cover;
+  object-position: center;
   height: 100%;
   width: 100%;
   display: block;
@@ -513,10 +511,8 @@
   font-size: 20px;
 }
 .charity__img {
-  -o-object-fit: cover;
-     object-fit: cover;
-  -o-object-position: center;
-     object-position: center;
+  object-fit: cover;
+  object-position: center;
   height: 100%;
   width: 100%;
 }
