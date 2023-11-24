@@ -19,9 +19,9 @@ if ( have_posts() ) : // Est-ce que nous avons des pages à afficher ?
 
 <?php
 
-get_template_part(" partials/genericHero ");
+get_template_part("partials/generichero");
 
-get_template_part(" partials/genericDesc ");
+get_template_part("partials/genericdesc");
 
 ?>
 
