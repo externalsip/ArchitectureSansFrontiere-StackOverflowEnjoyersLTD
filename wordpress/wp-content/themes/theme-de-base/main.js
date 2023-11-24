@@ -3,7 +3,6 @@
 //Animation GSAP sur menu hamburger du nav
 
 
-
 if(document.querySelector(".navbar-toggler") != undefined){
     let hamMenu = document.querySelector(".navbar-toggler");
   
@@ -82,11 +81,33 @@ if(document.querySelector(".navbar-toggler") != undefined){
   /*Animation GSAP dans la page 404*/
   
   if(document.getElementById("page404") != undefined){
-    gsap.timeline()
-      .fromTo(".notFound__container", {y: "80vh"}, {y: 10, duration:1})
-      .to(".titleChar", {y:-10, ease:Sine.InOut, stagger: 0.1, repeat:-1, yoyo:true, duration:0.5})
+
+  //RestAPI for the 404 page
+
+  const titleDiv = document.querySelector(".notFound__title");
+  fetch("wp-json/wp/v2/erreur404")
+  .then(response => response.json())
+  .then(data => {
+  console.log(data);
+  let title = JSON.stringify(data[0].title.rendered);
+  for(let i = 1; i < title.length - 1; i++){
+      const letterContainer = document.createElement("div");
+      letterContainer.classList.add("titleChar");
+      if(title.charAt(i) == " "){
+          letterContainer.innerHTML = "&nbsp"
+      } 
+      else{
+          letterContainer.innerHTML = title.charAt(i);
+      }
+      titleDiv.appendChild(letterContainer);
   }
-  
+
+  });
+      gsap.timeline()
+      .fromTo(".notFound__container", {y: "80vh"}, {y: 10, duration:1})
+      .to(".titleChar", {y:-10, ease:Sine.InOut, stagger: 0.1, repeat:-1, yoyo:true, duration:0.5});
+    
+  }
   
   /*Animation de la timeline avec gsap sur la page histoire*/
   if(document.getElementById("history") != undefined){
@@ -133,3 +154,4 @@ if(document.querySelector(".navbar-toggler") != undefined){
   }
   
   spacingFunction();
+

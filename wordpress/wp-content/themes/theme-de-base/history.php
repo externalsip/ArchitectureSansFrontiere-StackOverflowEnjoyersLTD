@@ -25,12 +25,15 @@ get_template_part("partials/genericdesc");
 
 ?>
 
+<!-- SECTION HISTOIRE -->
+
 <section class="history" id="history">
       <div class="container-fluid history__wrapper p-0">
         <div class="row">
           <div class="timeline mt-5">
             <div class="timeline__line py-1 py-md-2 py-xl-3"></div>
 			<?php 
+			//Loop sur événements de la timeline
 				$eventArguments = array(
 					'post_type' => 'evenementhistoire',
 					'posts_per_page' => 4
@@ -43,7 +46,10 @@ get_template_part("partials/genericdesc");
               <div
                 class="timeline__dot d-flex justify-content-center align-items-center p-1 mt-md-3"
               >
-                <span><?php the_field("annee"); ?></span>
+                <span><?php 
+				//Fetch du ACF annee
+				the_field("annee"); 
+				?></span>
               </div>
               <div class="timeline__event mb-md-3 mb-lg-5">
                 <?php the_title(); ?>
@@ -55,6 +61,7 @@ get_template_part("partials/genericdesc");
 	</div>
           	<div class="col-12 infoContainer">
 				<?php 
+				//Deuxième loop sur les événements historiques, cette fois pour faire appraître les informations sous la timeline.
 					$eventArguments = array(
 						'post_type' => 'evenementhistoire',
 						'posts_per_page' => 4
