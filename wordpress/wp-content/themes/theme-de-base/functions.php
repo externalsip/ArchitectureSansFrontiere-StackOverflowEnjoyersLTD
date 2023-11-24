@@ -76,8 +76,10 @@ add_action('wp_enqueue_scripts', 'add_style_and_js');
 
 // Pour ajouter sur les <li>
 function add_menu_list_item_class($classes, $item, $args) {
+	error_log('List Item Class', 0);
     if (property_exists($args, 'list_item_class')) {
         $classes[] = $args->list_item_class;
+
     }
     return $classes;
   }
