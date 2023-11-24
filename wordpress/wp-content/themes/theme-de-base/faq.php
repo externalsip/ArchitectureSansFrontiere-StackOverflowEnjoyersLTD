@@ -27,23 +27,26 @@ if ( have_posts() ) : // Est-ce que nous avons des pages à afficher ?
 
 <?php
   $question = new WP_Query('post_type=question');
-  while ($question->have_posts()) : $question->the_post(); 
+  $i = 1;
+ 
 ?>
 <!-- 👆 Début boucle while -->
 <section class="faq" id="pagefaq">
     <div class="container text-center pt-5 pb-5">
         <div class="row justify-content-center ps-2 pe-4">
+            <?php while  ($question->have_posts()) : $question->the_post(); ?>
             <div class="accordion" id="accordionExample">
                 <div class="accordion-item">
-                    <h2 class="accordion-header" id="faq-01">
+                    <h2 class="accordion-header" id="faq-01 <?php echo $i ?>">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#collapsefaq-01" aria-expanded="true" aria-controls="collapsefaq-01">
+                            data-bs-target="#collapsefaq-01<?php echo $i ?>" aria-expanded="true"
+                            aria-controls="collapsefaq-01<?php echo $i ?>">
                             <?php the_title(); ?>
                         </button>
                     </h2>
 
-                    <div id="collapsefaq-01" class="accordion-collapse collapse" aria-labelledby="faq-01"
-                        data-bs-parent="#accordionExample">
+                    <div id="collapsefaq-01<?php echo $i ?>" class="accordion-collapse collapse"
+                        aria-labelledby="faq-01<?php echo $i ?>" data-bs-parent="#accordionExample">
                         <div class="accordion-body text-start">
                             <p class="texte_01">
                                 <?php the_content(); ?>
@@ -56,15 +59,18 @@ if ( have_posts() ) : // Est-ce que nous avons des pages à afficher ?
                             </p>
                         </div>
                     </div>
+                    <?php
+$i = $i + 1;
+  endwhile; 
+  wp_reset_postdata(); 
+?>
                 </div>
             </div>
         </div>
 </section>
+
 <!-- 👇 Fin boucle while -->
-<?php
-  endwhile; 
-  wp_reset_postdata(); 
-?>
+
 <?php endwhile; // Fermeture de la boucle
 
 else : // Si aucune page n'a été trouvée
