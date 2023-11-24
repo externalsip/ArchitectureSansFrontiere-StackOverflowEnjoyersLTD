@@ -11,10 +11,6 @@ if ( have_posts() ) : // Est-ce que nous avons des pages à afficher ?
 	// Si oui, bouclons au travers les pages (logiquement, il n'y en aura qu'une)
 	while ( have_posts() ) : the_post(); 
 ?>
-<?php
-  $personnel = new WP_Query('post_type=personnel');
-  $i = 1;
-?>
 <section class="hero_equipe pt-5 pb-5" id="pageequipe">
     <div id="heroGeneric" class="container-fluid genericHero">
         <div class="genericHero__filter"></div>
@@ -33,7 +29,12 @@ if ( have_posts() ) : // Est-ce que nous avons des pages à afficher ?
             </div>
         </div>
         <div id="equipe_direction <?php echo $i ?>" class="row justify-content-center pt-4 pb-4">
-            <?php while ($personnel->have_posts()) : $personnel->the_post();?>
+            <?php
+$featured_posts = get_field('membres_du_personnel');
+if( $featured_posts ): ?>
+            <?php foreach( $featured_posts as $post ): 
+        // Setup this post for WP functions (variable must be named $post).
+        setup_postdata($post); ?>
             <div class="personnel col-8 col-sm-6 col-lg-2 pb-4">
                 <div class="card-direction card">
                     <?php the_post_thumbnail('medium', array('class' => 'card-img-top')) ?>
@@ -46,12 +47,13 @@ if ( have_posts() ) : // Est-ce que nous avons des pages à afficher ?
                 </div>
             </div>
         </div>
-        <?php
-        $i = 1;
-  endwhile; 
-  wp_reset_postdata(); 
-?>
     </div>
+    <?php endforeach; ?>
+
+    <?php 
+// Reset the global post object so that the rest of the page works correctly.
+wp_reset_postdata(); ?>
+    <?php endif; ?>
 </section>
 <?php endwhile; // Fermeture de la boucle
 
