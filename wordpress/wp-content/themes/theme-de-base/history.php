@@ -52,7 +52,7 @@ get_template_part(" partials/genericDesc ");
 			<?php endwhile;
 			wp_reset_postdata(); 
 			?>            
-
+	</div>
           	<div class="col-12 infoContainer">
 				<?php 
 					$eventArguments = array(
