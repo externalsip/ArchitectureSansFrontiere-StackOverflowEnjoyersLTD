@@ -91,7 +91,7 @@ get_header(); // Affiche header.php
     while ($article->have_posts()) : $article->the_post(); ?>
               <div class="swiper-slide actuality__img">
                 <div class="actuality__img__gradient"></div>
-                  <?php the_post_thumbnail('full', array('class' => 'actuality__img_source'));?>
+                  <?php the_post_thumbnail('full', array('class' => 'actuality__img__source'));?>
               </div>
 
 			  <?php 
