@@ -28,13 +28,7 @@ if ( have_posts() ) : // Est-ce que nous avons des pages à afficher ?
                 L'équipe de la direction
             </div>
         </div>
-        <div id="equipe_direction <?php echo $i ?>" class="row justify-content-center pt-4 pb-4">
-            <?php
-$featured_posts = get_field('membres_du_personnel');
-if( $featured_posts ): ?>
-            <?php foreach( $featured_posts as $post ): 
-        // Setup this post for WP functions (variable must be named $post).
-        setup_postdata($post); ?>
+        <div id="equipe_direction" class="row justify-content-center pt-4 pb-4">
             <div class="personnel col-8 col-sm-6 col-lg-2 pb-4">
                 <div class="card-direction card">
                     <?php the_post_thumbnail('medium', array('class' => 'card-img-top')) ?>
@@ -48,12 +42,6 @@ if( $featured_posts ): ?>
             </div>
         </div>
     </div>
-    <?php endforeach; ?>
-
-    <?php 
-// Reset the global post object so that the rest of the page works correctly.
-wp_reset_postdata(); ?>
-    <?php endif; ?>
 </section>
 <?php endwhile; // Fermeture de la boucle
 
