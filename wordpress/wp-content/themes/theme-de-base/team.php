@@ -22,15 +22,65 @@ if ( have_posts() ) : // Est-ce que nous avons des pages à afficher ?
             </div>
         </div>
     </div>
-    <div class="equipe__wrapper container-fluid">
+    <div class="equipe__direction__wrapper container-fluid">
         <div class="row pt-5">
             <div class="equipe__titre col-12 text-center pt-5 pb-2">
                 L'équipe de la direction
             </div>
         </div>
         <div id="equipe_direction" class="row justify-content-center pt-4 pb-4">
+            <?php
+$featured_posts = get_field('membres_du_personnnel');
+if( $featured_posts ): ?>
+            <?php foreach( $featured_posts as $post ):
+                  setup_postdata($post); ?>
             <div class="personnel col-8 col-sm-6 col-lg-2 pb-4">
-                <div class="card-direction card">
+                <div class="card-direction card <?php the_field("classe")?>">
+                    <?php the_post_thumbnail('medium', array('class' => 'card-img-top')) ?>
+                    <div class="row">
+                        <div class="poste-direction card-body">
+                            <h4 class="nom text-center">&nbsp;<?php the_title();?></h4>
+                            <p class="quote text-center"><?php the_content();?></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <?php endforeach; ?>
+
+    <?php 
+wp_reset_postdata(); ?>
+    <?php endif; ?>
+    <div class="equipe__collaborateur__wrapper container-fluid">
+        <div class="row pt-5">
+            <div class="equipe__titre col-12 text-center pt-5 pb-2">
+                Collaboratrices
+            </div>
+        </div>
+        <div id="equipe_collaborateur" class="row justify-content-center pt-4 pb-4">
+            <div class="personnel col-8 col-sm-6 col-lg-2 pb-4">
+                <div class="card-direction card <?php the_field("classe_deux")?>">
+                    <?php the_post_thumbnail('medium', array('class' => 'card-img-top')) ?>
+                    <div class="row">
+                        <div class="poste-direction card-body">
+                            <h4 class="nom text-center">&nbsp;<?php the_title();?></h4>
+                            <p class="quote text-center"><?php the_content();?></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="equipe__administration__wrapper container-fluid">
+        <div class="row pt-5">
+            <div class="equipe__titre col-12 text-center pt-5 pb-2">
+                Le conseil d'administration
+            </div>
+        </div>
+        <div id="equipe_administration" class="row justify-content-center pt-4 pb-4">
+            <div class="personnel col-8 col-sm-6 col-lg-2 pb-4">
+                <div class="card-direction card<?php the_field("classe_trois")?>">
                     <?php the_post_thumbnail('medium', array('class' => 'card-img-top')) ?>
                     <div class="row">
                         <div class="poste-direction card-body">
