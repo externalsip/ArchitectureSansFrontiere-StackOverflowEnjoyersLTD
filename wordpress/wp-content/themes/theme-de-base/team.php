@@ -98,11 +98,11 @@ $publication = array(
                 <div class="personnel col-8 col-sm-6 col-lg-2 pb-4 ps-1 me-3">
                     <div class="card-direction card">
                         <button type="button" class="btn text-start" data-bs-toggle="modal"
-                            data-bs-target="#button_modal">
+                            data-bs-target="#button_modal<?php the_ID()?>">
                             <?php the_post_thumbnail('medium', array('class' => 'card-img-top')) ?>
                         </button>
-                        <div class="modal fade" id="button_modal" tabindex="-1" aria-labelledby="button_modalLabel"
-                            aria-hidden="true">
+                        <div class="modal fade" id="button_modal<?php the_ID()?>" tabindex="-1"
+                            aria-labelledby="button_modalLabel" aria-hidden="true">
                             <div class="modal-dialog modal-lg modal-dialog-centered ps-3">
                                 <div class="modal-content text-center">
                                     <div class="modal-header">
@@ -112,7 +112,7 @@ $publication = array(
                                     <div class="modal-body">
                                         <?php the_post_thumbnail('full', array('class' => 'card-img-top')) ?>
                                         <h4><?php the_title();?></h4>
-                                        <p class="test"><?php the_content();?></p>
+                                        <p class="test"><?php the_field('info');?></p>
                                     </div>
                                 </div>
                             </div>
