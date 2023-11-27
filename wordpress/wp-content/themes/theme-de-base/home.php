@@ -21,7 +21,8 @@ get_header(); // Affiche header.php
                 <?php
                 $slideArguments = array(
                   'post_type' => 'slideheroprincipal',
-                  'posts_per_page' => 4
+                  'posts_per_page' => 4,
+                  'order' => 'ASC'
                 );
                 $heroSlides = new WP_Query($slideArguments);
                 while ($heroSlides->have_posts()) : $heroSlides->the_post(); 
@@ -49,11 +50,14 @@ get_header(); // Affiche header.php
     <section class="projects">
       <div class="projects__wrapper container p-2">
         <div class="row projects__title mt-3 mb-5">
-
-          <div class="col-12 text-center"><?php the_field("titre_projets"); ?></div>
+        <?php $projetCategory = new WP_Query("post_type=projets");
+        $projetCategory->the_post();
+        ?>
+          <div class="col-12 text-center"><?php the_field("titre_de_section"); ?></div>
         </div>
         <div class="row projects__list justify-content-sm-between justify-content-center gy-5 mb-5">		
         <?php
+        wp_reset_postdata();
     $projectArguments = array(
       'post_type' => 'projets',
       'posts_per_page' => 3
@@ -76,7 +80,13 @@ get_header(); // Affiche header.php
     <section class="actuality">
       <div class="actuality__wrapper container pt-2">
         <div class="row actuality__title mb-5 mt-3">
-          <div class="col-12 text-center"><?php the_field("titre_actualites"); ?></div>
+        <?php $articleCategory = new WP_Query("post_type=article");
+        $articleCategory->the_post();
+        ?>
+          <div class="col-12 text-center"><?php the_field("titre_de_section"); ?></div>
+          <?php
+        wp_reset_postdata();
+        ?>
         </div>
         <div class="row p-0">
           <div
@@ -175,17 +185,24 @@ get_header(); // Affiche header.php
     <section class="programs">
       <div class="programs__wrapper container">
         <div class="row mb-5 pt-3">
+
+                  <?php $programCategory = new WP_Query("post_type=programme");
+        $programCategory->the_post();
+        ?>
           <div class="programs__title col-12 text-center">
 			<?php
-       get_field("titre_programmes"); ?>
+       the_field("titre_de_section"); ?>
           </div>
+          <?php
+        wp_reset_postdata();
+        ?>
         </div>
         <div class="row justify-content-evenly">
         <?php 
                                 $programArguments = array(
                                   'post_type' => 'programme',
                                   'posts_per_page' => 7,
-                                  "order" => "DESC"
+                                  "order" => "ASC"
                                 );
                                 $program = new WP_Query($programArguments);
                                 while ($program->have_posts()) : $program->the_post();?>
@@ -219,14 +236,20 @@ get_header(); // Affiche header.php
     <section class="feedback">
       <div class="feedback__wrapper container-">
         <div class="row">
-          <div class="feedback__title col-12 text-center"><?php the_field("titre_temoignages"); ?></div>
+        <?php $projetCategory = new WP_Query("post_type=temoignages");
+        $projetCategory->the_post();
+        ?>
+          <div class="feedback__title col-12 text-center"><?php the_field("titre_de_section"); ?></div>
         </div>
+        <?php
+        wp_reset_postdata();
+        ?>
         <div class="row justify-content-evenly">
 			<?php                                 
         $temoignageArguments = array(
           'post_type' => 'temoignages',
           'posts_per_page' => 7,
-          'order' => 'DESC'
+          'order' => 'ASC'
         );
         $temoignage = new WP_Query($temoignageArguments);
         while ($temoignage->have_posts()) : $temoignage->the_post();?>

@@ -16,16 +16,16 @@ get_template_part(" partials/genericHero ");
 
 get_template_part(" partials/genericDesc ");
 
-?>
+?>  
 
 <section class="articleSwap">
       <div class="container-fluid px-5">
         <div class="row">
           <div class="col-6 text-start">
-            <a class="link"><?php the_field("prochain_programme"); ?></a>
+            <a class="link" src="<?php next_post_link($in_same_term = true); ?>"><?php the_field("prochain_programme"); ?></a>
           </div>
           <div class="col-6 text-end">
-            <a class="link"><?php the_field("dernier_programme"); ?>"</a>
+            <a class="link" src="<?php previous_post_link($in_same_term = true); ?>"><?php the_field("dernier_programme"); ?>"</a>
           </div>
         </div>
       </div>

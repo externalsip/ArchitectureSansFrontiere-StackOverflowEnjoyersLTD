@@ -101,11 +101,15 @@ if(document.querySelector(".navbar-toggler") != undefined){
       }
       titleDiv.appendChild(letterContainer);
   }
+  })
+  .then( animStart => {
+          gsap.timeline()
+    .fromTo(".notFound__container", {y: "80vh"}, {y: 10, duration:1})
+    .to(".titleChar", {y:-10, ease:Sine.InOut, stagger: 0.1, repeat:-1, yoyo:true, duration:0.5});
+  }
 
-  });
-      gsap.timeline()
-      .fromTo(".notFound__container", {y: "80vh"}, {y: 10, duration:1})
-      .to(".titleChar", {y:-10, ease:Sine.InOut, stagger: 0.1, repeat:-1, yoyo:true, duration:0.5});
+  );
+
     
   }
   
