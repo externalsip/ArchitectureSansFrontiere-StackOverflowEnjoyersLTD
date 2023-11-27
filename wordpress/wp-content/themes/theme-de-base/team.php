@@ -6,10 +6,18 @@
  */
 
 get_header(); // Affiche header.php
-
 if ( have_posts() ) : // Est-ce que nous avons des pages à afficher ? 
 	// Si oui, bouclons au travers les pages (logiquement, il n'y en aura qu'une)
 	while ( have_posts() ) : the_post(); 
+?>
+<?php
+
+$publication = array(
+    'post_type' => 'personnel',
+    'posts_per_page' => -1,
+    'order' => 'ASC'
+);
+  $personnel = new WP_Query($publication);
 ?>
 <section class="hero_equipe pt-5 pb-5" id="pageequipe">
     <div id="heroGeneric" class="container-fluid genericHero">
@@ -29,13 +37,11 @@ if ( have_posts() ) : // Est-ce que nous avons des pages à afficher ?
             </div>
         </div>
         <div id="equipe_direction" class="row justify-content-center pt-4 pb-4">
-            <?php
-$featured_posts = get_field('membres_du_personnnel');
-if( $featured_posts ): ?>
-            <?php foreach( $featured_posts as $post ):
-                  setup_postdata($post); ?>
-            <div class="personnel col-8 col-sm-6 col-lg-2 pb-4">
-                <div class="card-direction card <?php the_field("classe")?>">
+            <?php while ($personnel->have_posts()) : $personnel->the_post();       
+                if(get_field("categorie_poste")== "Direction"):
+                ?>
+            <div class="personnel col-8 col-sm-6 col-lg-2 pb-4 ps-1 me-3">
+                <div class="card-direction card">
                     <?php the_post_thumbnail('medium', array('class' => 'card-img-top')) ?>
                     <div class="row">
                         <div class="poste-direction card-body">
@@ -45,53 +51,89 @@ if( $featured_posts ): ?>
                     </div>
                 </div>
             </div>
+            <?php
+ endif;
+  endwhile; 
+?>
         </div>
     </div>
-    <?php endforeach; ?>
-
-    <?php 
-wp_reset_postdata(); ?>
-    <?php endif; ?>
     <div class="equipe__collaborateur__wrapper container-fluid">
-        <div class="row pt-5">
-            <div class="equipe__titre col-12 text-center pt-5 pb-2">
+        <div class="row pt-4">
+            <div class="equipe__titre col-12 text-center pt-2 pb-2">
                 Collaboratrices
             </div>
         </div>
         <div id="equipe_collaborateur" class="row justify-content-center pt-4 pb-4">
-            <div class="personnel col-8 col-sm-6 col-lg-2 pb-4">
-                <div class="card-direction card <?php the_field("classe_deux")?>">
+            <?php while ($personnel->have_posts()) : $personnel->the_post();       
+                if(get_field("categorie_poste")== "Collaboratrices"):
+                ?>
+            <div class="personnel col-8 col-sm-6 col-lg-2 pb-4 ps-1 me-3">
+                <div class="card-direction card">
                     <?php the_post_thumbnail('medium', array('class' => 'card-img-top')) ?>
                     <div class="row">
                         <div class="poste-direction card-body">
                             <h4 class="nom text-center">&nbsp;<?php the_title();?></h4>
-                            <p class="quote text-center"><?php the_content();?></p>
+                            <p class="quote text-center">
+                                <?php the_content();?>
+                            </p>
                         </div>
                     </div>
                 </div>
             </div>
+            <?php
+            endif;
+         endwhile; 
+        ?>
         </div>
-    </div>
-    <div class="equipe__administration__wrapper container-fluid">
-        <div class="row pt-5">
-            <div class="equipe__titre col-12 text-center pt-5 pb-2">
-                Le conseil d'administration
+        <div class="equipe__administration__wrapper container-fluid">
+            <div class="row pt-4">
+                <div class="equipe__titre col-12 text-center pt-2 pb-2">
+                    Le conseil d'administration
+                </div>
             </div>
-        </div>
-        <div id="equipe_administration" class="row justify-content-center pt-4 pb-4">
-            <div class="personnel col-8 col-sm-6 col-lg-2 pb-4">
-                <div class="card-direction card<?php the_field("classe_trois")?>">
-                    <?php the_post_thumbnail('medium', array('class' => 'card-img-top')) ?>
-                    <div class="row">
-                        <div class="poste-direction card-body">
-                            <h4 class="nom text-center">&nbsp;<?php the_title();?></h4>
-                            <p class="quote text-center"><?php the_content();?></p>
+            <div id="equipe_administration" class="row justify-content-center pt-4 pb-4">
+                <?php while ($personnel->have_posts()) : $personnel->the_post();       
+                if(get_field("categorie_poste")== "Administration"):
+                ?>
+                <div class="personnel col-8 col-sm-6 col-lg-2 pb-4 ps-1 me-3">
+                    <div class="card-direction card">
+                        <button type="button" class="btn text-start" data-bs-toggle="modal"
+                            data-bs-target="#button_modal<?php the_ID()?>">
+                            <?php the_post_thumbnail('medium', array('class' => 'card-img-top')) ?>
+                        </button>
+                        <div class="modal fade" id="button_modal<?php the_ID()?>" tabindex="-1"
+                            aria-labelledby="button_modalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-lg modal-dialog-centered ps-3">
+                                <div class="modal-content text-center">
+                                    <div class="modal-header">
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <?php the_post_thumbnail('full', array('class' => 'card-img-top')) ?>
+                                        <h4><?php the_title();?></h4>
+                                        <p class="test"><?php the_field('info');?></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="poste-direction card-body">
+                                <h4 class="nom text-center">&nbsp;<?php the_title();?></h4>
+                                <p class="quote text-center">
+                                    <?php the_content();?>
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
+                <?php
+ endif;
+  endwhile; 
+?>
             </div>
+            <?php wp_reset_postdata(); ?>
         </div>
-    </div>
 </section>
 <?php endwhile; // Fermeture de la boucle
 
@@ -99,6 +141,6 @@ else : // Si aucune page n'a été trouvée
 	get_template_part( 'partials/404' ); // Affiche partials/404.php
 endif;
 
-get_sidebar(); // Affiche le contenu de sidebar.php
+
 get_footer(); // Affiche footer.php 
 ?>
