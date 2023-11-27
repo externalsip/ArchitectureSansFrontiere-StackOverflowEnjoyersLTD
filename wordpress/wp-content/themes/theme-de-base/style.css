@@ -25,7 +25,7 @@ C'est le moment d'effacer ce commentaire et d'écrire du vrai
   width: 100%;
   height: 500px;
   /* the article's thumbnail image here; to be the hero */
-  background-image: url("../../../sources/medias/02_hub_nouvelles/image_06_nouvelle.png");
+  background-image: url("");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -34,7 +34,7 @@ C'est le moment d'effacer ce commentaire et d'écrire du vrai
 .nouvelle_hero .nouvelle_hero_container .nouvelle_hero_image .nouvelle_hero_image_gradient {
   height: 100%;
   width: 100%;
-  background-image: linear-gradient(to bottom, rgb(191, 215, 234), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.534), rgb(0, 0, 0));
+  background-image: linear-gradient(to bottom, rgb(191, 215, 234), rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.5), rgb(0, 0, 0));
 }
 
 .tag_title {
@@ -183,7 +183,6 @@ C'est le moment d'effacer ce commentaire et d'écrire du vrai
   background-position: center;
   margin-left: 15px;
   margin-right: 15px;
-  height: 600px;
 }
 
 .main_content_paragraph2 {
@@ -197,8 +196,6 @@ C'est le moment d'effacer ce commentaire et d'écrire du vrai
   background-size: cover;
   background-position: center;
   margin-right: 15px;
-  width: 300px;
-  height: 396px;
   float: left;
 }
 
@@ -220,11 +217,6 @@ C'est le moment d'effacer ce commentaire et d'écrire du vrai
     display: none;
 }
 */
-.suggested_article {
-  margin-left: 15px;
-  margin-right: 15px;
-}
-
 .line {
   width: calc(100vw - 15px);
   height: 6px;
@@ -328,9 +320,11 @@ C'est le moment d'effacer ce commentaire et d'écrire du vrai
   margin: 20px 0;
 }
 .hero__image {
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   height: 45vmin;
-  object-position: start;
+  -o-object-position: start;
+     object-position: start;
   z-index: 2;
   position: relative;
   width: 100%;
@@ -393,8 +387,10 @@ C'est le moment d'effacer ce commentaire et d'écrire du vrai
   transform: scale(1.1);
 }
 .projects__image {
-  object-fit: cover;
-  object-position: center;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
   height: 100%;
   width: 100%;
   display: block;
@@ -526,8 +522,10 @@ C'est le moment d'effacer ce commentaire et d'écrire du vrai
   font-size: 20px;
 }
 .charity__img {
-  object-fit: cover;
-  object-position: center;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
   height: 100%;
   width: 100%;
 }
@@ -602,8 +600,10 @@ C'est le moment d'effacer ce commentaire et d'écrire du vrai
 .person__img {
   width: 60%;
   aspect-ratio: 1/1;
-  object-position: center;
-  object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .person__text {
   margin-top: 20px;
@@ -687,6 +687,7 @@ C'est le moment d'effacer ce commentaire et d'écrire du vrai
 
 .sponsor {
   text-align: center;
+  max-width: 80%;
 }
 
 .sponsor_title {
