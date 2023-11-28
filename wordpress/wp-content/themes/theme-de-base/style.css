@@ -320,11 +320,9 @@ C'est le moment d'effacer ce commentaire et d'écrire du vrai
   margin: 20px 0;
 }
 .hero__image {
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   height: 45vmin;
-  -o-object-position: start;
-     object-position: start;
+  object-position: start;
   z-index: 2;
   position: relative;
   width: 100%;
@@ -387,10 +385,8 @@ C'est le moment d'effacer ce commentaire et d'écrire du vrai
   transform: scale(1.1);
 }
 .projects__image {
-  -o-object-fit: cover;
-     object-fit: cover;
-  -o-object-position: center;
-     object-position: center;
+  object-fit: cover;
+  object-position: center;
   height: 100%;
   width: 100%;
   display: block;
@@ -522,10 +518,8 @@ C'est le moment d'effacer ce commentaire et d'écrire du vrai
   font-size: 20px;
 }
 .charity__img {
-  -o-object-fit: cover;
-     object-fit: cover;
-  -o-object-position: center;
-     object-position: center;
+  object-fit: cover;
+  object-position: center;
   height: 100%;
   width: 100%;
 }
@@ -600,10 +594,8 @@ C'est le moment d'effacer ce commentaire et d'écrire du vrai
 .person__img {
   width: 60%;
   aspect-ratio: 1/1;
-  -o-object-position: center;
-     object-position: center;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-position: center;
+  object-fit: contain;
 }
 .person__text {
   margin-top: 20px;
@@ -667,6 +659,16 @@ C'est le moment d'effacer ce commentaire et d'écrire du vrai
   color: #1a3a3a;
   font-size: 16px;
   font-weight: normal;
+}
+
+.wp-post-image {
+  width: 200px;
+  height: 200px;
+}
+
+.card-img-top {
+  width: 200px;
+  height: 200px;
 }
 
 .about_text {
