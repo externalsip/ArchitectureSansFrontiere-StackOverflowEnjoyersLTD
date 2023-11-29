@@ -1,7 +1,7 @@
 <?php 
 /**
  * 	Template Name: Service
- * 	Identique à page, mais avec une barre latérale
+ *  Template Post Type: post, page, programme
  */
 
 get_header(); // Affiche header.php
@@ -9,34 +9,30 @@ get_header(); // Affiche header.php
 if ( have_posts() ) : // Est-ce que nous avons des pages à afficher ? 
 	// Si oui, bouclons au travers les pages (logiquement, il n'y en aura qu'une)
 	while ( have_posts() ) : the_post(); 
+
+  get_template_part("partials/generichero");
+
+  get_template_part("partials/genericdesc");
 ?>
-<?php endwhile; // Fermeture de la boucle
-
-get_template_part(" partials/genericHero ");
-
-get_template_part(" partials/genericDesc ");
-
-?>  
 
 <section class="articleSwap">
-      <div class="container-fluid px-5">
+      <div class="container px-5">
         <div class="row">
           <div class="col-6 text-start">
-            <a class="link" src="<?php next_post_link($in_same_term = true); ?>"><?php the_field("prochain_programme"); ?></a>
+          <?php echo next_post_link( '%link')?>
           </div>
           <div class="col-6 text-end">
-            <a class="link" src="<?php previous_post_link($in_same_term = true); ?>"><?php the_field("dernier_programme"); ?>"</a>
+            <?php echo previous_post_link( '%link')?>
           </div>
         </div>
       </div>
     </section>
 
-<?php
+<?php endwhile; // Fermeture de la boucle
 
 else : // Si aucune page n'a été trouvée
 	get_template_part( 'partials/404' ); // Affiche partials/404.php
 endif;
 
-get_sidebar(); // Affiche le contenu de sidebar.php
 get_footer(); // Affiche footer.php 
 ?>

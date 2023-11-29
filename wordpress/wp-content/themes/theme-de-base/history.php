@@ -28,7 +28,7 @@ get_template_part("partials/genericdesc");
 <!-- SECTION HISTOIRE -->
 
 <section class="history" id="history">
-      <div class="container-fluid history__wrapper p-0">
+      <div class="container-fluid history__wrapper">
         <div class="row">
           <div class="timeline mt-5">
             <div class="timeline__line py-1 py-md-2 py-xl-3"></div>
@@ -36,7 +36,8 @@ get_template_part("partials/genericdesc");
 			//Loop sur événements de la timeline
 				$eventArguments = array(
 					'post_type' => 'evenementhistoire',
-					'posts_per_page' => 4
+					'posts_per_page' => 4,
+					'order' => 'ASC'
 				  );
 				  $event = new WP_Query($eventArguments);
 				  while ($event->have_posts()) : $event->the_post(); 
@@ -64,7 +65,8 @@ get_template_part("partials/genericdesc");
 				//Deuxième loop sur les événements historiques, cette fois pour faire appraître les informations sous la timeline.
 					$eventArguments = array(
 						'post_type' => 'evenementhistoire',
-						'posts_per_page' => 4
+						'posts_per_page' => 4,
+						'order' => 'ASC'
 					);
 					$event = new WP_Query($eventArguments);
 					while ($event->have_posts()) : $event->the_post(); 

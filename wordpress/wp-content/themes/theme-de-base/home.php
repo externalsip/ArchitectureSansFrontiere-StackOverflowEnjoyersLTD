@@ -254,7 +254,7 @@ get_header(); // Affiche header.php
         $temoignage = new WP_Query($temoignageArguments);
         while ($temoignage->have_posts()) : $temoignage->the_post();?>
           <div class="col-8 col-md-3 person__wrapper">
-            <?php the_post_thumbnail('full', array('class' => 'person__img')) ?>
+            <?php the_post_thumbnail('full', array('class' => '')) ?>
             <div class="person__text">
               <h2 class="person__name"><?php the_title();?></h2>
               <p class="person__statement">

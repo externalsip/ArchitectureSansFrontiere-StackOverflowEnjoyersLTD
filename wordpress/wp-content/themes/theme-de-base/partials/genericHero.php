@@ -1,4 +1,4 @@
-<div class="container-fluid genericHero" style="background-image: url('<?php get_the_post_thumbnail(); ?>')">
+<div class="container-fluid genericHero" style="background-image: url('<?php the_field("image_hero") ?>')">
     <div class="genericHero__filter"></div>
     <div class="row align-self-end col-12 justify-content-center justify-content-md-start">
         <div
