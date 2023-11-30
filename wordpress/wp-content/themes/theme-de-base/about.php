@@ -31,9 +31,7 @@ if ($aboutText->have_posts()):
 					<?php the_content(array("class" => "description_paragraph mx-2 p-lg-5")); ?>
 				</div>
 				<div class="sponsor">
-					<a href="https://www.asfint.org/en">
-						<?php the_post_thumbnail("full", array("class" => "section_image mb-5", "loading" => "lazy")); ?>
-					</a>
+					<?php the_post_thumbnail("full", array("class" => "section_image mb-5", "loading" => "lazy")); ?>
 				</div>
 			</div>
 		</section>
