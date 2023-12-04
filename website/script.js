@@ -154,6 +154,17 @@ articlesBtn.addEventListener("click", function(){
   
   rowsShownCount++
 
+  fetch("wp-json/wp/v2/article")
+ 		.then(response => response.json())
+  		.then(data => {
+			console.log(data)
+			for(let i = 0; i <= data.length - 1; i++){
+				console.log(data[i]);
+				console.log(data[i].title.rendered);
+				console.log(data[i].content.rendered);
+			}
+		});
+
   for(let i = 0; i <= 2; i++){
     const cardDiv = document.createElement("div"); //  card div
     const cardBodyDiv = document.createElement("div"); //  card body div
