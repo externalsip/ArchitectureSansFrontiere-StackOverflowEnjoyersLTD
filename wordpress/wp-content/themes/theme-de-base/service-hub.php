@@ -7,6 +7,7 @@
 
 get_header(); // Affiche header.php
 
+
 get_template_part("partials/generichero");
 get_template_part("partials/genericdesc");
 
