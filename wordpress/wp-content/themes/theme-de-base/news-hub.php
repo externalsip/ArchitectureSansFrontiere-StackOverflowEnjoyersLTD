@@ -20,12 +20,79 @@ if ( have_posts() ) : // Est-ce que nous avons des pages à afficher ?
 		
 		<?php the_content(); // Contenu principal de la page ?>
 	</article>
+
+
+<?php get_template_part("partials/generichero") ?>
+	<section class="news_container container py-5">
+
+<label for="filter">Filtre:</label>
+
+<select name="filter">
+  <option value="Récent">Récent</option>
+  <option value="Plus vieux">Plus vieux</option>
+</select> 
+
+<div class="row" style="justify-content: center;">
+  <!-- featured article row -->
+
+  <div class="card mx-2 featured news col-8">
+	<img class="card-img-top" src="../../sources/medias/02_hub_nouvelles/image_06_nouvelle.png" alt="Nishiki" style="border-radius: 5px; padding-top: 10px; max-height: 400px; object-fit: cover;" />
+	<div class="card-body">
+	  <h5 class="card-title">Featured article</h5>
+	  <p class="card-text">La conception de l’école primaire pour la communauté massaï d’Enguserosambu est terminée et sa construction s’apprête à commencer. L’équipe de volontaires du Programme du regroupement étudiants pour la coopération internationale de l’ÉTS (PRÉCI) prend désormais le relais en Tanzanie pour participer au chantier.</p>
+	</div>
+  </div>
+</div>
+
+<div class="row gx-5 my-3"> <!-- ROW START -->
+  <div class="col-4">
+	<div class="card news">
+	  <img class="card-img-top" src="../../sources/medias/02_hub_nouvelles/image_06_nouvelle.png" alt="Nishiki" style="border-radius: 15px; padding: 10px; max-height: 200px; object-fit: cover;" />
+	  <div class="card-body">
+		<h5 class="card-title">regular article</h5>
+		<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore [...]</p>
+	  </div>
+	</div>
+  </div>
+
+  <div class="col-4">
+	<div class="card news">
+	  <img class="card-img-top" src="../../sources/medias/02_hub_nouvelles/image_06_nouvelle.png" alt="Nishiki" style="border-radius: 15px; padding: 10px; max-height: 200px; object-fit: cover;" />
+	  <div class="card-body">
+		<h5 class="card-title">regular article</h5>
+		<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore [...]</p>
+	  </div>
+	</div>
+  </div>
+
+  <div class="col-4">
+	<div class="card news">
+	  <img class="card-img-top" src="../../sources/medias/02_hub_nouvelles/image_06_nouvelle.png" alt="Nishiki" style="border-radius: 15px; padding: 10px; max-height: 200px; object-fit: cover;" />
+	  <div class="card-body">
+		<h5 class="card-title">regular article</h5>
+		<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore [...]</p>
+	  </div>
+	</div>
+  </div>
+  
+</div> <!-- ROW END -->
+
+
+  
+</div>
+</section>
+
+<div class="articlesBtnDiv">
+  <button class="articlesBtn" type="button" >
+	Plus d'articles
+  </button>
+</div>
+
 <?php endwhile; // Fermeture de la boucle
 
 else : // Si aucune page n'a été trouvée
 	get_template_part( 'partials/404' ); // Affiche partials/404.php
 endif;
 
-get_sidebar(); // Affiche le contenu de sidebar.php
 get_footer(); // Affiche footer.php 
 ?>

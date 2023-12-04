@@ -320,9 +320,11 @@ C'est le moment d'effacer ce commentaire et d'écrire du vrai
   margin: 20px 0;
 }
 .hero__image {
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   height: 45vmin;
-  object-position: start;
+  -o-object-position: start;
+     object-position: start;
   z-index: 2;
   position: relative;
   width: 100%;
@@ -385,8 +387,10 @@ C'est le moment d'effacer ce commentaire et d'écrire du vrai
   transform: scale(1.1);
 }
 .projects__image {
-  object-fit: cover;
-  object-position: center;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
   height: 100%;
   width: 100%;
   display: block;
@@ -518,8 +522,10 @@ C'est le moment d'effacer ce commentaire et d'écrire du vrai
   font-size: 20px;
 }
 .charity__img {
-  object-fit: cover;
-  object-position: center;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
   height: 100%;
   width: 100%;
 }
@@ -594,8 +600,10 @@ C'est le moment d'effacer ce commentaire et d'écrire du vrai
 .person__img {
   width: 60%;
   aspect-ratio: 1/1;
-  object-position: center;
-  object-fit: contain;
+  -o-object-position: center;
+     object-position: center;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 .person__text {
   margin-top: 20px;
@@ -667,11 +675,12 @@ C'est le moment d'effacer ce commentaire et d'écrire du vrai
   height: 200px;
 }
 */
+/* bruh
 .card-img-top {
   width: 200px;
   height: 200px;
 }
-
+*/
 .about_text {
   margin: 150px 150px;
   margin-bottom: 0px;
@@ -1261,6 +1270,42 @@ C'est le moment d'effacer ce commentaire et d'écrire du vrai
 .description {
   position: relative;
   width: 100%;
+}
+
+.card {
+  transition-duration: 0.5s;
+}
+
+.card:hover {
+  transition-duration: 0.5s;
+  color: #70B074;
+}
+
+.articlesBtnDiv {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 3rem;
+}
+
+.articlesBtn {
+  height: 50px;
+  width: 130px;
+  border-radius: 15px;
+  background-color: #FFFFFF;
+  font-size: 15px;
+  font-weight: 900;
+  color: #70B074;
+  border: none;
+  transition-duration: 0.5s;
+}
+
+.articlesBtn:hover {
+  background-color: #518154;
+  color: #FFFFFF;
+}
+
+main {
+  background-color: #bfd7ea;
 }
 
 * {
