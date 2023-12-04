@@ -138,73 +138,77 @@ spacingFunction();
 
 // Scripts pour la page hub de nouvelle - quoc huy
 
-let articlesBtn = document.querySelector(".articlesBtnDiv"); // bouton plus d'articles
-let rowsShownCount = 1;
+if (document.querySelector(".articlesBtnDiv") != null) {
+  let articlesBtn = document.querySelector(".articlesBtnDiv"); // bouton plus d'articles
+  let rowsShownCount = 1;
 
-articlesBtn.addEventListener("click", function () {
-  const parentSection = document.querySelector(".news_container");
-  const rowDiv = document.createElement("div"); //  row div
+  articlesBtn.addEventListener("click", function () {
+    const parentSection = document.querySelector(".news_container");
+    const rowDiv = document.createElement("div"); //  row div
 
-  const rowStartComment = document.createComment("ROW START");
-  const rowEndComment = document.createComment("ROW END");
+    const rowStartComment = document.createComment("ROW START");
+    const rowEndComment = document.createComment("ROW END");
 
-  parentSection.appendChild(rowStartComment);
-  parentSection.appendChild(rowDiv);
+    parentSection.appendChild(rowStartComment);
+    parentSection.appendChild(rowDiv);
 
-  rowDiv.classList.add("row");
-  rowDiv.classList.add("gx-5");
-  rowDiv.classList.add("my-3");
+    rowDiv.classList.add("row");
+    rowDiv.classList.add("gx-5");
+    rowDiv.classList.add("my-3");
 
-  rowsShownCount++;
+    rowsShownCount++;
 
-  for (let i = 0; i <= 2; i++) {
-    const cardDiv = document.createElement("div"); //  card div
-    const cardBodyDiv = document.createElement("div"); //  card body div
-    const imgCard = document.createElement("img"); // img
-    const h5Title = document.createElement("h5"); // h5 title in the cards
-    const pCard = document.createElement("p"); // paragraph element in cards
-    //console.log("printed " + (i+1) + " times");
+    for (let i = 0; i <= 2; i++) {
+      const cardDiv = document.createElement("div"); //  card div
+      const cardBodyDiv = document.createElement("div"); //  card body div
+      const imgCard = document.createElement("img"); // img
+      const h5Title = document.createElement("h5"); // h5 title in the cards
+      const pCard = document.createElement("p"); // paragraph element in cards
+      //console.log("printed " + (i+1) + " times");
 
-    const colDiv = document.createElement("div"); //  col div
-    rowDiv.appendChild(colDiv);
-    colDiv.appendChild(cardDiv); // create col, which contains the card
-    colDiv.classList.add("col-4");
-    cardDiv.classList.add("card");
-    cardDiv.classList.add("news");
-    cardDiv.appendChild(imgCard);
-    imgCard.classList.add("card-img-top");
-    imgCard.setAttribute(
-      "src",
-      "../../sources/medias/02_hub_nouvelles/image_06_nouvelle.png"
-    );
-    imgCard.setAttribute(
-      "style",
-      "border-radius: 15px; padding: 10px; max-height: 200px; object-fit: cover;"
-    );
-    cardDiv.appendChild(cardBodyDiv);
-    cardBodyDiv.appendChild(h5Title);
-    h5Title.classList.add("card-title");
-    cardBodyDiv.classList.add("card-body");
-    cardBodyDiv.appendChild(pCard);
-    pCard.classList.add("card-text");
-  }
+      const colDiv = document.createElement("div"); //  col div
+      rowDiv.appendChild(colDiv);
+      colDiv.appendChild(cardDiv); // create col, which contains the card
+      colDiv.classList.add("col-4");
+      cardDiv.classList.add("card");
+      cardDiv.classList.add("news");
+      cardDiv.appendChild(imgCard);
+      imgCard.classList.add("card-img-top");
+      imgCard.setAttribute(
+        "src",
+        "../../sources/medias/02_hub_nouvelles/image_06_nouvelle.png"
+      );
+      imgCard.setAttribute(
+        "style",
+        "border-radius: 15px; padding: 10px; max-height: 200px; object-fit: cover;"
+      );
+      cardDiv.appendChild(cardBodyDiv);
+      cardBodyDiv.appendChild(h5Title);
+      h5Title.classList.add("card-title");
+      cardBodyDiv.classList.add("card-body");
+      cardBodyDiv.appendChild(pCard);
+      pCard.classList.add("card-text");
+    }
 
-  parentSection.appendChild(rowEndComment);
+    parentSection.appendChild(rowEndComment);
 
-  if (rowsShownCount == 4) {
-    articlesBtn.setAttribute("style", "display: none; padding-bottom: 0px;");
-    console.log("remove button");
-  }
-  // console.log(rowsShownCount);
-  // console.log("new row of articles");
+    if (rowsShownCount == 4) {
+      articlesBtn.setAttribute("style", "display: none; padding-bottom: 0px;");
+      console.log("remove button");
+    }
+    // console.log(rowsShownCount);
+    // console.log("new row of articles");
+  });
+}
+
+const creditBar = document.querySelector("#credits");
+
+const close = document.querySelector("#close");
+
+close.addEventListener("click", () => {
+  creditBar.style.display = "none";
+  localStorage.setItem("close", close);
 });
-
-function myBanner() {
-  document.getElementsByClassName("credits").innerHTML;
-  let x = document.getElementsByClassName("credits");
-  if (x.style.display === "none") {
-    x.style.display = "block";
-  } else {
-    x.style.display = "none";
-  }
+if (localStorage.getItem("close") != null) {
+  creditBar.style.display = "none";
 }

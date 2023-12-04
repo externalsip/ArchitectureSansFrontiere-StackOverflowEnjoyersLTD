@@ -378,13 +378,13 @@
 .credits {
   text-align: center;
   position: fixed;
+  padding-right: 35px;
   left: 20%;
   border-radius: 0 0 10px 10px;
   background-color: col.$VertFor;
-  width: 60%;
+  width: 61%;
   z-index: 999999999;
   font-weight: 500;
-  cursor: pointer;
   //height: 100px;
 }
 .credit_site {
@@ -394,9 +394,24 @@
   font-size: 15px;
 }
 .asfq {
+  cursor: pointer;
   font-size: 15px;
   color: white;
 }
 .asfq:hover {
+  color: col.$Noir;
+}
+.bi-x {
+  position: absolute;
+  top: -17px;
+  right: 20px;
+  z-index: 999999999999999999999999999999999999;
+  cursor: pointer;
+  width: 20px;
+  font-size: 30px !important;
+  color: white;
+  font-weight: bolder;
+}
+.bi-x:hover {
   color: col.$Noir;
 }
