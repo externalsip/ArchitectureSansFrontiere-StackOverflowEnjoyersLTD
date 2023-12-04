@@ -16,31 +16,22 @@ if ( have_posts() ) : // Est-ce que nous avons des pages à afficher ?
 ?>
 
 <section class="generic__desc">
-    <div class="description container mt-2">
-        <h1 id="title_programs" class="description_title pt-3">
-            <span>Nos programmes</span>
-        </h1>
-        <p class="description_paragraph mx-5 p-lg-5 mt-5">
+    <div class="programs__wrapper container">
+        <div class="row mb-5 pt-3">
 
-        </p>
-    </div>
-</section>
-<div class="programs__wrapper container">
-    <div class="row mb-5 pt-3">
-
-        <?php $programCategory = new WP_Query("post_type=programme");
+            <?php $programCategory = new WP_Query("post_type=programme");
         $programCategory->the_post();
         ?>
-        <div class="programs__title col-12 text-center">
-            <?php
+            <div class="programs__title col-12 text-center">
+                <?php
        the_field("titre_de_section"); ?>
-        </div>
-        <?php
+            </div>
+            <?php
         wp_reset_postdata();
         ?>
-    </div>
-    <div class="row justify-content-evenly">
-        <?php
+        </div>
+        <div class="row justify-content-evenly">
+            <?php
                                 $programArguments = array(
                                   'post_type' => 'programme',
                                   'posts_per_page' => 7,
@@ -52,8 +43,8 @@ if ( have_posts() ) : // Est-ce que nous avons des pages à afficher ?
          endwhile;
           wp_reset_postdata();
           ?>
+        </div>
     </div>
-</div>
 </section>
 
 <?php endwhile; // Fermeture de la boucle
