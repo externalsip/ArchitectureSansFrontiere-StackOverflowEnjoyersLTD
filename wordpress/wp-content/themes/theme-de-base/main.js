@@ -161,92 +161,112 @@ if(document.querySelector(".navbar-toggler") != undefined){
 
 // Scripts pour la page hub de nouvelle - quoc huy
 
-if(document.querySelector(".articlesBtnDiv") != null){
+if(document.querySelector(".articlesBtnDiv") != undefined){
   let articlesBtn = document.querySelector(".articlesBtnDiv"); // bouton plus d'articles
-  let rowsShownCount = 1
+let rowsShownCount = 1;
+
+let loopIndex = 0;
+
+let wasLastRow = false;
+
+articlesBtn.addEventListener("click", function(){
   
-  //remove "/ArchitectureSansFrontiere-StackOverflowEnjoyersLTD" when in online version 🎂❤😁😉🙌🤦‍♀️🤦‍♀️🙌😉🙌🤣👍😉🙌🙌🙌😉🤞😁🤞😁🌹🙌✔ß
-      fetch("/ArchitectureSansFrontiere-StackOverflowEnjoyersLTD/wordpress/wp-json/wp/v2/article")
-      .then(response => response.json())
-       .then(data => {
-       console.log(data);
-       for(let i = 0; i <= data.length - 1; i++){
-         // console.log(data[i]);
-         console.log(data[i].title.rendered);
-         console.log(data[i].content.rendered);
-       }
-     });
+  const parentSection = document.querySelector(".news_container");
+  const rowDiv = document.createElement("div"); //  row div
+
+  const rowStartComment = document.createComment("ROW START");
+  const rowEndComment = document.createComment("ROW END");
+
+  parentSection.appendChild(rowStartComment);
+  parentSection.appendChild(rowDiv);
   
-  articlesBtn.addEventListener("click", function(){
+  rowDiv.classList.add("row");
+  rowDiv.classList.add("gx-5");
+  rowDiv.classList.add("my-3");
+
+  
+  rowsShownCount++
+
+
     
-    const parentSection = document.querySelector(".news_container");
-    const rowDiv = document.createElement("div"); //  row div
-    
-    const rowStartComment = document.createComment("ROW START");
-    const rowEndComment = document.createComment("ROW END");
-  
-    parentSection.appendChild(rowStartComment);
-    parentSection.appendChild(rowDiv);
-    
-    rowDiv.classList.add("row");
-    rowDiv.classList.add("gx-5");
-    rowDiv.classList.add("my-3");
-  
-    
-    rowsShownCount++
-  
-    for(let i = 0; i <= 2; i++){
-      const cardDiv = document.createElement("div"); //  card div
-      const cardBodyDiv = document.createElement("div"); //  card body div
-      const imgCard= document.createElement("img"); // img
-      const h5Title = document.createElement("h5"); // h5 title in the cards
-      const pCard = document.createElement("p"); // paragraph element in cards
+
+    //remove "/ArchitectureSansFrontiere-StackOverflowEnjoyersLTD" when in online version 🎂❤😁😉🙌🤦‍♀️🤦‍♀️🙌😉🙌🤣👍😉🙌🙌🙌😉🤞😁🤞😁🌹🙌✔
+    fetch("/ArchitectureSansFrontiere-StackOverflowEnjoyersLTD/wordpress/wp-json/wp/v2/article?_embed")
+    .then(response => response.json())
+     .then(data => {
+
       //console.log("printed " + (i+1) + " times");  
-  
-      
-  
-      
-      const colDiv = document.createElement("div"); //  col div
-      rowDiv.appendChild(colDiv);
-      colDiv.appendChild(cardDiv); // create col, which contains the card
-      colDiv.classList.add("col-4");  
-      cardDiv.classList.add("card");
-      cardDiv.classList.add("news");
-      cardDiv.appendChild(imgCard);
-      imgCard.classList.add("card-img-top");
-      imgCard.setAttribute("src", "../../sources/medias/02_hub_nouvelles/image_06_nouvelle.png");
-      imgCard.setAttribute("style", "border-radius: 15px; padding: 10px; max-height: 200px; object-fit: cover;");
-      cardDiv.appendChild(cardBodyDiv);
-      cardBodyDiv.appendChild(h5Title);
-      h5Title.classList.add("card-title");
-      cardBodyDiv.classList.add("card-body");
-      cardBodyDiv.appendChild(pCard);
-      pCard.classList.add("card-text");
-    }
-    
-    parentSection.appendChild(rowEndComment);
-    
-      if (rowsShownCount == 4){
-        articlesBtn.setAttribute("style", "display: none; padding-bottom: 0px;");
-        console.log("remove button");
+     console.log(data);
+     for(let i = loopIndex; i <= loopIndex + 2; i++){
+      if(loopIndex < data.length){
+        console.log(loopIndex);
+        const cardDiv = document.createElement("div"); //  card div
+        const cardBodyDiv = document.createElement("div"); //  card body div
+        const imgCard= document.createElement("img"); // img
+        const h5Title = document.createElement("h5"); // h5 title in the cards
+        const pCard = document.createElement("p"); // paragraph element in cards
+        loopIndex++;
+        // console.log(data[i]);
+        // console.log(data[i].title.rendered);
+        // console.log(data[i].content.rendered);
+        // console.log(data[i].link);
+        console.log(data[i]._embedded['wp:featuredmedia'][0].source_url);
+        const colDiv = document.createElement("div"); //  col div
+
+        rowDiv.appendChild(colDiv);
+        colDiv.appendChild(cardDiv); // create col, which contains the card
+        colDiv.classList.add("col-4");  
+        
+        cardDiv.classList.add("card");
+        cardDiv.classList.add("news");
+        imgCard.classList.add("card-img-top");
+        imgCard.setAttribute("src", data[i]._embedded['wp:featuredmedia'][0].source_url);
+        imgCard.setAttribute("style", "border-radius: 15px; padding: 10px; max-height: 200px; object-fit: cover;");
+
+        cardDiv.appendChild(imgCard);
+ 
+        cardDiv.appendChild(cardBodyDiv);
+        console.log(data[i].title.rendered);
+        h5Title.innerHTML = data[i].title.rendered;
+        h5Title.classList.add("card-title");
+        cardBodyDiv.appendChild(h5Title);
+
+        cardBodyDiv.classList.add("card-body");
+
+        pCard.innerHTML = data[i].content.rendered;
+        pCard.classList.add("card-text");
+        
+        cardBodyDiv.appendChild(pCard);
+ 
       }
-      // console.log(rowsShownCount);
-      // console.log("new row of articles");
+      else{
+        wasLastRow = true;
+      }
+
+        parentSection.appendChild(rowEndComment);
+
+        if (rowsShownCount == 5){
+          articlesBtn.setAttribute("style", "display: none; padding-bottom: 0px;");
+          console.log("remove button");
+        }
+      }
+
+       // console.log(rowsShownCount);
+       // console.log("new row of articles");
+   });
   });
 }
 
-const creditBar = document.querySelector("#credits");
 
-const close = document.querySelector("#close");
+  
+   const creditBar = document.querySelector("#credits");
 
-close.addEventListener("click", () => {
-  creditBar.style.display = "none";
-  localStorage.setItem("close", close);
-});
-if (localStorage.getItem("close") != null) {
-  creditBar.style.display = "none";
-}
-
-
-
-
+   const close = document.querySelector("#close");
+   
+   close.addEventListener("click", () => {
+     creditBar.style.display = "none";
+     localStorage.setItem("close", close);
+   });
+   if (localStorage.getItem("close") != null) {
+     creditBar.style.display = "none";
+   }
