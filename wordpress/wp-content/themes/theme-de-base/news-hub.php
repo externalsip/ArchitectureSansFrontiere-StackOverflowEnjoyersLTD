@@ -35,12 +35,8 @@ if ( have_posts() ) : // Est-ce que nous avons des pages à afficher ?
 <div class="row" style="justify-content: center;">
   <!-- featured article row -->
 
-  <div class="card mx-2 featured news col-8">
-	<img class="card-img-top" src="../../sources/medias/02_hub_nouvelles/image_06_nouvelle.png" alt="Nishiki" style="border-radius: 5px; padding-top: 10px; max-height: 400px; object-fit: cover;" />
-	<div class="card-body">
-	  <h5 class="card-title">Featured article</h5>
-	  <p class="card-text">La conception de l’école primaire pour la communauté massaï d’Enguserosambu est terminée et sa construction s’apprête à commencer. L’équipe de volontaires du Programme du regroupement étudiants pour la coopération internationale de l’ÉTS (PRÉCI) prend désormais le relais en Tanzanie pour participer au chantier.</p>
-	</div>
+  <div class="card mx-2 featured news col-8" id="featured">
+
   </div>
 </div>
 
