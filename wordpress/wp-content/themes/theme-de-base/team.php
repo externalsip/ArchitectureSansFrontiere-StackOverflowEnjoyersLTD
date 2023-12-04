@@ -11,15 +11,7 @@ if ( have_posts() ) : // Est-ce que nous avons des pages à afficher ?
 	while ( have_posts() ) : the_post(); 
 ?>
 
-<?php
 
-$publication = array(
-    'post_type' => 'personnel',
-    'posts_per_page' => -1,
-    'order' => 'ASC'
-);
-  $personnel = new WP_Query($publication);
-?>
 <section class="hero_equipe pt-5 pb-5" id="pageequipe">
     <div id="heroGeneric" class="container-fluid genericHero">
         <div class="genericHero__filter"></div>
@@ -31,12 +23,22 @@ $publication = array(
             </div>
         </div>
     </div>
+
     <div class="equipe__direction__wrapper container-fluid">
         <div class="row pt-5">
             <div class="equipe__titre col-12 text-center pt-5 pb-2">
                 L'équipe de la direction
             </div>
         </div>
+        <?php
+
+$publication = array(
+    'post_type' => 'personnel',
+    'posts_per_page' => -1,
+    'order' => 'ASC'
+);
+  $personnel = new WP_Query($publication);
+?>
         <div id="equipe_direction" class="row justify-content-center pt-4 pb-4">
             <?php while ($personnel->have_posts()) : $personnel->the_post();       
                 if(get_field("categorie_poste")== "Direction"):
