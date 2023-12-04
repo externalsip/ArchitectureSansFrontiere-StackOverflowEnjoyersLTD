@@ -55,3 +55,29 @@ C'est le moment d'effacer ce commentaire et d'écrire du vrai
  a:hover{
    text-decoration: underline;
  }
+
+ .credits {
+  text-align: center;
+  position: fixed;
+  left: 20%;
+  border-radius: 0 0 10px 10px;
+  background-color: col.$VertFor;
+  width: 60%;
+  z-index: 999999999;
+  font-weight: 500;
+  cursor: pointer;
+  //height: 100px;
+}
+.credit_site {
+  color: white;
+  padding-top: 3px;
+  margin: 0;
+  font-size: 15px;
+}
+.asfq {
+  font-size: 15px;
+  color: white;
+}
+.asfq:hover {
+  color: col.$Noir;
+}

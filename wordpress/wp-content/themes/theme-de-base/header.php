@@ -44,6 +44,8 @@
 </head>
 
 <body 
+
+
 	<?php body_class(); 
 	/* Applique une classe contextuel sur le body
 		 ex: sur la page d'accueil vous aurez la classe "home"
@@ -53,6 +55,7 @@
 >
 
 <header>
+  <?php get_template_part("partials/bannertemplate"); ?>
 	<nav
   class="navbar navbar-expand-md fixed-top"
   style="background-color: #70b074"
@@ -79,17 +82,14 @@
 	  <?php 
 		// Affiche un menu si dans le tableau de bord un menu a été défini dans cet emplacement
 		wp_nav_menu( array( 'theme_location' => 'main-menu',
-		'menu_class' => 'navbar-nav align-self-md-end align-items-end ml-auto col-md-9',
+		'menu_class' => 'navbar-nav align-self-md-end align-items-end ml-auto col-md-10',
 		'list_item_class' => 'nav-item',
 		'link_item_class' => 'nav-link', ) );
 		?>
       <div class="nav_end col-md-3">
-        <button type="button" class="charityBtn col-3 col-md-6 p-1">
+        <button type="button" class="charityBtn col-2 col-md-6 p-1">
           Faire un don
         </button>
-        <div class="nav-item">
-          <a class="nav-link" href="#">EN</a>
-        </div>
       </div>
     </div>
   </div>

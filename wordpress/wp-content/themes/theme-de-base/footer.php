@@ -75,7 +75,7 @@
 
           <div class="col-12 col-lg-3 pt-2 pb-3">
             <div class="logo_partenaire">
-              <p class="presentation">Notre partenaire fondateur</p>
+              <p class="presentation">[:fr]Notre partenaire fondateur</p>
 
               <img src="<?php bloginfo('template_url'); ?>/images/footer/logo_partenaire.png" class="partenaire" alt="logo_partenaire">
             </div>
