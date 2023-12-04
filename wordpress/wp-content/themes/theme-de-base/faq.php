@@ -10,6 +10,7 @@ get_header(); // Affiche header.php
 get_template_part("partials/generichero");
 get_template_part("partials/genericdesc");
 
+
 if ( have_posts() ) : // Est-ce que nous avons des pages à afficher ? 
 	// Si oui, bouclons au travers les pages (logiquement, il n'y en aura qu'une)
 	while ( have_posts() ) : the_post(); 
