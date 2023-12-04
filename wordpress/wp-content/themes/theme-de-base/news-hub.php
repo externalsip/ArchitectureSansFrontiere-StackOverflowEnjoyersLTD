@@ -27,9 +27,9 @@ if ( have_posts() ) : // Est-ce que nous avons des pages à afficher ?
 
 <label for="filter">Filtre:</label>
 
-<select name="filter">
-  <option value="Récent">Récent</option>
-  <option value="Plus vieux">Plus vieux</option>
+<select name="filter" id="filterDropdown">
+  <option value="newest">Récent</option>
+  <option value="oldest">Plus vieux</option>
 </select> 
 
 <div class="row" style="justify-content: center;">
@@ -41,7 +41,14 @@ if ( have_posts() ) : // Est-ce que nous avons des pages à afficher ?
 </div>
 
 </div>
+
+<div class="row gx-5 my-3" id="articleContainer">
+
+
+</div> 
 </section>
+
+
 
 <div class="articlesBtnDiv">
   <button class="articlesBtn" type="button" >
