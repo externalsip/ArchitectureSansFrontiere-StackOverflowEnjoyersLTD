@@ -609,6 +609,34 @@
     background-color: #BFD7EA;
   }
 }
+.credits {
+  text-align: center;
+  position: fixed;
+  left: 20%;
+  border-radius: 0 0 10px 10px;
+  background-color: #518154;
+  width: 60%;
+  z-index: 999999999;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.credit_site {
+  color: white;
+  padding-top: 3px;
+  margin: 0;
+  font-size: 15px;
+}
+
+.asfq {
+  font-size: 15px;
+  color: white;
+}
+
+.asfq:hover {
+  color: #000;
+}
+
 .notFound {
   width: 100vw;
   height: 100vh;

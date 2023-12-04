@@ -45,7 +45,7 @@ $publication = array(
                 <div class="card-direction card">
                     <button type="button" class="btn text-start" data-bs-toggle="modal"
                         data-bs-target="#button_modal<?php the_ID()?>">
-                        <?php the_post_thumbnail('medium', array('class' => 'card-img-top')) ?>
+                        <?php the_post_thumbnail('medium', array('class' => 'card-img-top team_img')) ?>
                     </button>
                     <div class="modal fade" id="button_modal<?php the_ID()?>" tabindex="-1"
                         aria-labelledby="button_modalLabel" aria-hidden="true">
@@ -56,7 +56,7 @@ $publication = array(
                                         aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
-                                    <?php the_post_thumbnail('large', array('class' => 'card-img-top')) ?>
+                                    <?php the_post_thumbnail('large', array('class' => 'card-img-top team_img')) ?>
                                     <h4><?php the_title();?></h4>
                                     <p class="test"><?php the_field('info');?></p>
                                 </div>
@@ -93,7 +93,7 @@ $publication = array(
                 <div class="card-direction card">
                     <button type="button" class="btn text-start" data-bs-toggle="modal"
                         data-bs-target="#button_modal<?php the_ID()?>">
-                        <?php the_post_thumbnail('medium', array('class' => 'card-img-top')) ?>
+                        <?php the_post_thumbnail('medium', array('class' => 'card-img-top team_img')) ?>
                     </button>
                     <div class="modal fade" id="button_modal<?php the_ID()?>" tabindex="-1"
                         aria-labelledby="button_modalLabel" aria-hidden="true">
@@ -104,7 +104,7 @@ $publication = array(
                                         aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
-                                    <?php the_post_thumbnail('large', array('class' => 'card-img-top')) ?>
+                                    <?php the_post_thumbnail('large', array('class' => 'card-img-top team_img')) ?>
                                     <h4><?php the_title();?></h4>
                                     <p class="test"><?php the_field('info');?></p>
                                 </div>
@@ -140,7 +140,7 @@ $publication = array(
                     <div class="card-direction card">
                         <button type="button" class="btn text-start" data-bs-toggle="modal"
                             data-bs-target="#button_modal<?php the_ID()?>">
-                            <?php the_post_thumbnail('medium', array('class' => 'card-img-top')) ?>
+                            <?php the_post_thumbnail('medium', array('class' => 'card-img-top team_img')) ?>
                         </button>
                         <div class="modal fade" id="button_modal<?php the_ID()?>" tabindex="-1"
                             aria-labelledby="button_modalLabel" aria-hidden="true">
@@ -151,7 +151,7 @@ $publication = array(
                                             aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
-                                        <?php the_post_thumbnail('large', array('class' => 'card-img-top')) ?>
+                                        <?php the_post_thumbnail('large', array('class' => 'card-img-top team_img')) ?>
                                         <h4><?php the_title();?></h4>
                                         <p class="test"><?php the_field('info');?></p>
                                     </div>
