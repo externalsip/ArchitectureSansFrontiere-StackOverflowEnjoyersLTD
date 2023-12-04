@@ -44,41 +44,6 @@ if ( have_posts() ) : // Est-ce que nous avons des pages à afficher ?
   </div>
 </div>
 
-<div class="row gx-5 my-3"> <!-- ROW START -->
-  <div class="col-4">
-	<div class="card news">
-	  <img class="card-img-top" src="../../sources/medias/02_hub_nouvelles/image_06_nouvelle.png" alt="Nishiki" style="border-radius: 15px; padding: 10px; max-height: 200px; object-fit: cover;" />
-	  <div class="card-body">
-		<h5 class="card-title">regular article</h5>
-		<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore [...]</p>
-	  </div>
-	</div>
-  </div>
-
-  <div class="col-4">
-	<div class="card news">
-	  <img class="card-img-top" src="../../sources/medias/02_hub_nouvelles/image_06_nouvelle.png" alt="Nishiki" style="border-radius: 15px; padding: 10px; max-height: 200px; object-fit: cover;" />
-	  <div class="card-body">
-		<h5 class="card-title">regular article</h5>
-		<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore [...]</p>
-	  </div>
-	</div>
-  </div>
-
-  <div class="col-4">
-	<div class="card news">
-	  <img class="card-img-top" src="../../sources/medias/02_hub_nouvelles/image_06_nouvelle.png" alt="Nishiki" style="border-radius: 15px; padding: 10px; max-height: 200px; object-fit: cover;" />
-	  <div class="card-body">
-		<h5 class="card-title">regular article</h5>
-		<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore [...]</p>
-	  </div>
-	</div>
-  </div>
-  
-</div> <!-- ROW END -->
-
-
-  
 </div>
 </section>
 
