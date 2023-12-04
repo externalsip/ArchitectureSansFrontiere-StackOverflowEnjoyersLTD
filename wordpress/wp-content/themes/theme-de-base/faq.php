@@ -16,6 +16,8 @@ if ( have_posts() ) : // Est-ce que nous avons des pages à afficher ?
 	while ( have_posts() ) : the_post(); 
 ?>
 <section class="generic__desc">
+    <!--
+ 
     <div class="description container mt-5">
         <h1 class="description_title">
             <span>FAQ - Foire aux questions</span>
@@ -28,54 +30,55 @@ if ( have_posts() ) : // Est-ce que nous avons des pages à afficher ?
         </p>
     </div>
 </section>
+ -->
 
-<?php
+    <?php
   $question = new WP_Query('post_type=question');
   $i = 1;
  
 ?>
-<!-- 👆 Début boucle while -->
-<section class="faq" id="pagefaq">
-    <div class="container text-center pt-5 pb-5">
-        <div class="row justify-content-center ps-2 pe-4">
-            <?php while  ($question->have_posts()) : $question->the_post(); ?>
-            <div class="accordion" id="accordionExample">
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="faq-01 <?php echo $i ?>">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#collapsefaq-01<?php echo $i ?>" aria-expanded="true"
-                            aria-controls="collapsefaq-01<?php echo $i ?>">
-                            <?php the_title(); ?>
-                        </button>
-                    </h2>
+    <!-- 👆 Début boucle while -->
+    <section class="faq" id="pagefaq">
+        <div class="container text-center pt-5 pb-5">
+            <div class="row justify-content-center ps-2 pe-4">
+                <?php while  ($question->have_posts()) : $question->the_post(); ?>
+                <div class="accordion" id="accordionExample">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="faq-01 <?php echo $i ?>">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapsefaq-01<?php echo $i ?>" aria-expanded="true"
+                                aria-controls="collapsefaq-01<?php echo $i ?>">
+                                <?php the_title(); ?>
+                            </button>
+                        </h2>
 
-                    <div id="collapsefaq-01<?php echo $i ?>" class="accordion-collapse collapse"
-                        aria-labelledby="faq-01<?php echo $i ?>" data-bs-parent="#accordionExample">
-                        <div class="accordion-body text-start">
-                            <p class="texte_01">
-                                <?php the_content(); ?>
-                            </p>
-                            <p class="texte-02">
-                                <?php the_content(); ?>
-                            </p>
-                            <p class="texte_03">
-                                <?php the_content(); ?>
-                            </p>
+                        <div id="collapsefaq-01<?php echo $i ?>" class="accordion-collapse collapse"
+                            aria-labelledby="faq-01<?php echo $i ?>" data-bs-parent="#accordionExample">
+                            <div class="accordion-body text-start">
+                                <p class="texte_01">
+                                    <?php the_content(); ?>
+                                </p>
+                                <p class="texte-02">
+                                    <?php the_content(); ?>
+                                </p>
+                                <p class="texte_03">
+                                    <?php the_content(); ?>
+                                </p>
+                            </div>
                         </div>
-                    </div>
-                    <?php
+                        <?php
 $i = $i + 1;
   endwhile; 
   wp_reset_postdata(); 
 ?>
+                    </div>
                 </div>
             </div>
-        </div>
-</section>
+    </section>
 
-<!-- 👇 Fin boucle while -->
+    <!-- 👇 Fin boucle while -->
 
-<?php endwhile; // Fermeture de la boucle
+    <?php endwhile; // Fermeture de la boucle
 
 else : // Si aucune page n'a été trouvée
 	get_template_part( 'partials/404' ); // Affiche partials/404.php
