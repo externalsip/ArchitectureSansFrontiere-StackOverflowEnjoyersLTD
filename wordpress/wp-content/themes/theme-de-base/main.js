@@ -257,7 +257,7 @@ articlesBtn.addEventListener("click", function(){
     .then(response => response.json())
      .then(data => {
       console.log(data.length/2);
-
+//i = length de data divisé par 2 pour afficher la moitié des articles de manière réactive.
       for(let i = Math.round(data.length/2); i <= data.length; i++){
 
          const cardDiv = document.createElement("div"); //  card div
