@@ -24,11 +24,29 @@ if ( have_posts() ) : // Est-ce que nous avons des pages à afficher ?
         </div>
     </div>
 
+    <?php
+
+$titleOne = array(
+    'post_type' => 'equipe',
+    'posts_per_page' => -1,
+    'order' => 'ASC'
+);
+  $team = new WP_Query($titleOne);
+?>
+
     <div class="equipe__direction__wrapper container-fluid">
+        <?php while ($team->have_posts()) : $team->the_post();       
+                if(get_field("selection")== "Direction"):
+                ?>
         <div class="row pt-5">
             <div class="equipe__titre col-12 text-center pt-5 pb-2">
-                L'équipe de la direction
+                <?php the_field('title_team');?>
             </div>
+            <?php
+ endif;
+  endwhile; 
+  wp_reset_postdata();
+?>
         </div>
         <?php
 
@@ -81,11 +99,28 @@ $publication = array(
 ?>
         </div>
     </div>
+    <?php
+
+$titleTwo = array(
+    'post_type' => 'equipe',
+    'posts_per_page' => -1,
+    'order' => 'ASC'
+);
+  $teamTwo = new WP_Query($titleTwo);
+?>
     <div class="equipe__collaborateur__wrapper container-fluid">
+        <?php while ($teamTwo->have_posts()) : $teamTwo->the_post();       
+                if(get_field("selection")== "Collaboratrices"):
+                ?>
         <div class="row pt-4">
             <div class="equipe__titre col-12 text-center pt-2 pb-2">
-                Collaboratrices
+                <?php the_field('title_team');?>
             </div>
+            <?php
+ endif;
+  endwhile; 
+  wp_reset_postdata();
+?>
         </div>
         <div id="equipe_collaborateur" class="row justify-content-center pt-4 pb-4">
             <?php while ($personnel->have_posts()) : $personnel->the_post();       
@@ -128,11 +163,28 @@ $publication = array(
          endwhile; 
         ?>
         </div>
+        <?php
+
+$titleThree = array(
+    'post_type' => 'equipe',
+    'posts_per_page' => -1,
+    'order' => 'ASC'
+);
+  $teamThree = new WP_Query($titleThree);
+?>
         <div class="equipe__administration__wrapper container-fluid">
+            <?php while ($teamThree->have_posts()) : $teamThree->the_post();       
+                if(get_field("selection")== "Administration"):
+                ?>
             <div class="row pt-4">
                 <div class="equipe__titre col-12 text-center pt-2 pb-2">
-                    Le conseil d'administration
+                    <?php the_field('title_team');?>
                 </div>
+                <?php
+ endif;
+  endwhile; 
+  wp_reset_postdata();
+?>
             </div>
             <div id="equipe_administration" class="row justify-content-center pt-4 pb-4">
                 <?php while ($personnel->have_posts()) : $personnel->the_post();       
