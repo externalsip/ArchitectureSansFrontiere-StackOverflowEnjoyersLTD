@@ -14,6 +14,10 @@
             <a href="<?php echo esc_url( home_url( '/' ) ); // Lien vers la page d'accueil ?>">
               <img src="<?php bloginfo('template_url'); ?>/images/hero/logo.png" class="logo" alt="logo">
             </a>
+            <?php 
+            $footerInfo = new WP_Query("post_type=footer");
+            while ($footerInfo->have_posts()) : $footerInfo->the_post(); 
+            //ACFs ont été utilisés pour s'assurer que les informations soient traduites en Français et Anglais?>
             <div class="col-sm-12 col-lg-8 pt-4 text-start">
               <button
                 type="button"
@@ -21,8 +25,8 @@
                 data-bs-toggle="modal"
                 data-bs-target="#button_modal"
               >
-                201 rue Sainte-Catherine <br />
-                Est, Montréal, QC, H2X 1L2
+                <?php the_field("adressepart1"); ?> <br/>
+                <?php the_field("adressepart2"); ?>
               </button>
               <div
                 class="modal fade"
@@ -61,13 +65,12 @@
                 info@asf-quebec.org
               </p>
               <p class="bienfaisance">
-                Numéro d'organisme de bienfaisance<br />
-                officiel du Canada: 831067012RR0001
+              <?php the_field("organismepart1"); ?><br />
+              <?php the_field("organismepart2"); ?>
               </p>
               <div class="col-12 col-lg-8 text-start">
                 <p class="droits">
-                  Copyright (c)2023 Architecture sans frontières Québec. Tous
-                  droits réservés. | Propulsé par Stack Overflow Enjoyers LTD
+                <?php the_field("copyright"); ?>
                 </p>
               </div>
             </div>
@@ -75,32 +78,52 @@
 
           <div class="col-12 col-lg-3 pt-2 pb-3">
             <div class="logo_partenaire">
-              <p class="presentation">[:fr]Notre partenaire fondateur</p>
+              
+              <p class="presentation"><?php the_field("partenairetitre"); ?></p>
 
-              <img src="<?php bloginfo('template_url'); ?>/images/footer/logo_partenaire.png" class="partenaire" alt="logo_partenaire">
+              <?php endwhile;
+              wp_reset_postdata();
+              $partnerInfo = new WP_Query("post_type=partenaire");
+              while ($partnerInfo->have_posts()) : $partnerInfo->the_post();?>
+              <a href="<?php the_field("partenaireurl");?>">
+              <img
+                class="partenaire"
+                src="<?php the_field("partenaireimg");?>"
+                alt="logo_partenaire"
+              />
+              </a>
+              <?php endwhile;
+              wp_reset_postdata();
+              ?>
+
             </div>
           </div>
 
           <div class="col-12 col-lg-2 pt-2 pb-3">
 		  <?php 
 		// Affiche un menu si dans le tableau de bord un menu a été défini dans cet emplacement
-		wp_nav_menu( array( 'theme_location' => 'footer',
+		wp_nav_menu( array( 'theme_location' => 'footer-menu',
 		'menu_class' => 'footer_menus',
 		'list_item_class' => 'p-2' ) );
 		?>
           </div>
+          <?php 
+            $footerInfo = new WP_Query("post_type=footer");
+            while ($footerInfo->have_posts()) : $footerInfo->the_post(); ?>
 
           <div class="col-12 col-lg-4 pt-3 pb-3">
             <div class="dons text-center pb-5">
-              <button type="button" class="btn-dons">Faire un don</button>
+              <button type="button" class="btn-dons"><?php the_field("don");?></button>
             </div>
             <div class="infolettre text-center pb-4">
-              <button type="button" class="btn-newsletter">Infolettre</button>
+              <button type="button" class="btn-newsletter"><?php the_field("infolettre");?></button>
             </div>
             <p class="conditions text-center pt-5 pb-4">
-              Conditions d'utilisation <br />
-              Politique de confidentialité
+            <?php the_field("tos");?> <br />
+            <?php the_field("politiques");?>
             </p>
+            <?php endwhile;
+            wp_reset_postdata();?>
             <div class="medias text-center pt-4">
               <a
                 href="https://www.facebook.com/architecturesansfrontieres/"
@@ -122,7 +145,7 @@
               ></a>
             </div>
             <div class="text-end pe-4">
-              <a href="index.html#carrousel_hero" scroll-behavior:smooth
+              <a href="#" scroll-behavior:smooth
                 ><i class="bi bi-arrow-up-circle"></i
               ></a>
             </div>

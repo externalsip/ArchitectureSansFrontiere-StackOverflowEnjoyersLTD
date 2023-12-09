@@ -3,7 +3,7 @@
 //Animation GSAP sur menu hamburger du nav
 
 
-if(document.querySelector(".navbar-toggler") != undefined){
+if(document.querySelector(".navbar-toggler") !== undefined){
     let hamMenu = document.querySelector(".navbar-toggler");
   
   hamMenu.addEventListener("mouseover", () => {
@@ -19,7 +19,7 @@ if(document.querySelector(".navbar-toggler") != undefined){
   /*
   swiper in the hero uses swipe.js, this is the code that makes said swiper work.
   */
-  if(document.getElementById("carrousel_hero") != undefined){
+  if(document.getElementById("carrousel_hero") !== undefined){
   const swiperPro = new Swiper('.swiperProject', {
       // Optional parameters
       direction: 'horizontal',
@@ -74,18 +74,17 @@ if(document.querySelector(".navbar-toggler") != undefined){
         .to(donationBtn, {scale: 1.1, duration: 0.4})
         .to(donationBtn, {scale: 1, duration: 0.5})
         .to(donationBtn, {scale: 1.1, duration: 0.6})
-        .to(donationBtn, {scale: 1, duration: 0.7})
+        .to(donationBtn, {scale: 1, duration: 0.7});
   });
-  console.log("reach");
   }
   /*Animation GSAP dans la page 404*/
   
-  if(document.getElementById("page404") != undefined){
+  if(document.getElementById("page404") !== undefined){
 
   //RestAPI for the 404 page
 
   const titleDiv = document.querySelector(".notFound__title");
-  fetch("wp-json/wp/v2/erreur404")
+  fetch("/ArchitectureSansFrontiere-StackOverflowEnjoyersLTD/wordpress/wp-json/wp/v2/erreur404")
   .then(response => response.json())
   .then(data => {
   console.log(data);
@@ -94,7 +93,7 @@ if(document.querySelector(".navbar-toggler") != undefined){
       const letterContainer = document.createElement("div");
       letterContainer.classList.add("titleChar");
       if(title.charAt(i) == " "){
-          letterContainer.innerHTML = "&nbsp"
+          letterContainer.innerHTML = "&nbsp";
       } 
       else{
           letterContainer.innerHTML = title.charAt(i);
@@ -114,7 +113,7 @@ if(document.querySelector(".navbar-toggler") != undefined){
   }
   
   /*Animation de la timeline avec gsap sur la page histoire*/
-  if(document.getElementById("history") != undefined){
+  if(document.getElementById("history") !== undefined){
     gsap.registerPlugin(ScrollTrigger);
     let timelineEvents = document.querySelectorAll(".eventContainer");
     let infoArr = document.querySelectorAll(".info");
@@ -132,7 +131,7 @@ if(document.querySelector(".navbar-toggler") != undefined){
     .to(infoArr[1], {opacity: 0, duration: 0.5, ease: "none"}, "-=12.5")
     .to(infoArr[2], {opacity: 1, duration: 0.5, ease: "none"}, "<")
     .to(infoArr[2], {opacity: 0, duration: 0.5, ease: "none"}, "-=8")
-    .to(infoArr[3], {opacity: 1, duration: 0.5, ease: "none"}, "<")
+    .to(infoArr[3], {opacity: 1, duration: 0.5, ease: "none"}, "<");
   }
   
   // Script pour l'espacement en dessous du nav
@@ -161,31 +160,36 @@ if(document.querySelector(".navbar-toggler") != undefined){
 
 // Scripts pour la page hub de nouvelle - quoc huy
 
-if(document.querySelector(".articlesBtnDiv") != undefined){
+let articleIndex = 0;
+let currentlyDisplayedArticles = 0;
 
-  let wasBtnPressed = false;
+if(document.querySelector(".articlesBtnDiv") !== undefined){
+
 
   let order = "&order=desc";
 
   const featuredCard = document.querySelector("#featured");   
   const articleContainer = document.getElementById("articleContainer");
 
-  fetch("/ArchitectureSansFrontiere-StackOverflowEnjoyersLTD/wordpress/wp-json/wp/v2/article?_embed"+order)
+  fetch("/ArchitectureSansFrontiere-StackOverflowEnjoyersLTD/wordpress/wp-json/wp/v2/article?_embed&per_page=100"+order)
   .then(response => response.json())
   .then(data => {
     
+    articleIndex++;
+    currentlyDisplayedArticles++;
+
+// Script pour faire apparaîte première nouvelle (Featured)
+
     const cardImg = document.createElement("img");
 
     cardImg.setAttribute("src", data[0]._embedded['wp:featuredmedia'][0].source_url);
     cardImg.classList.add("card-img-top");
 
-    cardImg.style.borderRadius = "5px";
-    cardImg.style.paddingTop = "10px";
-    cardImg.style.maxHeight = "400px";
-    cardImg.style.objectFit = "cover";
+    cardImg.setAttribute("style", "border-radius: 5px; padding-top: 10px; max-height: 400px; object-fit: cover;");
+    cardImg.setAttribute("loading", "lazy");
 
     const cardBody = document.createElement("div");
-    cardBody.classList.add("card-body")
+    cardBody.classList.add("card-body");
 
     const cardTitle = document.createElement("h5");
     cardTitle.classList.add("card-title");
@@ -195,49 +199,70 @@ if(document.querySelector(".articlesBtnDiv") != undefined){
     cardContent.classList.add("card-text");
     cardContent.innerHTML = data[0].content.rendered;
 
-    featuredCard.appendChild(cardImg);
+    const cardLink = document.createElement("a");
+    cardLink.setAttribute("href", data[0].link);
+
+    cardLink.appendChild(cardImg);
     cardBody.appendChild(cardTitle);
     cardBody.appendChild(cardContent);
-    featuredCard.appendChild(cardBody);
+    cardLink.appendChild(cardBody);
+    featuredCard.appendChild(cardLink);
     console.log(featuredCard);
-    for(i = 1; i <= data.length/2; i++){
+    
+
+
+    for(articleIndex; articleIndex <= currentlyDisplayedArticles + 5; articleIndex++){
+
+      if(articleIndex > data.length){
+        break; //Failsafe pour s'assurer que le compteur ne va pas overboard.
+      }
+      //Creation de tout ce qui est nécéssaire à la création des cartes.
       const cardDiv = document.createElement("div"); //  card div
       const cardBodyDiv = document.createElement("div"); //  card body div
       const imgCard= document.createElement("img"); // img
       const h5Title = document.createElement("h5"); // h5 title in the cards
       const pCard = document.createElement("p"); // paragraph element in cards
+      const cardLink = document.createElement("a");
       // console.log(data[i]);
       // console.log(data[i].title.rendered);
       // console.log(data[i].content.rendered);
       // console.log(data[i].link);
-      console.log(data[i]._embedded['wp:featuredmedia'][0].source_url);
+
+      cardLink.setAttribute("href", data[articleIndex].link);
+
+      console.log(data[articleIndex]._embedded['wp:featuredmedia'][0].source_url);
       const colDiv = document.createElement("div"); //  col div
 
       articleContainer.appendChild(colDiv);
       colDiv.appendChild(cardDiv); // create col, which contains the card
+      cardDiv.appendChild(cardLink);
+
       colDiv.classList.add("col-4");  
       
       cardDiv.classList.add("card");
       cardDiv.classList.add("news");
       imgCard.classList.add("card-img-top");
-      imgCard.setAttribute("src", data[i]._embedded['wp:featuredmedia'][0].source_url);
+      imgCard.setAttribute("src", data[articleIndex]._embedded['wp:featuredmedia'][0].source_url);
       imgCard.setAttribute("style", "border-radius: 15px; padding: 10px; max-height: 200px; object-fit: cover;");
+      imgCard.setAttribute("loading", "lazy");
 
-      cardDiv.appendChild(imgCard);
+      cardLink.appendChild(imgCard);
 
-      cardDiv.appendChild(cardBodyDiv);
-      console.log(data[i].title.rendered);
-      h5Title.innerHTML = data[i].title.rendered;
+      cardLink.appendChild(cardBodyDiv);
+      console.log(data[articleIndex].title.rendered);
+      h5Title.innerHTML = data[articleIndex].title.rendered;
       h5Title.classList.add("card-title");
       cardBodyDiv.appendChild(h5Title);
 
       cardBodyDiv.classList.add("card-body");
 
-      pCard.innerHTML = data[i].content.rendered;
+      pCard.innerHTML = data[articleIndex].content.rendered;
       pCard.classList.add("card-text");
       
       cardBodyDiv.appendChild(pCard);
+
     }
+    currentlyDisplayedArticles = articleIndex;
   })
 
   let articlesBtn = document.querySelector(".articlesBtnDiv"); // bouton plus d'articles
@@ -253,58 +278,70 @@ articlesBtn.addEventListener("click", function(){
 
 
     //remove "/ArchitectureSansFrontiere-StackOverflowEnjoyersLTD" when in online version 🎂❤😁😉🙌🤦‍♀️🤦‍♀️🙌😉🙌🤣👍😉🙌🙌🙌😉🤞😁🤞😁🌹🙌✔
-    fetch("/ArchitectureSansFrontiere-StackOverflowEnjoyersLTD/wordpress/wp-json/wp/v2/article?_embed"+order)
+    fetch("/ArchitectureSansFrontiere-StackOverflowEnjoyersLTD/wordpress/wp-json/wp/v2/article?_embed&per_page=100"+order)
     .then(response => response.json())
      .then(data => {
-      console.log(data.length/2);
-//i = length de data divisé par 2 pour afficher la moitié des articles de manière réactive.
-      for(let i = Math.round(data.length/2); i <= data.length; i++){
+      console.log(data);
+      if(currentlyDisplayedArticles + 6 >= data.length){
+        currentlyDisplayedArticles = data.length + 1;
+        console.log(currentlyDisplayedArticles);
+      }
+      else{
+        currentlyDisplayedArticles = currentlyDisplayedArticles + 6;
+        console.log("smaller");
+      }
+//i = Affiche le nombre d'article 
+      for(articleIndex; articleIndex <= currentlyDisplayedArticles; articleIndex++){
 
+
+        if(articleIndex >= data.length){
+          break; //Failsafe
+        }
          const cardDiv = document.createElement("div"); //  card div
          const cardBodyDiv = document.createElement("div"); //  card body div
          const imgCard= document.createElement("img"); // img
          const h5Title = document.createElement("h5"); // h5 title in the cards
          const pCard = document.createElement("p"); // paragraph element in cards
+         const cardLink = document.createElement("a");
          // console.log(data[i]);
          // console.log(data[i].title.rendered);
          // console.log(data[i].content.rendered);
          // console.log(data[i].link);
-         console.log(data[i]._embedded['wp:featuredmedia'][0].source_url);
          const colDiv = document.createElement("div"); //  col div
+
+         
+      cardLink.setAttribute("href", data[articleIndex].link);
  
          articleContainer.appendChild(colDiv);
          colDiv.appendChild(cardDiv); // create col, which contains the card
          colDiv.classList.add("col-4");  
+         cardDiv.appendChild(cardLink);
          
          cardDiv.classList.add("card");
          cardDiv.classList.add("news");
          imgCard.classList.add("card-img-top");
-         imgCard.setAttribute("src", data[i]._embedded['wp:featuredmedia'][0].source_url);
+         imgCard.setAttribute("src", data[articleIndex]._embedded['wp:featuredmedia'][0].source_url);
          imgCard.setAttribute("style", "border-radius: 15px; padding: 10px; max-height: 200px; object-fit: cover;");
+         imgCard.setAttribute("loading", "lazy");
  
-         cardDiv.appendChild(imgCard);
-  
-         cardDiv.appendChild(cardBodyDiv);
-         console.log(data[i].title.rendered);
-         h5Title.innerHTML = data[i].title.rendered;
+         cardLink.appendChild(imgCard);
+        
+         cardLink.appendChild(cardBodyDiv);
+         console.log(data[articleIndex].title.rendered);
+         h5Title.innerHTML = data[articleIndex].title.rendered;
          h5Title.classList.add("card-title");
          cardBodyDiv.appendChild(h5Title);
  
          cardBodyDiv.classList.add("card-body");
  
-         pCard.innerHTML = data[i].content.rendered;
+         pCard.innerHTML = data[articleIndex].content.rendered;
          pCard.classList.add("card-text");
          
          cardBodyDiv.appendChild(pCard);
-  
-
- 
-         parentSection.appendChild(rowEndComment);
- 
-          wasBtnPressed = true;
-           articlesBtn.setAttribute("style", "display: none; padding-bottom: 0px;");
-           console.log("remove button");
-         
+      }
+       if(currentlyDisplayedArticles >= data.length){
+        articlesBtn.setAttribute("style", "display: none; padding-bottom: 0px;");
+        console.log("remove button");
        }
  
         // console.log(rowsShownCount);
@@ -316,7 +353,7 @@ articlesBtn.addEventListener("click", function(){
    });
 
 
-   //Fonction pour filtres, clear les articles présentement sur la page pour ensuite les redéclarer dans le nouvel ordre
+   //Fonction pour filtres, clear les articles présentement sur la page pour ensuite les redéclarer dans le nouvel ordre, on pourrait économiser des lignes en créant une callback unique, mais j'en ai pas envi -Jacob
    let dropdown = document.getElementById("filterDropdown");
    console.log(dropdown);
    dropdown.addEventListener("change", () => {
@@ -337,11 +374,13 @@ articlesBtn.addEventListener("click", function(){
     featuredCard.innerHTML = "";
     articleContainer.innerHTML = "";
 
-    fetch("/ArchitectureSansFrontiere-StackOverflowEnjoyersLTD/wordpress/wp-json/wp/v2/article?_embed"+order)
+    fetch("/ArchitectureSansFrontiere-StackOverflowEnjoyersLTD/wordpress/wp-json/wp/v2/article?_embed&per_page=100"+order)
     .then(response => response.json())
     .then(data => {
             const cardImg = document.createElement("img");
       cardImg.setAttribute("src", data[0]._embedded['wp:featuredmedia'][0].source_url);
+      cardImg.setAttribute("loading", "lazy");
+  
       cardImg.classList.add("card-img-top");
   
       cardImg.style.borderRadius = "5px";
@@ -354,24 +393,29 @@ articlesBtn.addEventListener("click", function(){
   
       const cardTitle = document.createElement("h5");
       cardTitle.classList.add("card-title");
-      cardTitle.innerHTML = data[0].title.rendered
+      cardTitle.innerHTML = data[0].title.rendered;
   
       const cardContent = document.createElement("p");
       cardContent.classList.add("card-text");
       cardContent.innerHTML = data[0].content.rendered;
+
+      const cardLink = document.createElement("a");
+      cardLink.setAttribute("href", data[0].link);
   
-      featuredCard.appendChild(cardImg);
+      cardLink.appendChild(cardImg);
       cardBody.appendChild(cardTitle);
       cardBody.appendChild(cardContent);
-      featuredCard.appendChild(cardBody);
+      cardLink.appendChild(cardBody);
+      featuredCard.appendChild(cardLink);
+
       console.log(featuredCard);
-      if(wasBtnPressed){
-              for(i = 1; i <= data.length; i++){
+      for(i = 1; i <= currentlyDisplayedArticles - 1; i++){
         const cardDiv = document.createElement("div"); //  card div
         const cardBodyDiv = document.createElement("div"); //  card body div
         const imgCard= document.createElement("img"); // img
         const h5Title = document.createElement("h5"); // h5 title in the cards
         const pCard = document.createElement("p"); // paragraph element in cards
+        const cardLink = document.createElement("a");
         // console.log(data[i]);
         // console.log(data[i].title.rendered);
         // console.log(data[i].content.rendered);
@@ -379,19 +423,24 @@ articlesBtn.addEventListener("click", function(){
         console.log(data[i]._embedded['wp:featuredmedia'][0].source_url);
         const colDiv = document.createElement("div"); //  col div
   
+        cardLink.setAttribute("href", data[articleIndex].link);
+
         articleContainer.appendChild(colDiv);
         colDiv.appendChild(cardDiv); // create col, which contains the card
         colDiv.classList.add("col-4");  
+
+        cardDiv.appendChild(cardLink);
         
         cardDiv.classList.add("card");
         cardDiv.classList.add("news");
         imgCard.classList.add("card-img-top");
         imgCard.setAttribute("src", data[i]._embedded['wp:featuredmedia'][0].source_url);
         imgCard.setAttribute("style", "border-radius: 15px; padding: 10px; max-height: 200px; object-fit: cover;");
+        cardImg.setAttribute("loading", "lazy");
   
-        cardDiv.appendChild(imgCard);
+        cardLink.appendChild(imgCard);
   
-        cardDiv.appendChild(cardBodyDiv);
+        cardLink.appendChild(cardBodyDiv);
         console.log(data[i].title.rendered);
         h5Title.innerHTML = data[i].title.rendered;
         h5Title.classList.add("card-title");
@@ -403,47 +452,7 @@ articlesBtn.addEventListener("click", function(){
         pCard.classList.add("card-text");
         
         cardBodyDiv.appendChild(pCard);
-      }
-      }
-      else{
-        for(i = 1; i <= data.length/2; i++){
-          const cardDiv = document.createElement("div"); //  card div
-          const cardBodyDiv = document.createElement("div"); //  card body div
-          const imgCard= document.createElement("img"); // img
-          const h5Title = document.createElement("h5"); // h5 title in the cards
-          const pCard = document.createElement("p"); // paragraph element in cards
-          // console.log(data[i]);
-          // console.log(data[i].title.rendered);
-          // console.log(data[i].content.rendered);
-          // console.log(data[i].link);
-          console.log(data[i]._embedded['wp:featuredmedia'][0].source_url);
-          const colDiv = document.createElement("div"); //  col div
-    
-          articleContainer.appendChild(colDiv);
-          colDiv.appendChild(cardDiv); // create col, which contains the card
-          colDiv.classList.add("col-4");  
-          
-          cardDiv.classList.add("card");
-          cardDiv.classList.add("news");
-          imgCard.classList.add("card-img-top");
-          imgCard.setAttribute("src", data[i]._embedded['wp:featuredmedia'][0].source_url);
-          imgCard.setAttribute("style", "border-radius: 15px; padding: 10px; max-height: 200px; object-fit: cover;");
-    
-          cardDiv.appendChild(imgCard);
-    
-          cardDiv.appendChild(cardBodyDiv);
-          console.log(data[i].title.rendered);
-          h5Title.innerHTML = data[i].title.rendered;
-          h5Title.classList.add("card-title");
-          cardBodyDiv.appendChild(h5Title);
-    
-          cardBodyDiv.classList.add("card-body");
-    
-          pCard.innerHTML = data[i].content.rendered;
-          pCard.classList.add("card-text");
-          
-          cardBodyDiv.appendChild(pCard);
-        }
+     
       }
 
     })
@@ -454,7 +463,7 @@ articlesBtn.addEventListener("click", function(){
 
       //console.log("printed " + (i+1) + " times");  
      
-
+//Plutôt qu'avoir un boolean ou autre chose dans le local storage pour comparer, nous ne faisons que vérifier si une certaine chose est présente dans le localStorage, si il n'y a rien, la bannière apparaît.
 
   
    const creditBar = document.querySelector("#credits");
@@ -468,3 +477,4 @@ articlesBtn.addEventListener("click", function(){
    if (localStorage.getItem("close") != null) {
      creditBar.style.display = "none";
    }
+

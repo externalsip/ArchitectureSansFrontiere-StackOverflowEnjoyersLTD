@@ -83,19 +83,36 @@ if (have_posts()): // Est-ce que nous avons des pages à afficher ?
       </div>
     </section>
 
-    <section class="suggested_article container">
-      <div class="line container">
-      </div>
-      <h2 class="nextArticleTitle"> Nouvelle suivante</h2>
-      <div itemprop="image" class="nextArticleImage"></div>
-      <h2 class="nextArticleHeadline">
 
-      </h2>
-      <p class="nextArticleParagraph">
+    <section class="suggested_article container">
+      
+    <?php
+$prev_post = get_previous_post();
+if ( ! empty( $prev_post ) ): ?>
+      <div class="line container">
+
+      </div>
+      <h2 class="pt-2">Prochain Article</h2>
+      <div class="col-8 py-4" style="margin: auto;">
+      <a href="<?php echo get_permalink( $prev_post->ID );?>">   
+          <div class="card news">      
+            <?php $thumbnail_id = get_post_thumbnail_id($prev_post->ID);
+                  $thumbnail_url = wp_get_attachment_image_src($thumbnail_id, 'full', true)[0]; ?>
+            <img class="card-img-top" src="<?php echo $thumbnail_url ?>" style="border-radius: 15px; padding: 10px; max-height: 200px; object-fit: cover;" />
+            <div class="card-body">
+              <h5 class="card-title"><?php echo apply_filters( 'the_title', $prev_post->post_title ); ?></h5>
+              <p class="card-text"><?php echo apply_filters( 'the_content', $prev_post->post_content ); ?></p>
+            </div>
+          </div>
+        </div>
 
       </p>
+
+<?php endif; ?>
     </section>
-  </div>
+
+
+      </div>
 
   <?php
 else: // Si aucune page n'a été trouvée

@@ -55,7 +55,7 @@
 >
 
 <header>
-  <?php get_template_part("partials/bannertemplate"); ?>
+
 	<nav
   class="navbar navbar-expand-md fixed-top"
   style="background-color: #70b074"
@@ -80,20 +80,28 @@
       id="navbarNav"
     >
 	  <?php 
-		// Affiche un menu si dans le tableau de bord un menu a été défini dans cet emplacement
+		// Affiche un menu si dans le tableau de bord un menu a été défini dans cet emplacement 
+    //list_item_class et link_item_class sont des fonctions permetant de rajouter des classes sur les éléments des liens qui ne sont pas accessibles à la création du menu.
 		wp_nav_menu( array( 'theme_location' => 'main-menu',
 		'menu_class' => 'navbar-nav align-self-md-end align-items-end ml-auto col-md-10',
 		'list_item_class' => 'nav-item',
 		'link_item_class' => 'nav-link', ) );
 		?>
       <div class="nav_end col-md-3">
+        <?php $btnText = new WP_Query("post_type=nav");
+ while ($btnText->have_posts()) : $btnText->the_post(); ?>
+
         <button type="button" class="charityBtn col-2 col-md-6 p-1">
-          Faire un don
+          <?php the_field("btntext");?>
         </button>
+        <?php endwhile;
+        wp_reset_postdata();?>
       </div>
     </div>
   </div>
+  <?php get_template_part("partials/bannertemplate"); ?>
 </nav>
+
 </header>
 
 <main><!-- Débute le contenu principal de notre site -->

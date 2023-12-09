@@ -2,7 +2,7 @@
         <div class="notFound__wrapper container-fluid">
             <div class="row">
                 <div class="col-12 text-center notFound__container">
-                    <?php
+                    <?php //Texte présent sur la page 404 est dans un post
                     $missing = new WP_Query("post_type=erreur404");
                     while($missing->have_posts()) : $missing->the_post();
                     ?>
@@ -15,8 +15,4 @@
                 </div>
             </div>
         </div>
-        <script>
-
-
-                    </script>
     </section>

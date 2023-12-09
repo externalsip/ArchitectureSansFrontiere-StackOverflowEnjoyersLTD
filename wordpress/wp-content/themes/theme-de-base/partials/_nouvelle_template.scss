@@ -238,10 +238,8 @@
 }
 
 .nextArticleImage {
-  background-image: url("../../../sources/medias/02_hub_nouvelles/image_05_nouvelle.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
+  object-fit: cover;
+  object-position: center;
   float: left;
   margin-bottom: 15px;
   margin-right: 15px;

@@ -6,8 +6,8 @@
 ?>
 <?php
 get_header(); // Affiche header.php
-?>
 
+?>
 
 <?php
 $aboutText = new WP_Query("post_type=aPropos");

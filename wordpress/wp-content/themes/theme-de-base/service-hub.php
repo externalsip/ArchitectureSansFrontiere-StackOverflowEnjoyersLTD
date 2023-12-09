@@ -40,7 +40,7 @@ if ( have_posts() ) : // Est-ce que nous avons des pages à afficher ?
                                 );
                                 $program = new WP_Query($programArguments);
                                 while ($program->have_posts()) : $program->the_post();
-                              get_template_part("partials/programcard");
+                              get_template_part("partials/programcard"); //Utilisation du template pour les cartes de programmes
          endwhile;
           wp_reset_postdata();
           ?>

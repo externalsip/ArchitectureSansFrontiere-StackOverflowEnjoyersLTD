@@ -22,6 +22,7 @@ register_nav_menus(
 			3. 'Menu principal du site' = Description dans l'admin */
 		'main-menu' => __( 'Menu principal', 'Menu principal du site' ), 
 		/* Dupliquer cette ligne si vous désirez déclarer d'autres menus */
+		'footer-menu' => __( 'Partenaires', 'Menu principal du site' )
 	)
 );
 

@@ -56,17 +56,15 @@ C'est le moment d'effacer ce commentaire et d'écrire du vrai
    text-decoration: underline;
  }
 
- .credits {
+ .credits {  
+  position: absolute;
+  top:100%;
   text-align: center;
-  position: fixed;
-  left: 20%;
+  display:flex;
   border-radius: 0 0 10px 10px;
   background-color: col.$VertFor;
-  width: 60%;
   z-index: 999999999;
   font-weight: 500;
-  cursor: pointer;
-  //height: 100px;
 }
 .credit_site {
   color: white;
@@ -76,8 +74,16 @@ C'est le moment d'effacer ce commentaire et d'écrire du vrai
 }
 .asfq {
   font-size: 15px;
-  color: white;
+  color: col.$Aero;
 }
 .asfq:hover {
   color: col.$Noir;
+}
+
+#close{
+  cursor: pointer;
+}
+#close:hover{
+  color:black;
+  text-decoration: underline;
 }

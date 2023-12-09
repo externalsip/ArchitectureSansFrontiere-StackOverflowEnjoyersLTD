@@ -11,7 +11,7 @@
                 </div>
               </div>
               <div class="col-12 col-md-3 text-center">
-                  <?php the_post_thumbnail('full', array('class' => 'img-fluid')); ?>
+                  <?php the_post_thumbnail('full', array('class' => 'img-fluid', 'loading' => 'lazy')); ?>
               </div>
             </div>
         </a>

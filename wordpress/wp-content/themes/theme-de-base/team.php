@@ -11,18 +11,11 @@ if ( have_posts() ) : // Est-ce que nous avons des pages à afficher ?
 	while ( have_posts() ) : the_post(); 
 ?>
 
+<?php get_template_part("partials/generichero");?>
+
+<?php get_template_part("partials/genericdesc");?>
 
 <section class="hero_equipe pt-5 pb-5" id="pageequipe">
-    <div id="heroGeneric" class="container-fluid genericHero">
-        <div class="genericHero__filter"></div>
-        <div class="row align-self-end col-12 justify-content-center justify-content-md-start">
-            <div id="titre_Contenu"
-                class="col-8 col-md-4 col-lg-3 align-self-end justify-self-md-start justify-self-center genericHero__textContent">
-                Notre équipe</br>
-                <span class="texte_titre">Tous architectes d'un monde meilleur.</span>
-            </div>
-        </div>
-    </div>
 
     <?php
 

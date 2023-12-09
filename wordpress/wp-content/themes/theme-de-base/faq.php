@@ -35,7 +35,7 @@ if ( have_posts() ) : // Est-ce que nous avons des pages à afficher ?
     <?php
   $question = new WP_Query('post_type=question');
   $i = 1;
- 
+ //i est utiliser comme index, pour s'assurer que chacun des éléments de la FAQ soient séparés.
 ?>
     <!-- 👆 Début boucle while -->
     <section class="faq" id="pagefaq">
@@ -44,7 +44,7 @@ if ( have_posts() ) : // Est-ce que nous avons des pages à afficher ?
                 <?php while  ($question->have_posts()) : $question->the_post(); ?>
                 <div class="accordion" id="accordionExample">
                     <div class="accordion-item">
-                        <h2 class="accordion-header" id="faq-01 <?php echo $i ?>">
+                        <h2 class="accordion-header" id="faq-01<?php echo $i ?>">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#collapsefaq-01<?php echo $i ?>" aria-expanded="true"
                                 aria-controls="collapsefaq-01<?php echo $i ?>">
