@@ -25,6 +25,7 @@ $titleOne = array(
     'order' => 'ASC'
 );
   $team = new WP_Query($titleOne);
+  
 ?>
 
     <div class="equipe__direction__wrapper container-fluid">
@@ -36,13 +37,15 @@ $titleOne = array(
                 <?php the_field('title_team');?>
             </div>
             <?php
- endif;
+endif;
   endwhile; 
   wp_reset_postdata();
 ?>
         </div>
         <?php
+//Loop différent pour chaque catégorie, pour isoler chacun des membres dépendement de leurs rôles avec un champ en ACF
 
+//Loop
 $publication = array(
     'post_type' => 'personnel',
     'posts_per_page' => -1,

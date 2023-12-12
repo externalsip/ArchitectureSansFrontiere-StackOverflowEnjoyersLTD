@@ -92,7 +92,10 @@
                 alt="logo_partenaire"
               />
               </a>
-              <?php endwhile;
+              
+              <?php
+            //Coupe loop pour entre un menu  
+            endwhile;
               wp_reset_postdata();
               ?>
 
@@ -108,6 +111,7 @@
 		?>
           </div>
           <?php 
+          //Recommence loop
             $footerInfo = new WP_Query("post_type=footer");
             while ($footerInfo->have_posts()) : $footerInfo->the_post(); ?>
 

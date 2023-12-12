@@ -19,10 +19,16 @@ if ( have_posts() ) : // Est-ce que nous avons des pages à afficher ?
       <div class="container px-5">
         <div class="row">
           <div class="col-6 text-start">
-          <?php echo next_post_link( '%link')?>
+              <h2>
+                <?php echo next_post_link( '%link')?>
+              </h2>
+
           </div>
           <div class="col-6 text-end">
-            <?php echo previous_post_link( '%link')?>
+              <h2>
+                <?php echo previous_post_link( '%link')?>
+              </h2>
+
           </div>
         </div>
       </div>

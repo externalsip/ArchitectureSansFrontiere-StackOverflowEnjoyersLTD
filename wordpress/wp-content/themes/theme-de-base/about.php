@@ -1,13 +1,15 @@
 <?php
 /**
  * 	Template Name: À propos
- *  Template Post Type: apropos
+ *  Template Post Type: page, apropos
  */
 ?>
 <?php
 get_header(); // Affiche header.php
 
+  get_template_part("partials/generichero");
 ?>
+
 
 <?php
 $aboutText = new WP_Query("post_type=aPropos");

@@ -35,7 +35,7 @@ if ( have_posts() ) : // Est-ce que nous avons des pages à afficher ?
 <div class="row" style="justify-content: center;">
   <!-- featured article row -->
 
-  <div class="card mx-2 featured news col-8" id="featured">
+  <div class="card mx-2 featured news col-8 pb-2" id="featured">
 
   </div>
 </div>

@@ -3,21 +3,20 @@
     "projets": {},
     "article": {},
     "equipe": {},
-    "question": {},
     "personnel": {},
+    "question": {},
     "heromainpage": {},
     "temoignages": {},
     "dons": {},
     "programme": {},
     "slideheroprincipal": {},
     "evenementhistoire": {},
-    "erreur404": {},
     "apropos": {},
-    "hubService": {},
     "missionvision": {},
-    "nav": {},
-    "partenaire": {},
     "footer": {},
-    "banniere": {}
+    "partenaire": {},
+    "nav": {},
+    "banniere": {},
+    "erreur404": {}
   }
 }
