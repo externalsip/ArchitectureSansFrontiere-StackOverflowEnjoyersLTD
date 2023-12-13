@@ -58,12 +58,6 @@ if ( have_posts() ) : // Est-ce que nous avons des pages à afficher ?
                                 <p class="texte_01">
                                     <?php the_content(); ?>
                                 </p>
-                                <p class="texte-02">
-                                    <?php the_content(); ?>
-                                </p>
-                                <p class="texte_03">
-                                    <?php the_content(); ?>
-                                </p>
                             </div>
                         </div>
                         <?php
