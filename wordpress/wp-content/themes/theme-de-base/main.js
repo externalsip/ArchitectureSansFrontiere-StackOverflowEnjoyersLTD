@@ -171,7 +171,7 @@ let order = "&order=desc";
 const featuredCard = document.querySelector("#featured");   
 const articleContainer = document.getElementById("articleContainer");
 
-fetch("/wordpress/wp-json/wp/v2/article?_embed&per_page=100"+order)
+fetch("/ArchitectureSansFrontiere-StackOverflowEnjoyersLTD/wordpress/wp-json/wp/v2/article?_embed&per_page=100"+order)
 .then(response => response.json())
 .then(data => {
   
@@ -278,7 +278,7 @@ parentSection.appendChild(rowStartComment);
 
 
   //remove "/ArchitectureSansFrontiere-StackOverflowEnjoyersLTD" when in online version 🎂❤😁😉🙌🤦‍♀️🤦‍♀️🙌😉🙌🤣👍😉🙌🙌🙌😉🤞😁🤞😁🌹🙌✔
-  fetch("/wordpress/wp-json/wp/v2/article?_embed&per_page=100"+order)
+  fetch("/ArchitectureSansFrontiere-StackOverflowEnjoyersLTD/wordpress/wp-json/wp/v2/article?_embed&per_page=100"+order)
   .then(response => response.json())
    .then(data => {
     console.log(data);
@@ -375,7 +375,7 @@ parentSection.appendChild(rowStartComment);
   featuredCard.innerHTML = "";
   articleContainer.innerHTML = "";
 
-  fetch("/wordpress/wp-json/wp/v2/article?_embed&per_page=100"+order)
+  fetch("/ArchitectureSansFrontiere-StackOverflowEnjoyersLTD/wordpress/wp-json/wp/v2/article?_embed&per_page=100"+order)
   .then(response => response.json())
   .then(data => {
           const cardImg = document.createElement("img");
